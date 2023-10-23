@@ -4,11 +4,13 @@ import Footer from './components/Footer';
 
 export const App = () => {
   return (
-    <QuizProvider>
-      <div>
-        <CurrentQuestionZustand />
-      </div>
+    <div className="app-container">
+      <QuizProvider>
+        <div>
+          <CurrentQuestionZustand />
+        </div>
+      </QuizProvider>
       <Footer />
-    </QuizProvider>
+    </div>
   );
 };

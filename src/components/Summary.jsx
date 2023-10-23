@@ -11,10 +11,9 @@ export const SummaryPage = () => {
           <div key={question.id}>
             <h3>{question.questionText}</h3>
             <p>Your Answer: {question.options[answers[index]]}</p>
+            <p>Correct Answer: {question.options[question.correctOption]}</p>
           </div>
         ))}
-        {}
       </div>
     );
-  };
-  
+};
