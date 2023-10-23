@@ -1,0 +1,24 @@
+.summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 300px;
+}
+
+.summary h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: black;
+}
+
+.summary h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-align: left;
+}
+
+.summary p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-align: left;
+}
