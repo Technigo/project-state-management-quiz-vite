@@ -32,6 +32,7 @@ export const CurrentQuestionZustand = () => {
             // Reset currentQuestionIndex to 0 when restarting
             restart();
           }}
+
         />
       </>
     );
