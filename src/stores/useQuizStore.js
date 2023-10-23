@@ -1,39 +1,49 @@
 import { create } from "zustand";
+import image1 from '../assets/image1.jpg';
+import image2 from '../assets/image2.jpg';
+import image3 from '../assets/image3.jpg';
+import image4 from '../assets/image4.jpg';
+import image5 from '../assets/image5.jpg';
 
 const questions = [
   {
     id: 1,
     questionText: "What lake is this?",
-    options: ["xx", "xx", "xx", "xx"],
+    options: ["Lake Louise", "Lake Como", "Lake Titicaca", "Lake Superior"],
     correctAnswerIndex: 0,
+    imagesrc: image1,
   },
   {
     id: 2,
     questionText:
       "The Mariana Trench, the deepest part of the world's oceans, is located in which ocean?",
     options: ["Atlantic ocean", "Pacific ocean", "Southern ocean", "Indian Ocean"],
-    correctAnswerIndex: 2,
+    correctAnswerIndex: 1,
+    imagesrc: image2,
   },
   {
     id: 3,
     questionText:
       "What percentage of Earth's surface is covered by oceans?",
     options: ["Approximately 50%", "Approximately 61%", "Approximately 71%", "Approximately 85%"],
-    correctAnswerIndex: 3,
+    correctAnswerIndex: 2,
+    imagesrc: image3,
   },
   {
     id: 4,
     questionText:
       "What type of shark is pictured above?",
-    options: ["xx", "xx", "xx", "xx"],
+    options: ["Angel shark", "Tiger shark", "Whale shark", "Nurse shark"],
     correctAnswerIndex: 3,
+    imagesrc: image4,
   },
   {
     id: 5,
     questionText:
       "Who is the actor who plays Aquaman?",
     options: ["Liam Hemsworth", "Jason Segel", "Chris Evans", "Jason Momoa"],
-    correctAnswerIndex: 4,
+    correctAnswerIndex: 3,
+    imagesrc: image5,
   },
 ];
 

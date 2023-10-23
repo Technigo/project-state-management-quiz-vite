@@ -19,6 +19,7 @@ export const CurrentQuestionZustand = () => {
   const question = questions[currentQuestionIndex];
   const handleAnswerSubmission = useQuizStore((state) => state.submitAnswer);
   const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
+  const goToPreviousQuestion = useQuizStore((state) => state.goToPreviousQuestion);
   const restart = useQuizStore((state) => state.restart);
 
   if (showSummary) {
@@ -45,20 +46,25 @@ export const CurrentQuestionZustand = () => {
   };
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
 
-  // Conditionally render the Submit Answer button only on the last question
   const isLastQuestion = currentQuestionIndex === questions.length - 1;
   const submitAnswerButton = isLastQuestion ? (
     <SubmitAnswer onAnswerSubmit={() => setShowSummary(true)} />
   ) : null;
+
+  // Conditionally render the "Next Question" button based on whether it's the last question
+  const nextQuestionButton = isLastQuestion ? null : (
+    <GoToNextQuestion onNext={goToNextQuestion} />
+  );
 
   return (
     <div className="managed-component">
       <ProgressBar progress={progress} />
       <h2>The ocean quiz</h2>
       <h1>Question: {question.questionText}</h1>
+      <img src={question.imagesrc} alt="Lake" />
       <Options options={question.options} onOptionSelect={handleOptionSelect} />
       {submitAnswerButton}
-      <GoToNextQuestion onNext={goToNextQuestion} />
+      {nextQuestionButton}
     </div>
   );
 };
