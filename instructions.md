@@ -51,6 +51,7 @@ Your main objective is to choose one of these state management systems—either 
 ## Planning
 
 ### You should discuss these questions before you fork and clone the repo:
+
 - Will you use a planning tool (Jamboard, Figma) to plan your design/app structure?
 - How are you going to work in the team? E.g. Laying out the foundation together and then splitting up? Mob program approach all the way? Smaller groups / pairs / solo?
 - What is your quiz about?
@@ -64,6 +65,7 @@ Your main objective is to choose one of these state management systems—either 
 - What stretch goals are you aiming for?
 
 ### The Questions Array
+
 You can find the `quiz` state setup in two different locations based on the state management approach:
 
 - For the `useContext` approach: `./src/context/QuizContext.jsx`
@@ -79,9 +81,11 @@ You're free to restructure things if you want to, but it's recommended to stick 
 - `correctAnswerIndex` - the index of the item in the `options` array which is the correct answer.
 
 ### State Management Actions
+
 Depending on your chosen state management approach, you'll interact with the quiz state differently:
 
 ### `submitAnswer`
+
 Use this function when a user selects an answer to the question. You need to pass an object with a key `questionId` whose value is a valid question id (from the question objects) and an `answerIndex` which is the index of the answer they chose.
 
 - submitAnswer example for `useContext`
@@ -125,6 +129,7 @@ After the user clicks an answer and you show them if they were correct or not, y
 ```
 
 ### `restart`
+
 At the end of the quiz, if you want to start over, you can use this function.
 
 - restart example for `useContext`
@@ -141,6 +146,7 @@ restart();
 ```
 
 ### Selecting from the State
+
 Depending on your chosen state management approach, you'll fetch the quiz data differently:
 
 **For the `useContext` approach:**
@@ -159,7 +165,7 @@ To fetch the answer to a specific question:
 ```
 
 **For the Zustand approach:**
-In the `CurrentQuestionZustand` component, you can use the `useQuizStore` to access the quiz state. Here's how you can fetch the current question:
+In the `CurrentQuestion` component, you can use the `useQuizStore` to access the quiz state. Here's how you can fetch the current question:
 
 ```JS
   const questions = useQuizStore((state) => state.questions);
@@ -175,6 +181,7 @@ To fetch the answer to a specific question:
 ```
 
 ### Hints and tips to complete the project 🤓
+
 This project is quite open ended, so you should make sure to start with a sketch and make sure your team is aligned on how things should work and who's going to do what. After laying out the foundation together, it's up to you to decide how you want to work in your teams; whether you break up into smaller groups and work on specific features, or whether you continue to work as a big mob.
 
 Whatever you do, remember to break tasks up into small chunks and don't take on too many things at once!

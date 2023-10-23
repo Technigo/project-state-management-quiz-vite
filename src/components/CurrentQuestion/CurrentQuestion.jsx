@@ -1,6 +1,6 @@
 import useQuizStore from "../stores/useQuizStore"; // Adjust the path accordingly
 
-export const CurrentQuestionZustand = () => {
+export const CurrentQuestion = () => {
   const questions = useQuizStore((state) => state.questions);
   const currentQuestionIndex = useQuizStore(
     (state) => state.currentQuestionIndex
