@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+img {
+  width: 700px;
+}
+
 /* Components Structure */
 .managed-component {
   outline: 1px solid blue;
@@ -20,10 +24,12 @@ code {
   margin-bottom: 1em;
   font-size: 1em;
 }
+
 .managed-component h2 {
   text-align: center;
   font-size: 1.5em;
 }
+
 .managed-component h1 {
   font-size: 1em;
 }

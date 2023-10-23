@@ -59,7 +59,7 @@ export const CurrentQuestionZustand = () => {
   return (
     <div className="managed-component">
       <ProgressBar progress={progress} />
-      <h2>The ocean quiz</h2>
+
       <h1>Question: {question.questionText}</h1>
       <img src={question.imagesrc} alt="Lake" />
       <Options options={question.options} onOptionSelect={handleOptionSelect} />
