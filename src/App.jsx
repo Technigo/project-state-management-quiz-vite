@@ -1,14 +1,14 @@
-import { CurrentQuestionUseContext } from "./components/CurrentQuestionUseContext";
 import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand";
 import { QuizProvider } from "./context/QuizContext";
+import Footer from './components/Footer';
 
 export const App = () => {
   return (
     <QuizProvider>
       <div>
-        <CurrentQuestionUseContext />
         <CurrentQuestionZustand />
       </div>
+      <Footer />
     </QuizProvider>
   );
 };
