@@ -13,7 +13,7 @@ export const CurrentQuestionZustand = () => {
 
   return (
     <div className="managed-component">
-      <h2>Using Zustand</h2>
+      <h2>Hello Lemons!!</h2>
       <h1>Question: {question.questionText}</h1>
     </div>
   );
