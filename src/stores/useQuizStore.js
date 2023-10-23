@@ -3,16 +3,37 @@ import { create } from "zustand";
 const questions = [
   {
     id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
+    questionText: "What lake is this?",
+    options: ["xx", "xx", "xx", "xx"],
     correctAnswerIndex: 0,
   },
   {
     id: 2,
     questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
+      "The Mariana Trench, the deepest part of the world's oceans, is located in which ocean?",
+    options: ["Atlantic ocean", "Pacific ocean", "Southern ocean", "Indian Ocean"],
     correctAnswerIndex: 2,
+  },
+  {
+    id: 3,
+    questionText:
+      "What percentage of Earth's surface is covered by oceans?",
+    options: ["Approximately 50%", "Approximately 61%", "Approximately 71%", "Approximately 85%"],
+    correctAnswerIndex: 3,
+  },
+  {
+    id: 4,
+    questionText:
+      "What type of shark is pictured above?",
+    options: ["xx", "xx", "xx", "xx"],
+    correctAnswerIndex: 3,
+  },
+  {
+    id: 5,
+    questionText:
+      "Who is the actor who plays Aquaman?",
+    options: ["Liam Hemsworth", "Jason Segel", "Chris Evans", "Jason Momoa"],
+    correctAnswerIndex: 4,
   },
 ];
 
