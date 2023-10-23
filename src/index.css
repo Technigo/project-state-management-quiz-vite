@@ -26,7 +26,7 @@ img {
 
 a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 a:hover {
@@ -79,7 +79,7 @@ a:hover {
   margin-top: auto;
   width: 100%;
   background-color: #A0E9FF;
-  color: #fff;
+  color: black;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   text-align: center;
