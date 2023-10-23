@@ -1,25 +1,33 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; // Import BrowserRouter and Route
-import { Start } from "./components/Start"; // Import the StartComponent
-import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand";
+import React, { useState } from "react";
 import { QuizProvider } from "./context/QuizContext";
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand";
+
+const StartButton = ({ onStartClick }) => (
+  <button onClick={onStartClick}>Start Quiz</button>
+);
 
 export const App = () => {
+  const [quizStarted, setQuizStarted] = useState(false);
+
+  const handleStartClick = () => {
+    setQuizStarted(true);
+  };
+
   return (
-    <Router>
-      <div className="app-container">
-        <QuizProvider>
-          <div>
-            <Header />
-            <Switch>
-              <Route path="/quiz" component={CurrentQuestionZustand} />
-              <Route path="/" component={Start} />
-            </Switch>
+    <div className="app-container">
+      <QuizProvider>
+        <Header />
+        {quizStarted ? (
+          <CurrentQuestionZustand />
+        ) : (
+          <div className="start">
+            <StartButton onStartClick={handleStartClick} />
           </div>
-        </QuizProvider>
-        <Footer />
-      </div>
-    </Router>
+        )}
+      </QuizProvider>
+      <Footer />
+    </div>
   );
 };
