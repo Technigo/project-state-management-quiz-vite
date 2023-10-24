@@ -6,7 +6,7 @@ export const App = () => {
   return (
     <QuizProvider>
       <div>
-        <CurrentQuestionUseContext />
+        {/*<CurrentQuestionUseContext />*/}
         <CurrentQuestionZustand />
       </div>
     </QuizProvider>
