@@ -70,9 +70,9 @@ const useQuizStore = create((set) => ({
     });
   },
 
-  numberOfCorrectAnswers: () => {
-    return state.answers.filter(answer => answer.isCorrect).length;
- }
+ /* numberOfCorrectAnswers: (state) => {
+    return state.answers ? state.answers.filter(answer => answer.isCorrect).length : 0;
+ }*/
 
 
 }));
