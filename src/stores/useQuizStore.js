@@ -83,6 +83,7 @@ const useQuizStore = create((set) => ({
   },
 
   restart: () => {
+    console.log("Restart action called");
     set({
       answers: [],
       currentQuestionIndex: 0,
