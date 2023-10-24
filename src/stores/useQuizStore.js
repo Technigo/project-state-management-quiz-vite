@@ -51,6 +51,7 @@ const useQuizStore = create((set) => ({
     }));
   },
 
+  
   goToNextQuestion: () => {
     set((state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
@@ -68,6 +69,12 @@ const useQuizStore = create((set) => ({
       quizOver: false,
     });
   },
+
+  numberOfCorrectAnswers: () => {
+    return state.answers.filter(answer => answer.isCorrect).length;
+ }
+
+
 }));
 
 export default useQuizStore;
