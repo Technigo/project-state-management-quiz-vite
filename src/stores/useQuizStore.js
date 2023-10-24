@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 // The array of questions for the quiz.
-const questions = [
+export const questions = [
   {
     id: 1,
     questionText:
@@ -99,29 +99,32 @@ const questions = [
 ];
 
 // This is the main state store for the quiz. It contains the variable "questions", an array empty for the answers, a default index of 0 for the "currentQuestionIndex" and a default state of false for the variable "quizOver"
-const useQuizStore = create((set) => ({
+export const useQuizStore = create((set) => ({
   questions,
   answers: [],
   currentQuestionIndex: 0,
+  score: 0,
   quizOver: false,
 
   // This function takes a question id and an answer index, validates them, and then updates the answers array with the user's answer.
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
 
+    // ---------- IF THERE ARE NO QUESTION ----------
     // Throws an error if there is no question found
-    if (!question) {
-      throw new Error(
-        "Could not find question! Check to make sure you are passing the question id correctly."
-      );
-    }
+    // if (!question) {
+    //   throw new Error(
+    //     "Could not find question! Check to make sure you are passing the question id correctly."
+    //   );
+    // }
 
-    // Throws an error if the answerIndex isn't in the array of possible answers
-    if (question.options[answerIndex] === undefined) {
-      throw new Error(
-        `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
-      );
-    }
+    // // Throws an error if the answerIndex isn't in the array of possible answers
+    // if (question.options[answerIndex] === undefined) {
+    //   throw new Error(
+    //     `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+    //   );
+    // }
+    // ---------- IF THERE ARE NO QUESTION END ----------
 
     // State is updated for the answers array. The set-function takes a callback-function as an argument, which receives the current state as a parameter.
     set((state) => ({
@@ -146,10 +149,12 @@ const useQuizStore = create((set) => ({
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         return { quizOver: true };
       } else {
-        return { currentQuestionIndex: state.currentQuestionIndex + 1 };
+        return { currentQuestionIndex: state.currentQuestionIndex + 1 }
       }
-    });
+    })
   },
+
+  increaseScore: () => set((state) => ({ score: state.score + 1 })),
 
   // This function resets the answers array, currentQuestionIndex, and quizOver to their initial states.
   restart: () => {
@@ -161,5 +166,19 @@ const useQuizStore = create((set) => ({
   },
 }));
 
-// The useQuizStore is exported for use in other parts of the application.
-export default useQuizStore;
+
+
+// handleNextQuestionClick
+// currentScore - score, setScore
+// currentQuestion - currentOptions - nextQuestion
+// start, setStart - startpage
+// error, setError
+// quizState? quizOver?
+// const questions = useQuizStore((state) => state.questions);
+
+//const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
+
+// Get the current question and its available options
+//const question = questions[currentQuestionIndex];
+//const options = question.options;
+// handleOptionClick

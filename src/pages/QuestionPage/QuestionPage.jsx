@@ -1,6 +1,6 @@
 import { QuestionsCard } from "../../components/QuestionsCard/QuestionsCard";
 import { ProgressBar } from "../../components/ProgressBar/ProgressBar";
-import { Button } from "../../components/Button/Button";
+import { NextQuestion } from "../../components/NextQuestion/NextQuestion";
 import "./QuestionPage.css";
 
 export const QuestionPage = () => {
@@ -8,7 +8,7 @@ export const QuestionPage = () => {
     <section className="questions-wrapper">
       <ProgressBar />
       <QuestionsCard />
-      <Button />
+      <NextQuestion />
     </section>
   );
 };

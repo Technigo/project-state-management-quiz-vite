@@ -1,4 +1,5 @@
 import "./ProgressBar.css";
+// import { useQuizStore } from "../../stores/useQuizStore";
 
 export const ProgressBar = () => {
   return (
