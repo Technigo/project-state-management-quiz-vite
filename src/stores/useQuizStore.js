@@ -45,6 +45,7 @@ const questions = [
 ];
 
 const useQuizStore = create((set) => ({
+  // Setting all initial states
   questions,
   answers: [],
   currentQuestionIndex: 0,
@@ -65,6 +66,7 @@ const useQuizStore = create((set) => ({
       );
     }
 
+    // updating the user's answers to the previous selections.
     set((state) => ({
       answers: [
         ...state.answers,
@@ -78,7 +80,8 @@ const useQuizStore = create((set) => ({
       ],
     }));
   },
-
+  //Function to update quizOver from false to true when step is at final/step 6 
+  // Else the function will increment the step by one going to next question
   goToNextQuestion: () => {
     set((state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
@@ -89,6 +92,7 @@ const useQuizStore = create((set) => ({
     });
   },
 
+  //On step summary page, this function will restart the array of selections to blank
   restart: () => {
     set({
       answers: [],
