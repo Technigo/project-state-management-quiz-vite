@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 const initialQuestions = [
     {
-        questionText: "When is the surströmming premiere in 2024?",
+        text: "When is the surströmming premiere in 2024?",
         options: [
             "Monday, July 1",
             "Saturday, August 10",
@@ -15,7 +15,7 @@ const initialQuestions = [
         givenAnswerIndex: null,
     },
     {
-        questionText: "A significant holiday in Sweden is Midsummer. Midsummer night was associated with various supernatural beliefs. What was considered health-promoting?",
+        text: "A significant holiday in Sweden is Midsummer. Midsummer night was associated with various supernatural beliefs. What was considered health-promoting?",
         options: [
             "Drinking hot tea with honey",
             "Wearing a crown of thorns",
@@ -28,7 +28,7 @@ const initialQuestions = [
         givenAnswerIndex: null,
     },
     {
-        questionText: "Astrid Lindgren is one of Sweden's most famous authors of all time. However, during World War II, she had a top-secret task, what was it?",
+        text: "Astrid Lindgren is one of Sweden's most famous authors of all time. However, during World War II, she had a top-secret task, what was it?",
         options: [
             "She worked on opening mail and censoring information that was deemed potentially revealing about the Swedish defense.",
             "Coordinating espionage missions",
@@ -41,7 +41,7 @@ const initialQuestions = [
         givenAnswerIndex: null,
     },
     {
-        questionText: "When is the first time meatballs are mentioned in Swedish history?",
+        text: "When is the first time meatballs are mentioned in Swedish history?",
         options: [
             "In a royal decree from 1605",
             "Meatballs are first mentioned in print in Sweden in Kajsa Warg's cookbook from 1754",
@@ -54,7 +54,7 @@ const initialQuestions = [
         givenAnswerIndex: null,
     },
     {
-        questionText: "How many cars does the king own??",
+        text: "How many cars does the king own?",
         options: [
             "5 cars",
             "20 cars",
@@ -103,11 +103,18 @@ const useQuizStore = create((set) => ({
     },
 
     restart: () => {
-        set({
-            hasCompleted: false,
+        set((state) => ({
+            // For some reason it does not work to just set this
+            // to initialQuestions, the givenAnswerIndex retains its
+            // old value. Therefore we use map instead to do a hard
+            // reset of each questions givenAnswerIndex
+            questions: state.questions.map((question) => ({
+                ...question,
+                givenAnswerIndex: null,
+            })),
             currentQuestionIndex: 0,
-            questions: initialQuestions,
-        });
+            hasCompleted: false,
+        }));
     },
 }));
 

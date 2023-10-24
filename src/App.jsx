@@ -15,7 +15,7 @@ export const App = () => {
         <>
             <div className="question-container">
                 <h2>Using Zustand</h2>
-                <h1>Question: {currentQuestion.questionText}</h1>
+                <h1>Question: {currentQuestion.text}</h1>
                 <div className="option-container">
                     {currentQuestion.options.map((option, index) => (
                         <button
