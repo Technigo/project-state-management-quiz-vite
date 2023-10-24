@@ -8,10 +8,15 @@ export const QuestionsCard = () => {
     questions: state.questions,
     currentQuestionIndex: state.currentQuestionIndex,
   }));
+
   return (
     <div className="current-question-container">
-      <CurrentQuestion question={questions[currentQuestionIndex]} />
-      <CurrentOptions question={questions[currentQuestionIndex]} />
+      <CurrentQuestion
+        question={questions[currentQuestionIndex]}
+        currentQuestionIndex={currentQuestionIndex} />
+      <CurrentOptions
+        question={questions[currentQuestionIndex]}
+        currentQuestionIndex={currentQuestionIndex} />
     </div>
   );
 };

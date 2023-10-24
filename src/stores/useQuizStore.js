@@ -106,7 +106,7 @@ export const useQuizStore = create((set) => ({
   score: 0,
   quizOver: false,
 
-  // This function takes a question id and an answer index, validates them, and then updates the answers array with the user's answer.
+  // q = question - This function takes a question id and an answer index, validates them, and then updates the answers array with the user's answer.
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
 

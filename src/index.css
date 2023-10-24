@@ -25,8 +25,7 @@ a {
   color: inherit;
 }
 
-img,
-svg {
+img {
   display: block;
   max-width: 100%;
 }
@@ -74,9 +73,7 @@ body {
 /*---------- BREAKPOINTS ----------*/
 
 /* For large devices */
-@media (min-width: 1024px) {
-}
+@media (min-width: 1024px) {}
 
 /* For medium devices */
-@media (min-width: 744px) {
-}
+@media (min-width: 744px) {}

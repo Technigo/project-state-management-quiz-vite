@@ -1,34 +1,30 @@
 import { useQuizStore } from "../../stores/useQuizStore";
+import { Link } from "react-router-dom"
+import "./nextQuestion.css";
 
 export const NextQuestion = () => {
 
-    // Assume you have a button or user action to go to the next question, e.g., a "Next" button
+    const quizOver = useQuizStore((state) => state.quizOver);
+    const selectedAnswerIndex = useQuizStore((state) => state.answers[state.currentQuestionIndex]?.answerIndex);
+
     const handleNextQuestionClick = () => {
-        useQuizStore.getState().goToNextQuestion();
+        if (selectedAnswerIndex !== undefined) {
+            useQuizStore.getState().goToNextQuestion();
+        } else {
+            // User has not selected an option, handle it here (e.g., show a message)
+            console.log("Please select an option before proceeding.");
+        }
     };
-
-    // Render your quiz component
-    // const QuizComponent = () => {
-    //     const quizState = useQuizStore();
-
-    //     if (quizState.quizOver) {
-    //         // You can display the quiz results or a completion message when the quiz is over.
-    //         return (
-    //             <>
-    //                 <p>Quiz is over! Display results or completion message here.</p>
-    //             </>
-    //         );
-    //     }
 
     return (
         <div>
-            {/* <p>Question {quizState.currentQuestionIndex + 1}:</p>
-                <p>{quizState.questions[quizState.currentQuestionIndex].questionText}</p>
-                Render answer choices and handle user's answer submission */}
-            <button onClick={handleNextQuestionClick}>Next</button>
+            {/* Conditionally render the buttons based on quizStatus */}
+            {quizOver === true ? (
+                <Link to="/summary-page" className="summary-btn">Show summary</Link>
+            ) : (
+                <button onClick={handleNextQuestionClick}>Next question</button>
+            )}
         </div>
 
     )
 }
-
-// Render the current question and answer choices here based on `quizState.questions[quizState.currentQuestionIndex]`

@@ -1,9 +1,18 @@
 import { QuestionPage } from "./pages/QuestionPage/QuestionPage";
+import { BrowserRouter, Routes } from "react-router-dom";
+import { routes } from "./routes/routes";
 
 export const App = () => {
   return (
-    <div className="main-wrapper">
-      <QuestionPage />
-    </div>
+    <>
+      <BrowserRouter>
+        <div className="main-wrapper">
+          <QuestionPage />
+        </div>
+        {/* The Routes component renders the defined routes in the application. 
+           The 'routes' variable contains the route configuration. */}
+        <Routes>{routes}</Routes>
+      </BrowserRouter>
+    </>
   );
 };
