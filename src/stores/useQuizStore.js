@@ -68,16 +68,22 @@ const initialQuestions = [
     },
 ];
 
+// Creating a Zustand store for managing quiz state
 const useQuizStore = create((set) => ({
-    questions: initialQuestions,
-    currentQuestionIndex: 0,
-    hasCompleted: false,
+    // Initial state properties
+    questions: initialQuestions, // Array of quiz questions
+    currentQuestionIndex: 0, // Index of the current question
+    hasCompleted: false, // Flag indicating if the quiz has been completed
 
+    // Function to answer the current question
     answerCurrentQuestion: (answerIndex) => {
         set((state) => {
+            // Creating a copy of the questions array to avoid mutating the original state
             const copyOfQuestions = [...state.questions];
+            // Updating the given answer index for the current question
             copyOfQuestions[state.currentQuestionIndex].givenAnswerIndex = answerIndex;
 
+            // Returning the updated state
             return {
                 ...state,
                 questions: copyOfQuestions,
@@ -85,9 +91,12 @@ const useQuizStore = create((set) => ({
         });
     },
 
+    // Function to navigate to the next question
     goToNextQuestion: () => {
         set((state) => {
+            // Checking if the current question has been answered
             if (state.questions[state.currentQuestionIndex].givenAnswerIndex !== null) {
+                // Determining if the quiz has been completed
                 const hasCompleted = state.currentQuestionIndex === state.questions.length - 1;
                 return {
                     ...state,
@@ -102,20 +111,18 @@ const useQuizStore = create((set) => ({
         });
     },
 
+    // Function to restart the quiz
     restart: () => {
         set((state) => ({
-            // For some reason it does not work to just set this
-            // to initialQuestions, the givenAnswerIndex retains its
-            // old value. Therefore we use map instead to do a hard
-            // reset of each questions givenAnswerIndex
+            // Resetting questions and their given answer indices
             questions: state.questions.map((question) => ({
                 ...question,
                 givenAnswerIndex: null,
             })),
-            currentQuestionIndex: 0,
-            hasCompleted: false,
+            currentQuestionIndex: 0, // Resetting to the first question
+            hasCompleted: false, // Resetting completion flag
         }));
     },
 }));
 
-export default useQuizStore;
+export default useQuizStore; // Exporting the Zustand store for use in components
