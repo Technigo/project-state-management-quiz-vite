@@ -1,12 +1,9 @@
-import useQuizStore from "../../stores/useQuizStore";
+import useCurrentQuestion from "../../hooks/useCurrentQuestion";
 import styles from "./Answers.module.css";
 
 const Answers = () => {
-    const questions = useQuizStore((state) => state.questions);
-    const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
-    const answerCurrentQuestion = useQuizStore((state) => state.answerCurrentQuestion);
+    const { currentQuestion, answerCurrentQuestion } = useCurrentQuestion();
 
-    const currentQuestion = questions[currentQuestionIndex];
     const hasGuessedCorrectly = currentQuestion.givenAnswerIndex === currentQuestion.correctAnswerIndex;
 
     return (

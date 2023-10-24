@@ -1,12 +1,9 @@
-import useQuizStore from "../../stores/useQuizStore";
+import useCurrentQuestion from "../../hooks/useCurrentQuestion";
 import Card from "../card/Card";
 import styles from "./Question.module.css";
 
 const Question = () => {
-    const questions = useQuizStore((state) => state.questions);
-    const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
-
-    const currentQuestion = questions[currentQuestionIndex];
+    const { currentQuestion } = useCurrentQuestion();
 
     return (
         <Card>
