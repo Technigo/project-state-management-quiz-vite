@@ -9,8 +9,7 @@ const questions = [
   },
   {
     id: 2,
-    questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
+    questionText: "How do I look?",
     options: ["2012", "2014", "2016", "2018"],
     correctAnswerIndex: 2,
   },
