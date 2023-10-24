@@ -3,16 +3,48 @@ import { create } from "zustand";
 const questions = [
   {
     id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
-    correctAnswerIndex: 0,
+    questionText: "Science: What is the largest planet in our solar system?",
+    options: ["Mars", "Venus", "Earth", "Jupiter"],
+    correctAnswerIndex: 3,
   },
   {
     id: 2,
-    questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
+    questionText: "History: Who was the first president of the United States?",
+    options: [
+      "Benjamin Franklin",
+      "Thomas Jefferson",
+      "George Washington",
+      "Abraham Lincoln",
+    ],
     correctAnswerIndex: 2,
+  },
+  {
+    id: 3,
+    questionText: "Geography: Which river is the longest in the world?",
+    options: [
+      "Amazon River",
+      "Nile River",
+      "Yangtze River",
+      "Mississippi River",
+    ],
+    correctAnswerIndex: 1,
+  },
+  {
+    id: 4,
+    questionText: "Literature: Who wrote the play Romeo and Juliet?",
+    options: [
+      "William Wordsworth",
+      "Charles Dickens",
+      "William Shakespeare",
+      "John Keats",
+    ],
+    correctAnswerIndex: 2,
+  },
+  {
+    id: 5,
+    questionText: "Sports: Which country hosted the 2016 Summer Olympics?",
+    options: ["Brazil", "China", "Australia", "United Kingdom"],
+    correctAnswerIndex: 0,
   },
 ];
 
