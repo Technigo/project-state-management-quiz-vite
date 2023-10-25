@@ -38,19 +38,20 @@ export const QuestionCounter = ({ totalQuestions }) => {
       <div className="progress-bar">
         <div className="progress" style={{ width: `${progress}%` }} />
       </div>
-
-      <button
-        className="previous-button"
-        onClick={handleBack}
-        disabled={currentQuestionIndex === 0}>
-        Previous
-      </button>
-      <button
-        className="next-button"
-        onClick={handleNext}
-        disabled={currentQuestionIndex === totalQuestions - 1}>
-        Next
-      </button>
+      <div className="two-buttons">
+        <button
+          className="previous-button"
+          onClick={handleBack}
+          disabled={currentQuestionIndex === 0}>
+          Previous
+        </button>
+        <button
+          className="next-button"
+          onClick={handleNext}
+          disabled={currentQuestionIndex === totalQuestions - 1}>
+          Next
+        </button>
+      </div>
     </div>
   );
 };

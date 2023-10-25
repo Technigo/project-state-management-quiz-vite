@@ -10,10 +10,13 @@
   font-size: 16px;
 } */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+code {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -23,17 +26,19 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow: auto;
 }
 
 /* Components Structure */
 .managed-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 20px 0;
 }
 
 .managed-component h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   line-height: 1;
   color: #7e5fc0;
   font-family: Holtwood One SC;
@@ -61,28 +66,48 @@ body {
   width: 100%;
   max-width: 100px;
   margin-top: 20px;
-  align-self: flex-start;
+  align-self: center;
 }
 
 /* Tablet styles */
 @media (min-width: 768px) and (max-width: 1024px) {
   .managed-component h1 {
     font-size: 64px;
-    margin-top: 30px;
+    /* margin-top: 30px;
     margin-bottom: 0;
-    padding-top: 25px;
+    padding-top: 25px; */
   }
 
   .managed-component h2 {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     font-size: 48px;
     margin-top: 0;
+  }
+  .managed-component img {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
   }
 }
 
 /* Desktop styles */
 @media (min-width: 1025px) {
+  .managed-component h1 {
+    font-size: 5vw;
+    /* margin-bottom: 0;
+    padding-top: 25px;*/
+    margin-top: 40px;
+  }
   .managed-component h2 {
+    font-size: 48px;
     margin-bottom: 50px;
+    margin-left: 160px;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+  .managed-component img {
+    width: 200px;
+
+    height: auto;
   }
 }

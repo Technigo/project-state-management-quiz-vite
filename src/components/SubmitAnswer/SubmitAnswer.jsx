@@ -26,7 +26,10 @@ export const SubmitAnswer = ({ questionId, selectedOption }) => {
 
   return (
     <div>
-      <button className="submit-button" onClick={handleSubmission}>
+      <button
+        className="submit-button"
+        onClick={handleSubmission}
+        type="button">
         Submit
       </button>
       {showMessage && (

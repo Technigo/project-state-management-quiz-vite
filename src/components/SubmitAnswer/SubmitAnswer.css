@@ -10,8 +10,28 @@
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
+  font-family: Arvo;
+  margin-top: 20px;
 }
 
 .submit-button:hover {
   background-color: #7e5fc0;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .submit-button {
+    font-size: 20px;
+    width: 147px;
+    height: 40px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .submit-button {
+    font-size: 22px;
+    width: 193px;
+    height: 48px;
+  }
 }

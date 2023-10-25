@@ -36,7 +36,7 @@ export const QuestionBox = ({ question }) => {
         ))}
         <SubmitAnswer
           questionId={question.id}
-          // selectedOption={question.options}
+          //selectedOption={question.options}
         />
       </form>
     </div>
