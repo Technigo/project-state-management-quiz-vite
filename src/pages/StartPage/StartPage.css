@@ -1,6 +1,13 @@
 .start-game-wrapper {
-  background-color: #fff;
-  border-radius: 1.25rem;
-  padding: 1rem;
-  margin: 1.5rem 0 3rem;
+  max-width: 590px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
