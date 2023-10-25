@@ -5,7 +5,7 @@ export const StartPage = () => {
   return (
     <div className="start-game-wrapper">
       <div className="title">
-        <img src="/title-ghost.png" alt="" />
+        <img src="/title-ghost.png" alt="Ghost image" />
       </div>
       <h2>Creep and Crawl, Answer them All</h2>
       <Link to="/question-page">

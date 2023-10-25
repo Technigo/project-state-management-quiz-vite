@@ -15,41 +15,21 @@ export const SummaryPage = () => {
 
   // Determine the response text based on the user's score
   const response = responses.find((response) => response.score === score);
-  console.log(response.text);
 
   return (
     <div className="summary-wrapper">
-      {/* {quizOver && (
-        <>
-          <h2>Quiz Completed!</h2>
-          <p>Your Score: {score}</p>
-        </>
-      )} */}
-
-      <h2>Quiz Completed!</h2>
-      <p>Your Score: {score}</p>
-      <p>{response.text}</p>
+      <div className="summary-headings">
+        <h1>Quiz Completed!</h1>
+        <h2>Your Score: {score} / 10</h2>
+      </div>
+      <p className="response-text">{response.text}</p>
       <Link to="/">
-        <button className="restart-btn" onClick={handleRestartQuiz}>
-          Do the quiz again
+        <button className="restart-btn btn-layout" onClick={handleRestartQuiz}>
+          <div className="restart-btn-content">
+            <span className="btn-text">Do the quiz again!</span>
+          </div>
         </button>
       </Link>
     </div>
   );
 };
-
-//
-//     {quizOver ? (
-//       <>
-//         <h2>Quiz Completed!</h2>
-//         <p>Your Score: {score}</p>
-//         {/* Add more summary content based on quiz data? */}
-//       </>
-//     ) : (
-//       <>
-//         <h2>Quiz Incomplete</h2>
-//         <p>Please complete the quiz to view the summary.</p>
-//       </>
-//     )}
-//
-// );

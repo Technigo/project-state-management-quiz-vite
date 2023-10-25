@@ -4,7 +4,7 @@ import "./ErrorPage.css";
 export const ErrorPage = () => {
   return (
     <div className="error-page-wrapper">
-      <h1>Whoops, something went wrong! 👻</h1>
+      <h1>Whoops, something went wrong! 💀</h1>
       <Link to="/">
         <button className="errorpage-btn btn-layout">
           <div className="errorpage-btn-content">

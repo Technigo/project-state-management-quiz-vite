@@ -1,12 +1,8 @@
 .error-page-wrapper {
-  /* max-width: 590px;
-  margin: 0 auto; */
+    max-width: 20rem;
+  width: 100%;
   color: #fff;
   text-align: center;
-
-  /* border-radius: 1.25rem;
-  padding: 1rem;
-  margin: 1.5rem 0 3rem; */
   display: flex;
   flex-direction: column;
   gap: 2rem;
