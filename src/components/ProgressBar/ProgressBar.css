@@ -1,5 +1,6 @@
 .progress-wrapper {
   color: #fff;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.125rem;
   display: flex;
@@ -19,7 +20,7 @@
   height: 100%;
   width: 2rem;
   border-radius: 6rem;
-  transition: width 0.5s;
+  transition: width 0.7s;
   border: 1px solid #431c52;
   background: linear-gradient(90deg, #ff9033 0%, #c1405a 100%);
 }

@@ -13,10 +13,12 @@ export const QuestionsCard = () => {
     <div className="current-question-container">
       <CurrentQuestion
         question={questions[currentQuestionIndex]}
-        currentQuestionIndex={currentQuestionIndex} />
+        currentQuestionIndex={currentQuestionIndex}
+      />
       <CurrentOptions
         question={questions[currentQuestionIndex]}
-        currentQuestionIndex={currentQuestionIndex} />
+        currentQuestionIndex={currentQuestionIndex}
+      />
     </div>
   );
 };

@@ -1,7 +1,5 @@
-import "./StartPage.css"
+import "./StartPage.css";
 
 export const StartPage = () => {
-  return (
-    <div className="start-game-wrapper">StartPage</div>
-  )
-}
+  return <div className="start-game-wrapper">StartPage</div>;
+};

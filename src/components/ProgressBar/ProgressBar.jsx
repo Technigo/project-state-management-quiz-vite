@@ -2,7 +2,9 @@ import "./ProgressBar.css";
 import { useQuizStore } from "../../stores/useQuizStore";
 
 export const ProgressBar = () => {
-  const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
+  const currentQuestionIndex = useQuizStore(
+    (state) => state.currentQuestionIndex
+  );
   const totalQuestions = useQuizStore((state) => state.questions.length);
 
   // Calculate the progress percentage

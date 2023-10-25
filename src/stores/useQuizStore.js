@@ -149,9 +149,9 @@ export const useQuizStore = create((set) => ({
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         return { quizOver: true };
       } else {
-        return { currentQuestionIndex: state.currentQuestionIndex + 1 }
+        return { currentQuestionIndex: state.currentQuestionIndex + 1 };
       }
-    })
+    });
   },
 
   increaseScore: () => set((state) => ({ score: state.score + 1 })),
@@ -165,8 +165,6 @@ export const useQuizStore = create((set) => ({
     });
   },
 }));
-
-
 
 // handleNextQuestionClick
 // currentScore - score, setScore

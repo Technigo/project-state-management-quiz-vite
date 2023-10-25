@@ -11,6 +11,11 @@
   color: #431c52;
   font-size: 1rem;
   font-weight: 500;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
 }
 
 .options-container .correct {
@@ -24,6 +29,6 @@
 
 .correct-icon,
 .incorrect-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  height: 1.3rem;
+  width: 1.3rem;
 }
