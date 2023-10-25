@@ -6,12 +6,14 @@ import { BiSolidChevronRight } from "react-icons/bi";
 
 export const NextQuestion = () => {
   const [errorMessage, setErrorMessage] = useState(null); // State variable for error message
-  const quizOver = useQuizStore((state) => state.quizOver);
+  const quizOver = useQuizStore((state) => state.quizOver); // Gets the quizOver state from the store and saves it in a variable
+  const currentQuestionIndex = useQuizStore(
+    (state) => state.currentQuestionIndex
+  ); // Gets the currentQuestionIndex from the store and saves it in a variable
   const selectedAnswerIndex = useQuizStore(
-    (state) => state.answers[state.currentQuestionIndex]?.answerIndex
+    (state) => state.answers[state.currentQuestionIndex]?.answerIndex // Gets the selected answers index from the store and saves it in a variable
   );
 
-  console.log("quizOver", quizOver);
   const handleNextQuestionClick = () => {
     if (selectedAnswerIndex !== undefined) {
       useQuizStore.getState().goToNextQuestion();
@@ -23,17 +25,14 @@ export const NextQuestion = () => {
     }
   };
 
-  const currentQuestionIndex = useQuizStore(
-    (state) => state.currentQuestionIndex
-  );
-
   // Check if the current question is the last one
   const isLastQuestion = currentQuestionIndex === 9;
+  // If the user is on the last question and the quizOver is set to true, save the result in a variable
   const showGetScoreButton = isLastQuestion && quizOver === true;
-  console.log("currentQuestionIndex", currentQuestionIndex);
 
   return (
     <div className="next-summary-btn">
+      {/* if the user is on the last question, and quizOver is set tu true, then Show the "Get your score" button. */}
       {showGetScoreButton ? (
         <Link to="/summary-page">
           <div className="summary-btn btn-layout">
@@ -49,7 +48,12 @@ export const NextQuestion = () => {
           >
             <div id="btn-pseudocontent"></div>
             <div className="next-btn-content">
-              <span className="btn-text">Next</span>
+              {/* IF currentIndex is 9 (the last question), then change the text to Finish */}
+              {currentQuestionIndex === 9 ? (
+                <span className="btn-text">Finish</span>
+              ) : (
+                <span className="btn-text">Next</span>
+              )}
               <BiSolidChevronRight className="next-icon" />
             </div>
           </button>
@@ -58,58 +62,3 @@ export const NextQuestion = () => {
     </div>
   );
 };
-
-// // Check if the current question is the last one
-// const isLastQuestion = currentQuestionIndex === 9;
-
-// return (
-//   <div className="next-summary-btn">
-//     {isLastQuestion && quizOver ? (
-//       // Render the "Get Your Score" link button when on the last question
-//       <Link to="/summary-page">
-//         <div className="summary-btn btn-layout">
-//           <span className="btn-text">Get your score</span>
-//         </div>
-//       </Link>
-//     ) : (
-//       // Render the "Next" button for other questions
-//       <div>
-//         {errorMessage && <div className="error-message">{errorMessage}</div>}
-//         <button
-//           className="next-btn btn-layout"
-//           onClick={handleNextQuestionClick}
-//         >
-//           <div id="btn-pseudocontent"></div>
-//           <div className="next-btn-content">
-//             <span className="btn-text">Next</span>
-//             <BiSolidChevronRight className="next-icon" />
-//           </div>
-//         </button>
-//       </div>
-//     )}
-//   </div>
-// );
-
-//   return (
-//     <div className="next-summary-btn">
-//       {/* Conditionally render the buttons based on quizStatus */}
-//       {quizOver === true ? (
-//         <Link to={`/summary-page`}>
-//           <div className="summary-btn btn-layout">
-//             <span className="btn-text">continue</span>
-//           </div>
-//         </Link>
-//       ) : (
-//         <button
-//           className="next-btn btn-layout"
-//           onClick={handleNextQuestionClick}
-//         >
-//           <div className="next-btn-content">
-//             <span className="btn-text">next</span>
-//             <BiSolidChevronRight className="next-icon" />
-//           </div>
-//         </button>
-//       )}
-//     </div>
-//   );
-// };

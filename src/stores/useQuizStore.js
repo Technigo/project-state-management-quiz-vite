@@ -134,13 +134,19 @@ export const useQuizStore = create((set) => ({
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
 
-    // // Throws an error if the answerIndex isn't in the array of possible answers
-    // if (question.options[answerIndex] === undefined) {
-    //   throw new Error(
-    //     `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
-    //   );
-    // }
-    // ---------- IF THERE ARE NO QUESTION END ----------
+    // Throws an error if there is no question found
+    if (!question) {
+      throw new Error(
+        "Could not find question! Check to make sure you are passing the question id correctly."
+      );
+    }
+
+    // Throws an error if the answerIndex isn't in the array of possible answers
+    if (question.options[answerIndex] === undefined) {
+      throw new Error(
+        `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+      );
+    }
 
     // State is updated for the answers array. The set-function takes a callback-function as an argument, which receives the current state as a parameter.
     set((state) => ({
@@ -164,18 +170,6 @@ export const useQuizStore = create((set) => ({
     }));
   },
 
-  // score: newScore, // Update the score
-  // const newScore = isCorrect ? state.score + 1 : state.score;
-  // Increment the score if the answer is correct
-
-  // const useQuizStore = create((set) => ({
-  //   quizOver: false,
-  //   score: 0,
-  //   restart: () => {
-  //     set({ quizOver: false, score: 0 });
-  //   },
-  // }));
-
   // This function increments the currentQuestionIndex to move to the next question. If there are no more questions, it sets quizOver to true.
   goToNextQuestion: () => {
     set((state) => {
@@ -197,18 +191,3 @@ export const useQuizStore = create((set) => ({
     });
   },
 }));
-
-// handleNextQuestionClick
-// currentScore - score, setScore
-// currentQuestion - currentOptions - nextQuestion
-// start, setStart - startpage
-// error, setError
-// quizState? quizOver?
-// const questions = useQuizStore((state) => state.questions);
-
-//const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
-
-// Get the current question and its available options
-//const question = questions[currentQuestionIndex];
-//const options = question.options;
-// handleOptionClick

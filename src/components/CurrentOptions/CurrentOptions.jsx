@@ -20,7 +20,6 @@ export const CurrentOptions = ({ question, currentQuestionIndex }) => {
   // 'isCorrect' is a boolean indicating whether the selected answer is correct.
   const isAnswerCorrect = selectedAnswer?.isCorrect;
 
-
   // Handle the click event when an option is selected.
   const handleOptionClick = (index) => {
     // Check if option is already choosen.
@@ -30,7 +29,6 @@ export const CurrentOptions = ({ question, currentQuestionIndex }) => {
     }
 
     // Submit the selected answer to the store.
-    // useQuizStore.getState().submitAnswer(question.id, index);
     submitAnswer(question.id, index);
 
     // Set focus to the next interactive element after an option is selected.

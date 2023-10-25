@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 
 export const SummaryPage = () => {
   const quizOver = useQuizStore((state) => state.quizOver);
+  // Gets the score and saves it in a variable named score
   const score = useQuizStore((state) => state.score);
-
+  // Gets the response object from the store, and saves them in a variable named responses
   const responses = useQuizStore((state) => state.responses);
-
+  // the restart function from the store and saves it in a variable
   const restartQuiz = useQuizStore.getState().restart;
   const handleRestartQuiz = () => {
     restartQuiz();
@@ -22,6 +23,7 @@ export const SummaryPage = () => {
         <h1>Quiz Completed!</h1>
         <h2>Your Score: {score} / 10</h2>
       </div>
+      {/* Show the response text that comes from the store */}
       <p className="response-text">{response.text}</p>
       <Link to="/">
         <button className="restart-btn btn-layout" onClick={handleRestartQuiz}>
