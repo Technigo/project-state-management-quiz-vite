@@ -5,29 +5,30 @@ import { Link } from "react-router-dom";
 export const SummaryPage = () => {
   const quizOver = useQuizStore((state) => state.quizOver);
   const score = useQuizStore((state) => state.score);
-  console.log(score);
+
+  const responses = useQuizStore((state) => state.responses);
 
   const restartQuiz = useQuizStore.getState().restart;
   const handleRestartQuiz = () => {
     restartQuiz();
   };
 
+  // Determine the response text based on the user's score
+  const response = responses.find((response) => response.score === score);
+  console.log(response.text);
+
   return (
     <div className="summary-wrapper">
-        {quizOver && (
+      {/* {quizOver && (
         <>
           <h2>Quiz Completed!</h2>
           <p>Your Score: {score}</p>
-          {/* Add more summary content based on quiz data? */}
         </>
-      )}
+      )} */}
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quis
-        recusandae reiciendis fugiat accusantium obcaecati laudantium iure
-        adipisci delectus, est nobis consequuntur debitis soluta asperiores eumvero! 
-      </p>
-
+      <h2>Quiz Completed!</h2>
+      <p>Your Score: {score}</p>
+      <p>{response.text}</p>
       <Link to="/">
         <button className="restart-btn" onClick={handleRestartQuiz}>
           Do the quiz again

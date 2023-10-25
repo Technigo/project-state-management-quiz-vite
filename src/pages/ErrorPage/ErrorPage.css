@@ -1,0 +1,22 @@
+.error-page-wrapper {
+  /* max-width: 590px;
+  margin: 0 auto; */
+  color: #fff;
+  text-align: center;
+
+  /* border-radius: 1.25rem;
+  padding: 1rem;
+  margin: 1.5rem 0 3rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.errorpage-btn {
+  box-shadow: 0px 16px 24px 0px rgba(255, 255, 255, 0.3);
+}

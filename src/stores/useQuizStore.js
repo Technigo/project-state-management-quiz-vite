@@ -98,9 +98,33 @@ export const questions = [
   },
 ];
 
+export const responses = [
+  { score: 0, text: "Boo-hoo! Time to haunt the Halloween library. 👻📚" },
+  { score: 1, text: "Boo-hoo! Time to haunt the Halloween library. 👻📚" },
+  { score: 2, text: "You're on the right track, but a long way to go." },
+  {
+    score: 3,
+    text: "Boo! You can do better with some more Halloween knowledge.",
+  },
+  {
+    score: 4,
+    text: "You're getting there, but the spirits are not impressed.",
+  },
+  { score: 5, text: "You might need a witch's brew to improve your score!" },
+  {
+    score: 6,
+    text: "Your Halloween knowledge is in the cauldron, brewing and improving! 🎃📚",
+  },
+  { score: 7, text: "You've got a graveyard of knowledge on Halloween!" },
+  { score: 8, text: "Impressive! You're a Halloween aficionado." },
+  { score: 9, text: "You're so spooky-smart, it's scary!" },
+  { score: 10, text: "You're a Halloween wizard! 🎃✨" },
+];
+
 // This is the main state store for the quiz. It contains the variable "questions", an array empty for the answers, a default index of 0 for the "currentQuestionIndex" and a default state of false for the variable "quizOver"
 export const useQuizStore = create((set) => ({
   questions,
+  responses,
   answers: [],
   currentQuestionIndex: 0,
   score: 0,
@@ -109,14 +133,6 @@ export const useQuizStore = create((set) => ({
   // q = question - This function takes a question id and an answer index, validates them, and then updates the answers array with the user's answer.
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
-
-    // ---------- IF THERE ARE NO QUESTION ----------
-    // Throws an error if there is no question found
-    // if (!question) {
-    //   throw new Error(
-    //     "Could not find question! Check to make sure you are passing the question id correctly."
-    //   );
-    // }
 
     // // Throws an error if the answerIndex isn't in the array of possible answers
     // if (question.options[answerIndex] === undefined) {
@@ -140,8 +156,25 @@ export const useQuizStore = create((set) => ({
           isCorrect: question.correctAnswerIndex === answerIndex, // A boolean indicating whether the selected answer is correct. Determined by comparing the answerIndex with the correctAnswerIndex in the question object.
         },
       ],
+      // Increase the score if the answer is correct
+      score:
+        question.correctAnswerIndex === answerIndex
+          ? state.score + 1
+          : state.score,
     }));
   },
+
+  // score: newScore, // Update the score
+  // const newScore = isCorrect ? state.score + 1 : state.score;
+  // Increment the score if the answer is correct
+
+  // const useQuizStore = create((set) => ({
+  //   quizOver: false,
+  //   score: 0,
+  //   restart: () => {
+  //     set({ quizOver: false, score: 0 });
+  //   },
+  // }));
 
   // This function increments the currentQuestionIndex to move to the next question. If there are no more questions, it sets quizOver to true.
   goToNextQuestion: () => {
@@ -154,14 +187,13 @@ export const useQuizStore = create((set) => ({
     });
   },
 
-  increaseScore: () => set((state) => ({ score: state.score + 1 })),
-
   // This function resets the answers array, currentQuestionIndex, and quizOver to their initial states.
   restart: () => {
     set({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
+      score: 0,
     });
   },
 }));

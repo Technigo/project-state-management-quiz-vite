@@ -20,6 +20,7 @@ export const CurrentOptions = ({ question, currentQuestionIndex }) => {
   // 'isCorrect' is a boolean indicating whether the selected answer is correct.
   const isAnswerCorrect = selectedAnswer?.isCorrect;
 
+
   // Handle the click event when an option is selected.
   const handleOptionClick = (index) => {
     // Check if option is already choosen.
