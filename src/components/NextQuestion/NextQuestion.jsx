@@ -27,8 +27,7 @@ export const NextQuestion = () => {
       {quizOver === true || currentQuestionIndex === 9 ? (
         <Link to={`/summary-page`}>
           <div className="summary-btn btn-layout">
-            <span className="btn-text">continue</span>
-            <BiSolidChevronRight className="next-icon" />
+            <span className="btn-text">get your score</span>
           </div>
         </Link>
       ) : (

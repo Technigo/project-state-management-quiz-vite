@@ -7,21 +7,26 @@ export const StartPage = () => {
   const [startQuizClicked, setStartQuizClicked] = useState(false);
 
   const handleStartQuizClick = () => {
-    // Set the state variable to indicate that the button is clicked
-    setStartQuizClicked(true);
+    if (!startQuizClicked) {
+      setStartQuizClicked(true);
+    }
   };
+
+  const startButton = (
+    <Link to="/question-page">
+      <button className="startquiz-btn btn-layout">
+        <div className="startquiz-btn-content">
+          <span className="btn-text">Start quiz!</span>
+        </div>
+      </button>
+    </Link>
+  );
 
   return (
     <div className="start-game-wrapper">
-      Welcome to the Halloween Quiz!
-      {startQuizClicked ? ( // Render the Link when the button is clicked
-        <Link to="/question-page">
-          <button className="startquiz-btn btn-layout">
-            <div className="startquiz-btn-content">
-              <span className="btn-text">Start quiz!</span>
-            </div>
-          </button>
-        </Link>
+      Creep and Crawl, Answer them All
+      {startQuizClicked ? (
+        startButton
       ) : (
         <button
           className="startquiz-btn btn-layout"
@@ -36,23 +41,71 @@ export const StartPage = () => {
   );
 };
 
-// export const StartPage = () => {
-
 //   const handleStartQuizClick = () => {
-//     if (startquiz-btn.clicked)<Link to={`/question-page`}></Link>
-//     } else {
-
-//     }
+//     // Set the state variable to indicate that the button is clicked
+//     setStartQuizClicked(true);
 //   };
+
 //   return (
 //     <div className="start-game-wrapper">
-//       Welcome to the Halloween Quiz!
-//       <button className="startquiz-btn btn-layout" onClick={handleStartQuizClick}>
-//         <div className="startquiz-btn-content">
-//           <span className="btn-text">Start quiz!</span>
+//       Creep and Crawl, Answer them All
+//       <Link
+//         to={startQuizClicked ? "/question-page" : ""}
+//         onClick={handleStartQuizClick}
+//       >
+//         <button className="startquiz-btn btn-layout">
+//           <div className="startquiz-btn-content">
+//             <span className="btn-text">Start quiz!</span>
+//           </div>
+//         </button>
+//       </Link>
+//     </div>
+//   );
+// };
 
-//         </div>
-//       </button>
+//   return (
+//     <div className="start-game-wrapper">
+//       Creep and Crawl, Answer them All
+//       <Link to={startQuizClicked ? "/question-page" : ""}>
+//         <button
+//           className="startquiz-btn btn-layout"
+//           onClick={() => setStartQuizClicked(true)}
+//         >
+//           <div className="startquiz-btn-content">
+//             <span className="btn-text">Start quiz!</span>
+//           </div>
+//         </button>
+//       </Link>
+//     </div>
+//   );
+// };
+
+//   const handleStartQuizClick = () => {
+//     // Set the state variable to indicate that the button is clicked
+//     setStartQuizClicked(true);
+//   };
+
+//   return (
+//     <div className="start-game-wrapper">
+//       Creep and Crawl, Answer them All
+//       {startQuizClicked ? ( // Render the Link when the button is clicked
+//         <Link to="/question-page">
+//           <button className="startquiz-btn btn-layout">
+//             <div className="startquiz-btn-content">
+//               <span className="btn-text">Start quiz!</span>
+//             </div>
+//           </button>
+//         </Link>
+//       ) : (
+//         <button
+//           className="startquiz-btn btn-layout"
+//           onClick={handleStartQuizClick}
+//         >
+//           <div className="startquiz-btn-content">
+//             <span className="btn-text">Start quiz!</span>
+//           </div>
+//         </button>
+//       )}
 //     </div>
 //   );
 // };

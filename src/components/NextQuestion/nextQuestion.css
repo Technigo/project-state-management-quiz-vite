@@ -14,6 +14,30 @@
 }
 
 /* -------------------- */
+/* ---------- START QUIZ BTN ---------- */
+.startquiz-btn {
+  display: flex;
+  width: 206px;
+  padding: 10px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
+  border: 1px solid #431c52;
+  background: linear-gradient(
+    55deg,
+    #ec661e -8.61%,
+    #ab1d4f 41%,
+    #61146f 92.72%
+  );
+  box-shadow: 0px 16px 24px 0px rgba(255, 255, 255, 0.3);
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* ---------- START QUIZ BTN END ---------- */
 
 /* ---------- SUMMARY BTN ---------- */
 .summary-btn {
@@ -28,8 +52,7 @@
   border-radius: 6rem;
   transition: 1s;
   background-size: 200% auto;
-  width: 11rem;
-  height: 2.5rem;
+  padding: 1rem 2rem;
 }
 
 .summary-btn:hover {
