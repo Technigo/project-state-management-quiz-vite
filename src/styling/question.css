@@ -6,67 +6,95 @@
     padding: 2rem;
     border-radius: 5px;
     color: rgb(242, 232, 182);
-  }
-
-
-  /* Radio buttons */
-  .radio-button-wrapper {
-    line-height: 1.5;
-    margin: 20px 0 30px;
     display: flex;
     flex-direction: column;
-  }
-  
-  .radio-button-label {
+    gap: 3rem;
+}
+
+
+.managed-component h1 {
+    font-size: calc(24px + 0.1vh);
+}
+
+/* Radio buttons */
+.radio-button-wrapper {
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-button-label {
     display: flex;
     align-items: center;
-  }
-  
-  .radio-button-label p {
+}
+
+.radio-button-label p {
     margin: 0;
-  }
-  
-  .radio-button-label input[type="radio"] {
+}
+
+.radio-button-label input[type="radio"] {
     accent-color: rgb(17, 32, 38);
     margin-right: 10px;
-  }
+}
 
-  
+
 
 /* Progress bar */
 
-  .progress-wrapper {
+.progress-wrapper {
     /* Center the progress bar within its container */
     display: flex;
     align-items: center;
-  }
-  
-  .progress-bar {
+}
+
+.progress-bar {
     /* Adjust the progress bar dimensions and appearance */
     width: 100%;
     height: 20px;
     border: 1px solid rgb(242, 232, 182);
     border-radius: 10px;
     background: rgb(242, 232, 182);
-  }
-  
-  .progress-bar::-webkit-progress-value {
+}
+
+.progress-bar::-webkit-progress-value {
     /* Change the progress bar fill color for WebKit browsers (Chrome, Safari) */
     background: #da5525;
     border-radius: 10px;
-  }
-  
-  .progress-bar::-webkit-progress-bar {
+}
+
+.progress-bar::-webkit-progress-bar {
     /* Change the background color behind the progress fill for WebKit browsers */
     background: rgb(242, 232, 182);
     border-radius: 10px;
-  }
-  
-  .progress-text {
+}
+
+.progress-text {
     /* Style the progress text */
     margin-left: 10px;
     color: rgb(242, 232, 182);
     font-weight: bold;
-  }
-  
-  
+}
+
+/* button */
+.next-btn-wrapper button {
+    background: rgb(242, 232, 182);
+    color: rgb(17, 32, 38);
+    border-radius: 10px;
+    border: none;
+    width: 10rem;
+}
+
+.next-btn-wrapper button p {
+    padding: 3px 0;
+}
+
+@media (min-width: 667px) and (max-width: 1024px) {
+
+   
+}
+
+
+@media (min-width: 1025px) {
+
+   
+}

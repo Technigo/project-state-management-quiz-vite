@@ -8,9 +8,8 @@ export const CurrentQuestionZustand = () => {
     (state) => state.currentQuestionIndex
   );
   const question = questions[currentQuestionIndex];
-  const submitAnswer = useQuizStore((state) => state.submitAnswer);
   const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
-  const quizOver = useQuizStore((state) => state.quizOver);
+
 
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
@@ -80,7 +79,7 @@ export const CurrentQuestionZustand = () => {
       <div className="next-btn-wrapper">
         {currentQuestionIndex + 1 === totalQuestions ? (
           <button className="summary-btn">
-            Summary
+            <p>Summary</p>
           </button>
         ) : (
           <button
@@ -88,7 +87,7 @@ export const CurrentQuestionZustand = () => {
             onClick={goToNextQuestion}
             disabled={selectedAnswer === null}
           >
-            Next
+            <p>Next</p>
           </button>
         )}
       </div>
