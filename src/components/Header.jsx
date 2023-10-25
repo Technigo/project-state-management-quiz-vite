@@ -1,3 +1,3 @@
 export const Header = () => {
-  return <div>Header</div>;
+  return <div>kółko i krzyżyk po polsku</div>;
 };
