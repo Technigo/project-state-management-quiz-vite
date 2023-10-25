@@ -77,8 +77,6 @@ export const Board = () => {
           <Link to={`/quest/${questions[0].id}`} element={<Questions />} />X
         </div>
       </div>
-
-      <Questions />
     </>
   );
 };
