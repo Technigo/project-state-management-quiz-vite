@@ -4,7 +4,7 @@
   </a>
 </h1>
 
-# State Management Quiz
+# State Management Quizz
 
 Replace this readme with your own information about your project.
 
