@@ -6,11 +6,12 @@ import styles from "./Question.module.css"; // CSS module for styling
 // Creating the Question component
 const Question = () => {
     // Using the custom hook `useCurrentQuestion` to access the current question
-    const { currentQuestion } = useCurrentQuestion();
+    const { currentQuestion, image } = useCurrentQuestion();
 
     return (
-        <Card>
+        <Card image={image}>
             {/* Rendering the question text inside a Card component */}
+
             <h2 className={styles.question}>
                 {currentQuestion.text}
             </h2>

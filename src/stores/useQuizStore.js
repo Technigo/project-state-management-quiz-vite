@@ -1,8 +1,10 @@
 import { create } from "zustand";
 
+
 const initialQuestions = [
     {
         text: "When is the surströmming premiere in 2024?",
+        image: "src/assets/QuizGame_5.jpg",
         options: [
             "Monday, July 1",
             "Saturday, August 10",
@@ -16,6 +18,7 @@ const initialQuestions = [
     },
     {
         text: "A significant holiday in Sweden is Midsummer. Midsummer night was associated with various supernatural beliefs. What was considered health-promoting?",
+        image: "src/assets/QuizGame_3.jpg",
         options: [
             "Drinking hot tea with honey",
             "Wearing a crown of thorns",
@@ -29,6 +32,7 @@ const initialQuestions = [
     },
     {
         text: "Astrid Lindgren is one of Sweden's most famous authors of all time. However, during World War II, she had a top-secret task, what was it?",
+        image: "src/assets/QuizGame_7.jpg",
         options: [
             "She worked on opening mail and censoring information that was deemed potentially revealing about the Swedish defense.",
             "Coordinating espionage missions",
@@ -42,6 +46,7 @@ const initialQuestions = [
     },
     {
         text: "When is the first time meatballs are mentioned in Swedish history?",
+        image: "src/assets/QuizGame_2.jpg",
         options: [
             "In a royal decree from 1605",
             "Meatballs are first mentioned in print in Sweden in Kajsa Warg's cookbook from 1754",
@@ -55,6 +60,7 @@ const initialQuestions = [
     },
     {
         text: "How many cars does the king own?",
+        image: "src/assets/QuizGame_10.jpg",
         options: [
             "5 cars",
             "20 cars",

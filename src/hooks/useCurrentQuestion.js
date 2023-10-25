@@ -7,13 +7,15 @@ const useCurrentQuestion = () => {
     const questions = useQuizStore((state) => state.questions); // Array of quiz questions
     const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex); // Index of the current question
     const answerCurrentQuestion = useQuizStore((state) => state.answerCurrentQuestion); // Function to answer the current question
+    const image = questions[currentQuestionIndex].image;
 
     // Getting the current question object from the questions array
     const currentQuestion = questions[currentQuestionIndex];
 
     // Returning an object with current question and answer function
     return {
-        currentQuestion, // The current question object
+        currentQuestion,
+        image, // The current question object
         answerCurrentQuestion, // The function to answer the current question
     };
 };
