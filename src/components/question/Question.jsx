@@ -1,22 +1,44 @@
-// Importing hooks, components, and styles
-import useCurrentQuestion from "../../hooks/useCurrentQuestion"; // Custom hook for accessing current question
+import useQuizStore from "../../stores/useQuizStore";
 import Card from "../card/Card"; // Custom Card component
-import styles from "./Question.module.css"; // CSS module for styling
 
 // Creating the Question component
 const Question = () => {
-    // Using the custom hook `useCurrentQuestion` to access the current question
-    const { currentQuestion, image } = useCurrentQuestion();
+    const questions = useQuizStore((state) => state.questions);
+    const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
+    const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
+    const answerCurrentQuestion = useQuizStore((state) => state.answerCurrentQuestion);
+
+    // Get the current question based on the current index
+    const currentQuestion = questions[currentQuestionIndex];
 
     return (
-        <Card image={image}>
-            {/* Rendering the question text inside a Card component */}
-
-            <h2 className={styles.question}>
-                {currentQuestion.text}
-            </h2>
+        <Card>
+            <div>
+                <h2 className="">
+                    {currentQuestion.text}
+                </h2>
+                {currentQuestion.options.map((option, index) => (
+                    <button
+                        key={index}
+                        // Disabling the button if an answer has already been given
+                        disabled={currentQuestion.givenAnswerIndex !== null}
+                        // Handling the user's answer click event
+                        onClick={() => answerCurrentQuestion(index)}
+                    >
+                        {option}
+                    </button>
+                ))}
+            </div>
+            <div className="">
+                <button
+                    disabled={currentQuestion.givenAnswerIndex === null}
+                    onClick={goToNextQuestion}
+                >
+                    Next
+                </button>
+            </div>
         </Card>
     );
 }
 
-export default Question; // Exporting the Question component
+export default Question;
