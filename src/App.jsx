@@ -6,7 +6,7 @@ import Question from "./components/question/Question";
 export const App = () => {
     const hasCompleted = useQuizStore((state) => state.hasCompleted);
     return (
-        <div className="">
+        <div className="max-w-lg mx-auto px-4 py-4">
             <Header />
             {!hasCompleted && (
                 <Question />

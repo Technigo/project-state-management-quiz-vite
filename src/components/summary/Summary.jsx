@@ -2,6 +2,7 @@
 import useQuizStore from "../../stores/useQuizStore"; // Custom hook for accessing quiz state
 import Button from "../button/Button"; // Custom Button component
 import Card from "../card/Card"; // Custom Card component
+import Title from "../title/Title";
 
 // Creating the Summary component
 const Summary = () => {
@@ -12,28 +13,19 @@ const Summary = () => {
     // Calculating the score by counting correct answers
     const score = questions.reduce((acc, question) => acc + (question.givenAnswerIndex === question.correctAnswerIndex ? 1 : 0), 0);
 
-    //trying to filter the correct answer to show them, NOT WORKING
-    const correctAnswers = questions
-        .filter((question) => question.givenAnswerIndex === question.correctAnswerIndex);
-
-
     return (
-        <Card>
-            <h2>Quiz Summary</h2>
-            <p>Correct Answers: {score}</p>
-            <p>Incorrect Answers: {questions.length - score}</p>
-
-            {/* trying to map the correct answers, NOT WORKING */}
-            <ul>
-                {correctAnswers.map((question, index) => (
-                    <li key={index}>
-                        Question {index + 1}: {question.options[question.correctAnswerIndex]}
-                    </li>
-                ))}
-            </ul>
-            {/* Rendering a Button component with a callback to restart the quiz */}
-            <Button onClick={restart}>Restart Quiz</Button>
-        </Card>
+        <>
+            <Card>
+                <Title>Summary</Title>
+                <p className="text-gray-900 font-semibold">{`You scored ${score} out of a possible ${questions.length}. Good job!`}</p>
+            </Card>
+            <Button
+                onClick={restart}
+                className="mt-4 bg-blue-900 hover:bg-blue-950"
+            >
+                Do the quiz again
+            </Button>
+        </>
     );
 };
 
