@@ -16,15 +16,18 @@ const questions = [
   },
 ];
 
+//set up store, arrow function with an object
 const useQuizStore = create((set) => ({
   questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
 
+  //handle the submit answer from user
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
 
+    //check if the user clicked "submit answer"
     if (!question) {
       throw new Error(
         "Could not find question! Check to make sure you are passing the question id correctly."
@@ -51,6 +54,7 @@ const useQuizStore = create((set) => ({
     }));
   },
 
+  //display new question
   goToNextQuestion: () => {
     set((state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
@@ -61,6 +65,7 @@ const useQuizStore = create((set) => ({
     });
   },
 
+  //restart quiz
   restart: () => {
     set({
       answers: [],

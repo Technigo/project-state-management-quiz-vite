@@ -1,0 +1,11 @@
+/* CSS for answer section, 4 buttons etc */
+
+.button {
+  background-color: red;
+}
+
+.answerOptionsBox {
+  color: blue;
+  border: 2px solid red;
+  padding: 1em;
+}
