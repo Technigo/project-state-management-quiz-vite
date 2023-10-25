@@ -1,4 +1,5 @@
 import useQuizStore from "../../stores/useQuizStore";
+import "./Restart.css";
 
 export const Restart = () => {
   const restartQuiz = useQuizStore((state) => state.restart);
@@ -7,5 +8,9 @@ export const Restart = () => {
     restartQuiz(); // Reset the quiz state.
   };
 
-  return <button onClick={handleRestart}>Restart Quiz</button>;
+  return (
+    <button className="restart-button" onClick={handleRestart}>
+      Restart Quiz
+    </button>
+  );
 };

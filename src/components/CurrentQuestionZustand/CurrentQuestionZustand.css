@@ -2,8 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   line-height: 45px;
-  font-size: 20px;
+  font-size: 14px;
   text-align: center;
   width: 300px;
   height: 291px;
@@ -11,4 +12,36 @@
   background: rgba(201, 222, 193, 0.79);
   font-family: Arvo;
   color: #ffffff;
+  padding: 15px;
+}
+
+.managed-component img {
+  width: 100%;
+  max-width: 100px;
+  margin-top: 20px;
+  align-self: flex-start;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .question-box {
+    line-height: 45px;
+    font-size: 24px;
+    text-align: center;
+    width: 600px;
+    height: 291px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }

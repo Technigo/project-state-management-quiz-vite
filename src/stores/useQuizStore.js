@@ -63,6 +63,8 @@ const useQuizStore = create((set) => ({
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
+  userAnswer: null, // Added this new state variable
+  showMessage: false,
 
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
@@ -91,6 +93,13 @@ const useQuizStore = create((set) => ({
         },
       ],
     }));
+    set((state) => ({
+      ...state,
+      userAnswer: state.questions.find((q) => q.id === questionId).options[
+        answerIndex
+      ],
+      showMessage: true,
+    }));
   },
 
   goToNextQuestion: () => {
@@ -101,6 +110,11 @@ const useQuizStore = create((set) => ({
         return { currentQuestionIndex: state.currentQuestionIndex + 1 };
       }
     });
+    set((state) => ({
+      ...state,
+      userAnswer: null,
+      showMessage: false,
+    }));
   },
 
   restart: () => {

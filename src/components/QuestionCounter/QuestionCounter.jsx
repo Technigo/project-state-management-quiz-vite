@@ -30,7 +30,7 @@ export const QuestionCounter = ({ totalQuestions }) => {
     <div className="question-counter">
       {totalQuestions > 0 && (
         <div>
-          Question {currentQuestionIndex + 1} / {totalQuestions}
+          {currentQuestionIndex + 1} / {totalQuestions}
         </div>
       )}
 
@@ -39,13 +39,16 @@ export const QuestionCounter = ({ totalQuestions }) => {
         <div className="progress" style={{ width: `${progress}%` }} />
       </div>
 
-      <button onClick={handleBack} disabled={currentQuestionIndex === 0}>
+      <button
+        className="previous-button"
+        onClick={handleBack}
+        disabled={currentQuestionIndex === 0}>
         Previous
       </button>
       <button
+        className="next-button"
         onClick={handleNext}
-        disabled={currentQuestionIndex === totalQuestions - 1}
-      >
+        disabled={currentQuestionIndex === totalQuestions - 1}>
         Next
       </button>
     </div>

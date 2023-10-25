@@ -16,10 +16,11 @@ export const CurrentQuestionZustand = () => {
   return (
     <div className="managed-component">
       <h1>Trivia Time</h1>
-      <h2>whit lemons 🍋</h2>
+      <h2>with lemons 🍋</h2>
       <div className="question-box">
         <QuestionBox question={question} />
       </div>
+      <img src={question.image} alt="Image related to question" />
     </div>
   );
 };
