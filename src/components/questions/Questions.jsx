@@ -3,8 +3,11 @@ import useQuestions from "../../stores/useQuestions"; // Adjust the path accordi
 import { Timer } from "../Timer";
 import "./questions.css";
 
-export const Questions = () => {
+export const Questions = ({ param }) => {
   const [showImage, setShowImage] = useState(true);
+  // const currentQuestionIndex = param.id;
+  // console.log(currentQuestionIndex);
+
   /*
   const [correctAnswer, setCorrectAnswer] = useState(false);
   if the answer is correct, set to true and have connection to global state that affects the board
@@ -19,7 +22,7 @@ export const Questions = () => {
   const qImageURL = question.qImage;
   const qOptions = question.options;
 
-  const timerInterval = 2000;
+  const timerInterval = 20000;
   const flipCard = () => {
     setTimeout(() => {
       setShowImage(!showImage);

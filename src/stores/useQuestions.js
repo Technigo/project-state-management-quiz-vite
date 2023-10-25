@@ -6,19 +6,20 @@ const questions = [
     qImage:
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     questionText: "What’s the smallest bone in the body?",
-    options: ["Patella", "Stirrup", "Thigh", "Teeny"],
+    options: ["Patella", "Stirrup", "Thigh", "Teeny Peeny"],
     correctAnswerIndex: 0,
   },
   {
     id: 2,
-    qImage: "Suger apple",
+    qImage:
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/907/original/bone.jpeg?1698237706",
     questionText: "what is this fruit called?",
-    options: ["Seedbox", "Suger Apple", "Papijaja", "Lotusicous"],
+    options: ["Seedbox", "Sugar Apple", "Papijaja", "Lotusicous"],
     correctAnswerIndex: 1,
   },
   {
     id: 3,
-    qImage: "Greta Thunberg",
+    qImage: "/Greta-Thunberg.jpeg",
     questionText: "Who is this person?",
     options: [
       "Solvik Hammar",
