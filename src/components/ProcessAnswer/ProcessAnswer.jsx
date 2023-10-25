@@ -1,22 +1,43 @@
-import styles from "./ProcessAnswer.Module.css";
-
+import styles from "./ProcessAnswer.module.css";
 import useQuizStore from "../../stores/useQuizStore";
+import { useState } from "react";
 
 export const ProcessAnswer = () => {
-  //function to check if the answer is correct or not?
+  const {
+    answers,
+    questions,
+    currentQuestionIndex,
+    quizOver,
+    submitAnswer,
+  } = useQuizStore();
 
-  const { answers, questions, currentQuestionIndex, quizOver, submitAnswer } =
-    useQuizStore();
+  const [userChoice, setUserChoice] = useState(null);
+  const [resultMessage, setResultMessage] = useState("");
 
   const CheckAnswer = (event) => {
-    console.log(`what is in value:`, event.target.value); //this works
+    const selectedAnswer = event.target.value.trim(); // Trim to remove extra spaces
 
-    //if condition, if value is qual to the correct answer then display you are correct message, else display you are incorrect??? is this already in the useQuizStore?
+    setUserChoice(selectedAnswer);
+
+    const question = questions[currentQuestionIndex];
+    const correctAnswerIndex = question.correctAnswerIndex;
+    const correctAnswer = question.options[correctAnswerIndex].trim(); // Trim to remove extra spaces
+
+    console.log("Selected answer:", selectedAnswer);
+    console.log("Correct answer:", correctAnswer);
+
+    if (selectedAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+      setResultMessage("You are correct!");
+    } else {
+      setResultMessage("You are incorrect.");
+    }
+
+    submitAnswer(question.id, question.options.indexOf(selectedAnswer));
   };
 
-  //function for start again button to refresh quiz
   const StartAgain = () => {
-    //write code here
+    setUserChoice(null);
+    setResultMessage("");
   };
 
   return (
@@ -27,43 +48,43 @@ export const ProcessAnswer = () => {
           <label>
             <input
               type="radio"
-              value="estonia"
+              value="Estonia"
               onChange={CheckAnswer}
-              checked=""
+              checked={userChoice === "Estonia"}
             />
-            <img src="/assets/ee.svg" alt="Flag of Estonia"></img>
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              value="finland"
-              onChange={CheckAnswer}
-              checked=""
-            />
-            <img src="/assets/fi.svg" alt="Flag of Finland"></img>
+            <img src="/assets/ee.svg" alt="Flag of Estonia" />
           </label>
           <label>
             <input
               type="radio"
-              value="indonesia"
+              value="Finland"
               onChange={CheckAnswer}
-              checked=""
+              checked={userChoice === "Finland"}
             />
-            <img src="/assets/id.svg" alt=" Flag of Indonesia"></img>
+            <img src="/assets/fi.svg" alt="Flag of Finland" />
           </label>
           <label>
             <input
               type="radio"
-              value="australia"
+              value="Indonesia"
               onChange={CheckAnswer}
-              checked=""
+              checked={userChoice === "Indonesia"}
             />
-            <img src="/assets/au.svg" alt="Flag of Australia"></img>
+            <img src="/assets/id.svg" alt="Flag of Indonesia" />
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="Australia"
+              onChange={CheckAnswer}
+              checked={userChoice === "Australia"}
+            />
+            <img src="/assets/au.svg" alt="Flag of Australia" />
           </label>
         </div>
         <button onClick={StartAgain}>Start Again!</button>
       </div>
+      {resultMessage && <p>{resultMessage}</p>}
     </div>
   );
 };
