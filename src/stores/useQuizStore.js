@@ -1,12 +1,13 @@
 import { create } from "zustand";
-import { questions } from '../data.js';
+import { questions } from "../data.js";
 
 const useQuizStore = create((set) => ({
   questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
-
+  startQuiz: false,
+  finishQuiz: false,
 
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
@@ -52,8 +53,18 @@ const useQuizStore = create((set) => ({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
+      finishQuiz: false,
     });
   },
+
+  // when this startQuiz is true, the quiz page will be opened
+  // This needs to be imported and called in WelcomePage.
+  start: () => {
+    set({
+      startQuiz: true,
+    });
+  },
+  // For the summary page, we can use quizOver. When it is true, we can show the summary page.
 }));
 
 export default useQuizStore;
