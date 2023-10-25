@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 
+
     @media (min-width:667px) {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -9,4 +10,31 @@
     @media (min-width:1024px) {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+/* Default style for buttons */
+.defaultButton {
+    margin-right: 20px;
+    background-color: #ccc;
+    color: #000;
+
+}
+
+.defaultButton:hover {
+    background-color: grey;
+}
+
+/* Style for correct answers */
+.correctButton {
+    background-color: #4CAF50;
+    color: #fff;
+
+}
+
+/* Style for wrong answers */
+.wrongButton {
+    background-color: #ea0000;
+    /* Red background for wrong answers */
+    color: #fff;
+    /* White text color */
 }

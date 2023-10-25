@@ -10,6 +10,9 @@ const Answers = () => {
     // Checking if the user has guessed correctly
     const hasGuessedCorrectly = currentQuestion.givenAnswerIndex === currentQuestion.correctAnswerIndex;
 
+    // Check if the user's answer is correct
+    const isCorrect = currentQuestion.givenAnswerIndex === currentQuestion.correctAnswerIndex;
+
     return (
         <div className={styles.answers}>
             {/* Mapping over the options of the current question */}
@@ -18,8 +21,17 @@ const Answers = () => {
                     key={index}
                     // Disabling the button if an answer has already been given
                     disabled={currentQuestion.givenAnswerIndex !== null}
+
                     // Handling the user's answer click event
                     onClick={() => answerCurrentQuestion(index)}
+                    // if correct answer make buttons green, otherwise red
+                    className={currentQuestion.givenAnswerIndex === index
+                        ? index === currentQuestion.correctAnswerIndex
+                            ? styles.correctButton
+                            : styles.wrongButton
+                        : styles.defaultButton
+                    }
+
                 >
                     {option}
                 </button>
