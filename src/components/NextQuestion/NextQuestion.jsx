@@ -24,34 +24,24 @@ export const NextQuestion = () => {
 
   return (
     <div className="next-summary-btn">
-      {quizOver === true ? (
+      {quizOver === true || currentQuestionIndex === 9 ? (
         <Link to={`/summary-page`}>
           <div className="summary-btn btn-layout">
             <span className="btn-text">continue</span>
+            <BiSolidChevronRight className="next-icon" />
           </div>
         </Link>
       ) : (
-        <div>
-          {currentQuestionIndex < 9 ? ( // Show "Next" button for questions 1-9
-            <button
-              className="next-btn btn-layout"
-              onClick={handleNextQuestionClick}
-            >
-              <div id="btn-pseudocontent"></div>
-              <div className="next-btn-content">
-                <span className="btn-text">next</span>
-                <BiSolidChevronRight className="next-icon" />
-              </div>
-            </button>
-          ) : (
-            <Link to={`/summary-page`}>
-              {/*Show "Continue" button for question 10*/}
-              <div className="next-btn btn-layout">
-                <span className="btn-text">continue</span>
-              </div>
-            </Link>
-          )}
-        </div>
+        <button
+          className="next-btn btn-layout"
+          onClick={handleNextQuestionClick}
+        >
+          <div id="btn-pseudocontent"></div>
+          <div className="next-btn-content">
+            <span className="btn-text">next</span>
+            <BiSolidChevronRight className="next-icon" />
+          </div>
+        </button>
       )}
     </div>
   );
