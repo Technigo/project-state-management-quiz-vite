@@ -2,19 +2,17 @@ import { create } from "zustand";
 
 //// This is the main state store for the quiz. It contains the variable "questions", an array empty for the answers, a default index of 0 for the "currentQuestionIndex" and a default state of false for the variable "quizOver"
 
-//should we delete the 'options' in the questions array as all of our questions have the SAME possible answers, so we dont need to check each question specifically.
-
 const questions = [
   {
     id: 1,
     questionText:
       "Uluru, The Great Barrier Reef, and Mount Kosciuszko, are found in which country?",
     options: ["Estonia", "Finland", "Indonesia", "Australia"],
-    correctAnswerIndex: 4,
+    correctAnswerIndex: 3,
   },
   {
     id: 2,
-    questionText: "put new Question 3 here!",
+    questionText: "put new Question 2 here!",
     options: ["Estonia", "Finland", "Indonesia", "Australia"],
     correctAnswerIndex: 2,
   },
@@ -38,7 +36,7 @@ const questions = [
   },
 ];
 
-//set up store, arrow function with an object
+// Define and create the 'useStore' store using Zustand's 'create' function
 const useQuizStore = create((set) => ({
   questions,
   answers: [],

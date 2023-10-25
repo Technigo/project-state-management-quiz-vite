@@ -2,14 +2,14 @@ import useStore from "../../stores/useQuizStore"; //
 
 //this component just displays the current question count
 
-export const CounterComponent = () => {
+export const QuestionCounter = () => {
   const { count, increment, currentQuestionIndex } = useStore();
 
   return (
     <div>
       <p>
-        CounterComponent: display the question count: {currentQuestionIndex} of
-        5
+        CounterComponent: display the question count: {currentQuestionIndex + 1}
+        of 5
       </p>
     </div>
   );

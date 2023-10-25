@@ -1,6 +1,4 @@
 import useQuizStore from "../../stores/useQuizStore"; // Adjust the path accordingly
-import { CounterComponent } from "../CounterComponent/CounterComponent";
-import { ProcessAnswer } from "../ProcessAnswer/ProcessAnswer";
 
 import styles from "./CurrentQuestionZustand.module.css";
 
@@ -15,22 +13,12 @@ export const CurrentQuestionZustand = () => {
     return <h1>Oh no! I could not find the current question!</h1>;
   }
 
-  //function for start again button to refresh quiz
-  const StartAgain = () => {
-    //write code here
-  };
-
   return (
     <div className="managed-component">
       <h2>Question</h2>
       <h1>
-        {currentQuestionIndex}.{question.questionText}
+        {currentQuestionIndex + 1}.{question.questionText}
       </h1>
-
-      <ProcessAnswer />
-      <CounterComponent />
-
-      <button onClick={StartAgain}>Start Again!</button>
     </div>
   );
 };

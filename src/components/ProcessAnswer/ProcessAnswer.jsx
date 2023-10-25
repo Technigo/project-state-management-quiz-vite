@@ -2,10 +2,23 @@ import styles from "./ProcessAnswer.Module.css";
 
 import useQuizStore from "../../stores/useQuizStore";
 
-//function to check if the answer is correct or not?
-export const CheckAnswer = () => {};
-
 export const ProcessAnswer = () => {
+  //function to check if the answer is correct or not?
+
+  const { answers, questions, currentQuestionIndex, quizOver, submitAnswer } =
+    useQuizStore();
+
+  const CheckAnswer = (event) => {
+    console.log(`what is in value:`, event.target.value); //this works
+
+    //if condition, if value is qual to the correct answer then display you are correct message, else display you are incorrect??? is this already in the useQuizStore?
+  };
+
+  //function for start again button to refresh quiz
+  const StartAgain = () => {
+    //write code here
+  };
+
   return (
     <div>
       <p>Process Answer component</p>
@@ -49,6 +62,7 @@ export const ProcessAnswer = () => {
             <img src="/assets/au.svg" alt="Flag of Australia"></img>
           </label>
         </div>
+        <button onClick={StartAgain}>Start Again!</button>
       </div>
     </div>
   );
