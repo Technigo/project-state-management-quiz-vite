@@ -1,6 +1,6 @@
 import "./SummaryPage.css";
 import { useQuizStore } from "../../stores/useQuizStore";
-import { Link } from "react-router-dom";
+import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 
 export const SummaryPage = () => {
   const quizOver = useQuizStore((state) => state.quizOver);
@@ -25,13 +25,14 @@ export const SummaryPage = () => {
       </div>
       {/* Show the response text that comes from the store */}
       <p className="response-text">{response.text}</p>
-      <Link to="/">
-        <button className="restart-btn btn-layout" onClick={handleRestartQuiz}>
-          <div className="restart-btn-content">
-            <span className="btn-text">Do the quiz again!</span>
-          </div>
-        </button>
-      </Link>
+      {/* Button to restart the quiz */}
+      <ButtonLink
+        path="/" // or use 'to' for routing, e.g., "/question-page"
+        className="restart-btn"
+        onClick={handleRestartQuiz}
+        ariaLabel="Restart the Quiz"
+        label="Do the quiz again!"
+      />
     </div>
   );
 };

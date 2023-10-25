@@ -1,13 +1,16 @@
 import "./ButtonLink.css";
+import { Link } from "react-router-dom";
 
-export const ButtonLink = () => {
+export const ButtonLink = ({ path, onClick, label, className, ariaLabel }) => {
   return (
-    <>
-      <button className="startquiz-btn btn-layout">
-        <div className="startquiz-btn-content">
-          <span className="btn-text">Start quiz!</span>
-        </div>
+    <Link to={path}>
+      <button
+        className={`btn-layout btn-gradient ${className}`}
+        onClick={onClick}
+        aria-label={ariaLabel}
+      >
+        <span className="btn-text">{label}</span>
       </button>
-    </>
+    </Link>
   );
 };

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import "./StartPage.css";
+import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 
 export const StartPage = () => {
   return (
@@ -8,13 +8,13 @@ export const StartPage = () => {
         <img src="/title-ghost.png" alt="Ghost image" />
       </div>
       <h2>Creep and Crawl, Answer them All</h2>
-      <Link to="/question-page">
-        <button className="startquiz-btn btn-layout">
-          <div className="startquiz-btn-content">
-            <span className="btn-text">Start quiz!</span>
-          </div>
-        </button>
-      </Link>
+      {/* Button to start the quiz */}
+      <ButtonLink
+        path="/question-page"
+        className="startquiz-btn"
+        label="Start quiz!"
+        ariaLabel="Click to start the quiz"
+      />
     </div>
   );
 };
