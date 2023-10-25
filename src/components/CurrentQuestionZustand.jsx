@@ -38,20 +38,22 @@ export const CurrentQuestionZustand = () => {
                 name="radio-btn"
                 value={option}
                 onChange={submitAnswer(question.id, index)}
-                //checked={value === option}
+              //checked={value === option}
               />
               {option}
             </label>
           )
         )}
       </div>
-      <div>
+      <div className="next-btn-wrapper">
         <button className="next-btn" onClick={goToNextQuestion}>
           Next
         </button>
       </div>
       {/* create a progress bar */}
-      <progress value="65" max="100" />
+      <div className="progress-wrapper">
+        <progress className="progress-bar" value="65" max="100" />
+      </div>
     </div>
   );
 };
