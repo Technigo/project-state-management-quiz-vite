@@ -32,7 +32,6 @@ export const NextQuestion = () => {
           className="next-btn btn-layout"
           onClick={handleNextQuestionClick}
         >
-          <sh></sh>
           <div className="next-btn-content">
             <span className="btn-text">next</span>
             <BiSolidChevronRight className="next-icon" />
