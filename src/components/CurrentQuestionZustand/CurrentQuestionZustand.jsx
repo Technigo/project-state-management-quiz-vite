@@ -26,10 +26,10 @@ export const CurrentQuestionZustand = () => {
       <h1>
         {currentQuestionIndex}.{question.questionText}
       </h1>
-      <p>
-        <ProcessAnswer />
-        <CounterComponent />
-      </p>
+
+      <ProcessAnswer />
+      <CounterComponent />
+
       <button onClick={StartAgain}>Start Again!</button>
     </div>
   );
