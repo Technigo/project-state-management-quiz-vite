@@ -1,0 +1,1 @@
+//dont think we need this. We think it will be enough with just the app, but then we need to style the main page in index.css. 

@@ -1,3 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/harry-potter?styles=41888');
+@import url('https://fonts.cdnfonts.com/css/spqr');
+
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,7 +8,7 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
+  background-color: rgb(10, 2, 41);
 }
 
 code {
@@ -13,17 +16,39 @@ code {
     monospace;
 }
 
-/* Components Structure */
-.managed-component {
-  outline: 1px solid red;
-  padding: 2em;
-  margin-bottom: 1em;
-  font-size: 1em;
+/*THIS IS WHERE WE CAN STYLE THE PAGE; F.EKS QA BOX IN GRIDS AND STYLE IT FURTHER*/
+
+/*FOR STYLING THE WHOLE PAGE, CLASS IS IN APP*/
+.layout_wrapper {
+  display: grid;
+  grid-template-columns: 1fr repeat(4);
+  grid-template-areas:
+    "questionBox questionBox questionBox questionBox";
+  align-items: center;
+  justify-items: center;
 }
-.managed-component h2 {
-  text-align: center;
-  font-size: 1.5em;
+
+/*FOR STYLING THE QUESTION-BOX, CLASS IS IN APP*/
+.questionBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "quizQuestion quizMultichoise";
+  border: 4px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0.249);
+  margin: 40px;
+  grid-area: questionBox;
+  max-width: 800px;
 }
-.managed-component h1 {
-  font-size: 1em;
+
+/* ONLY GRID AREA DECLARED, REST OF STYLING IN MODULE FOR EACH CLASS: QuizQandA.module.css*/
+
+.quizQuestion {
+  grid-area: quizQuestion;
 }
+
+.quizMultichoise {
+  grid-area: quizMultichoise;
+}
+
+/********************************/
