@@ -1,6 +1,6 @@
 import styles from "./ProcessAnswer.module.css";
 import useQuizStore from "../../stores/useQuizStore";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const ProcessAnswer = () => {
   const {
@@ -15,13 +15,12 @@ export const ProcessAnswer = () => {
   const [resultMessage, setResultMessage] = useState("");
 
   const CheckAnswer = (event) => {
-    const selectedAnswer = event.target.value.trim(); // Trim to remove extra spaces
-
+    const selectedAnswer = event.target.value.trim();
     setUserChoice(selectedAnswer);
 
     const question = questions[currentQuestionIndex];
     const correctAnswerIndex = question.correctAnswerIndex;
-    const correctAnswer = question.options[correctAnswerIndex].trim(); // Trim to remove extra spaces
+    const correctAnswer = question.options[correctAnswerIndex].trim();
 
     console.log("Selected answer:", selectedAnswer);
     console.log("Correct answer:", correctAnswer);
@@ -40,11 +39,30 @@ export const ProcessAnswer = () => {
     setResultMessage("");
   };
 
+  useEffect(() => {
+    // Add an event listener when the component mounts
+    window.addEventListener("beforeunload", (event) => {
+      // Cancel the event to prevent the browser prompt
+      event.preventDefault();
+      // Chrome requires returnValue to be set
+      event.returnValue = "";
+    });
+
+    // Return a cleanup function to remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("beforeunload", (event) => {
+        event.preventDefault();
+        event.returnValue = "";
+      });
+    };
+  }, []); // The empty dependency array ensures this effect only runs on component mount and unmount.
+
   return (
     <div>
       <p>Process Answer component</p>
       <div className={styles.answerOptionsBox}>
-        <div className={styles.flags}>
+        
+      <div className={styles.flags}>
           <label>
             <input
               type="radio"
@@ -88,3 +106,4 @@ export const ProcessAnswer = () => {
     </div>
   );
 };
+
