@@ -1,0 +1,23 @@
+.question-counter {
+  color: #fff;
+  text-align: center;
+  font-family: Arvo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.progress-bar {
+  width: 90%;
+  background-color: #8c8fb0;
+  height: 18px;
+  border-radius: 20px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #7240dd;
+  transition: width 0.3s;
+  border-radius: 20px;
+}

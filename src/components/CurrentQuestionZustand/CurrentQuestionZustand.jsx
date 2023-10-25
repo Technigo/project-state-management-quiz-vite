@@ -1,4 +1,6 @@
-import useQuizStore from "../stores/useQuizStore"; // Adjust the path accordingly
+import useQuizStore from "../../stores/useQuizStore";
+import { QuestionBox } from "../Questionbox/QuestionBox";
+import "./CurrentQuestionZustand.css";
 
 export const CurrentQuestionZustand = () => {
   const questions = useQuizStore((state) => state.questions);
@@ -15,7 +17,9 @@ export const CurrentQuestionZustand = () => {
     <div className="managed-component">
       <h1>Trivia Time</h1>
       <h2>whit lemons 🍋</h2>
-      <h3>{question.questionText}</h3>
+      <div className="question-box">
+        <QuestionBox question={question} />
+      </div>
     </div>
   );
 };

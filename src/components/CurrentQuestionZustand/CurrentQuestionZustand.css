@@ -1,0 +1,14 @@
+.question-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 45px;
+  font-size: 20px;
+  text-align: center;
+  width: 300px;
+  height: 291px;
+  border-radius: 25px;
+  background: rgba(201, 222, 193, 0.79);
+  font-family: Arvo;
+  color: #ffffff;
+}
