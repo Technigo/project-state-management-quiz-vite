@@ -37,6 +37,7 @@ export const NextQuestion = () => {
               className="next-btn btn-layout"
               onClick={handleNextQuestionClick}
             >
+              <div id="btn-pseudocontent"></div>
               <div className="next-btn-content">
                 <span className="btn-text">next</span>
                 <BiSolidChevronRight className="next-icon" />
