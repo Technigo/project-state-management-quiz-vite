@@ -1,4 +1,5 @@
-import useQuizStore from "../stores/useQuizStore"; // Adjust the path accordingly
+import useQuizStore from "../stores/useQuizStore";
+import { QuestionCounter } from "./QuestionCounter/QuestionCounter";
 
 export const CurrentQuestionZustand = () => {
   const questions = useQuizStore((state) => state.questions);
@@ -13,9 +14,15 @@ export const CurrentQuestionZustand = () => {
 
   return (
     <div className="managed-component">
+
       <h1>Trivia Time</h1>
       <h2>whit lemons 🍋</h2>
       <h3>{question.questionText}</h3>
+
+     
+      
+      <QuestionCounter totalQuestions={5} />
+
     </div>
   );
 };
