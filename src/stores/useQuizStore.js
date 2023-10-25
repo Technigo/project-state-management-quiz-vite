@@ -1,4 +1,9 @@
 import { create } from "zustand";
+import geographyImage from "../assets/geography.svg";
+import historyImage from "../assets/history.svg";
+import literatureImage from "../assets/literature.svg";
+import scienceImage from "../assets/science.svg";
+import sportsImage from "../assets/sports.svg";
 
 const questions = [
   {
@@ -6,6 +11,7 @@ const questions = [
     questionText: "Science: What is the largest planet in our solar system?",
     options: ["Mars", "Venus", "Earth", "Jupiter"],
     correctAnswerIndex: 3,
+    image: scienceImage,
   },
   {
     id: 2,
@@ -17,6 +23,7 @@ const questions = [
       "Abraham Lincoln",
     ],
     correctAnswerIndex: 2,
+    image: historyImage,
   },
   {
     id: 3,
@@ -28,6 +35,7 @@ const questions = [
       "Mississippi River",
     ],
     correctAnswerIndex: 1,
+    image: geographyImage,
   },
   {
     id: 4,
@@ -39,12 +47,14 @@ const questions = [
       "John Keats",
     ],
     correctAnswerIndex: 2,
+    image: literatureImage,
   },
   {
     id: 5,
     questionText: "Sports: Which country hosted the 2016 Summer Olympics?",
     options: ["Brazil", "China", "Australia", "United Kingdom"],
     correctAnswerIndex: 0,
+    image: sportsImage,
   },
 ];
 
@@ -83,7 +93,6 @@ const useQuizStore = create((set) => ({
     }));
   },
 
-  
   goToNextQuestion: () => {
     set((state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
@@ -102,11 +111,11 @@ const useQuizStore = create((set) => ({
     });
   },
 
- /* numberOfCorrectAnswers: (state) => {
-    return state.answers ? state.answers.filter(answer => answer.isCorrect).length : 0;
- }*/
-
-
+  numberOfCorrectAnswers: (state) => {
+    return state.answers
+      ? state.answers.filter((answer) => answer.isCorrect).length
+      : 0;
+  },
 }));
 
 export default useQuizStore;

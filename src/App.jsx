@@ -1,13 +1,15 @@
-import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand";
-import { SubmitAnswer } from "./components/SubmitAnswer/SubmitAnswer";
+import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand/CurrentQuestionZustand";
+
+import { QuestionCounter } from "./components/QuestionCounter/QuestionCounter";
 import { Summary } from "./components/Summary/Summary";
 
 export const App = () => {
   return (
     <div>
       <CurrentQuestionZustand />
-      <SubmitAnswer />
+
       <Summary />
+      <QuestionCounter totalQuestions={5} />
     </div>
   );
 };
