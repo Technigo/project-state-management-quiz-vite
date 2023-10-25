@@ -9,7 +9,6 @@ export const CurrentQuestionZustand = () => {
   const submitAnswer = useQuizStore((state) => state.submitAnswer);
   const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
   const quizOver = useQuizStore((state) => state.quizOver);
-  const restart = useQuizStore((state) => state.restart);
 
   /*const { submitAnswer, goToNextQuestion, restart } = useQuizStore() infinite loop from Diego ?*/
 
@@ -19,37 +18,40 @@ export const CurrentQuestionZustand = () => {
 
   return (
     <div className="managed-component">
-      <h2>Using Zustand</h2>
+      {/* Question tilte */}
       <h1>Question: {question.questionText}</h1>
+      {/* radio button answers  and check if it is correct, if it is correct, show the correct emoji✅, wrong emoji❌*/}
       <div>
-        {question.options.map((option, index) => ( // https://www.geeksforgeeks.org/javascript-index-inside-map-function/
-          <label
-            className="radio-button-label"
-            htmlFor="radio-btn"
-            key={option}>
-            <input
-              type="radio"
-              className="radio-button"
-              name="radio-btn"
-              value={option}
-              onChange={submitAnswer(question.id, index)}
-            //checked={value === option}
-            />
-            {option}
-          </label>
-        ))}
+        {question.options.map(
+          (
+            option,
+            index // https://www.geeksforgeeks.org/javascript-index-inside-map-function/
+          ) => (
+            <label
+              className="radio-button-label"
+              htmlFor="radio-btn"
+              key={option}
+            >
+              <input
+                type="radio"
+                className="radio-button"
+                name="radio-btn"
+                value={option}
+                onChange={submitAnswer(question.id, index)}
+                //checked={value === option}
+              />
+              {option}
+            </label>
+          )
+        )}
       </div>
       <div>
-        <button
-          className="next-btn"
-          onClick={goToNextQuestion}>Next</button>
+        <button className="next-btn" onClick={goToNextQuestion}>
+          Next
+        </button>
       </div>
-      <div>
-        {quizOver && <button
-          className="restart-btn"
-          onClick={restart}>Restart</button>}
-      </div>
-
+      {/* create a progress bar */}
+      <progress value="65" max="100" />
     </div>
   );
 };
