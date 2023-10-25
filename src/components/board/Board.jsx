@@ -1,4 +1,5 @@
 import { Questions } from "../questions/Questions";
+import { QuestionPage } from "../../pages/QuestionPage";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import useQuestions from "../../stores/useQuestions";
@@ -17,7 +18,6 @@ export const Board = () => {
     q9: true,
   });
   const questions = useQuestions((state) => state.questions);
-  // console.log(questions);
 
   return (
     <>
@@ -33,7 +33,7 @@ export const Board = () => {
           </div>
         ))}
         <div className="a-question">
-          <Link to={`/questions/random`} element={<Questions />}>
+          <Link to={`/questions/random`} element={<QuestionPage />}>
             {/* <Link to={`/questions/${id}`}> */}
             <button className="board-question-btn">
               <img
@@ -74,7 +74,7 @@ export const Board = () => {
         <div className="a-question">X</div>
         <div className="a-question">O</div>
         <div className="a-question">
-          <Link to={`/quest/${questions[0].id}`} element={<Questions />} />X
+          <Link to={`/quest/${questions[0].id}`} element={<QuestionPage />} />X
         </div>
       </div>
     </>
