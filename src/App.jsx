@@ -1,14 +1,15 @@
-import { CurrentQuestionUseContext } from "./components/CurrentQuestionUseContext";
-import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand";
-import { QuizProvider } from "./context/QuizContext";
+import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand/CurrentQuestionZustand";
+import { Header } from "./components/Header/Header";
+import { ProcessAnswer } from "./components/ProcessAnswer/ProcessAnswer";
+import { QuestionCounter } from "./components/QuestionCounter/QuestionCounter";
 
 export const App = () => {
   return (
-    <QuizProvider>
-      <div>
-        <CurrentQuestionUseContext />
-        <CurrentQuestionZustand />
-      </div>
-    </QuizProvider>
+    <div>
+      <Header />
+      <CurrentQuestionZustand />
+      <ProcessAnswer />
+      <QuestionCounter />
+    </div>
   );
 };

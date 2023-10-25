@@ -1,4 +1,6 @@
-import useQuizStore from "../stores/useQuizStore"; // Adjust the path accordingly
+import useQuizStore from "../../stores/useQuizStore"; // Adjust the path accordingly
+
+import styles from "./CurrentQuestionZustand.module.css";
 
 export const CurrentQuestionZustand = () => {
   const questions = useQuizStore((state) => state.questions);
@@ -13,8 +15,10 @@ export const CurrentQuestionZustand = () => {
 
   return (
     <div className="managed-component">
-      <h2>Using Zustand</h2>
-      <h1>Question: {question.questionText}</h1>
+      <h2>Question</h2>
+      <h1>
+        {currentQuestionIndex + 1}.{question.questionText}
+      </h1>
     </div>
   );
 };
