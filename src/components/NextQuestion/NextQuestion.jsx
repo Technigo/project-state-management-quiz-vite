@@ -18,26 +18,64 @@ export const NextQuestion = () => {
     }
   };
 
+  const currentQuestionIndex = useQuizStore(
+    (state) => state.currentQuestionIndex
+  );
+
   return (
     <div className="next-summary-btn">
-      {/* Conditionally render the buttons based on quizStatus */}
       {quizOver === true ? (
-        <Link to="/summary-page">
+        <Link to={`/summary-page`}>
           <div className="summary-btn btn-layout">
             <span className="btn-text">continue</span>
           </div>
         </Link>
       ) : (
-        <button
-          className="next-btn btn-layout"
-          onClick={handleNextQuestionClick}
-        >
-          <div className="next-btn-content">
-            <span className="btn-text">next</span>
-            <BiSolidChevronRight className="next-icon" />
-          </div>
-        </button>
+        <div>
+          {currentQuestionIndex < 9 ? ( // Show "Next" button for questions 1-9
+            <button
+              className="next-btn btn-layout"
+              onClick={handleNextQuestionClick}
+            >
+              <div className="next-btn-content">
+                <span className="btn-text">next</span>
+                <BiSolidChevronRight className="next-icon" />
+              </div>
+            </button>
+          ) : (
+            <Link to={`/summary-page`}>
+              {/*Show "Continue" button for question 10*/}
+              <div className="next-btn btn-layout">
+                <span className="btn-text">continue</span>
+              </div>
+            </Link>
+          )}
+        </div>
       )}
     </div>
   );
 };
+
+//   return (
+//     <div className="next-summary-btn">
+//       {/* Conditionally render the buttons based on quizStatus */}
+//       {quizOver === true ? (
+//         <Link to={`/summary-page`}>
+//           <div className="summary-btn btn-layout">
+//             <span className="btn-text">continue</span>
+//           </div>
+//         </Link>
+//       ) : (
+//         <button
+//           className="next-btn btn-layout"
+//           onClick={handleNextQuestionClick}
+//         >
+//           <div className="next-btn-content">
+//             <span className="btn-text">next</span>
+//             <BiSolidChevronRight className="next-icon" />
+//           </div>
+//         </button>
+//       )}
+//     </div>
+//   );
+// };

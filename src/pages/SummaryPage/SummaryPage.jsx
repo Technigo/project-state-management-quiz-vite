@@ -6,7 +6,7 @@ export const SummaryPage = () => {
   //const score = useQuizStore((state) => state.score);
   //console.log(quizOver);
 
-  return <div className="summary-wrapper">SummaryPage</div>;
+  return <div className="summary-wrapper">Summary Page</div>;
 };
 
 //   <div className="summary-wrapper">
