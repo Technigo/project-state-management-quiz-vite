@@ -2,14 +2,13 @@ import styles from "./ProcessAnswer.module.css";
 import useQuizStore from "../../stores/useQuizStore";
 import { useState } from "react";
 
+
+
 export const ProcessAnswer = () => {
-  const {
-    answers,
-    questions,
-    currentQuestionIndex,
-    quizOver,
-    submitAnswer,
-  } = useQuizStore();
+  
+  // mikael edit
+  const { answers, questions, currentQuestionIndex, submitAnswer, goToNextQuestion } = useQuizStore();
+  // mikael edit end
 
   const [userChoice, setUserChoice] = useState(null);
   const [resultMessage, setResultMessage] = useState("");
@@ -39,6 +38,22 @@ export const ProcessAnswer = () => {
     setUserChoice(null);
     setResultMessage("");
   };
+// mikael edit
+const NextQuestion = () => {
+  const selectedAnswer = answers[currentQuestionIndex];
+  const question = questions[currentQuestionIndex];
+  const correctAnswerIndex = question.correctAnswerIndex;
+  const correctAnswer = question.options[correctAnswerIndex].trim();
+
+  if (selectedAnswer === correctAnswer) {
+    setResultMessage("Correct!");
+  } else {
+    setResultMessage("Incorrect.");
+  }
+
+  goToNextQuestion();
+};
+//mikael edit end
 
   return (
     <div>
@@ -85,6 +100,10 @@ export const ProcessAnswer = () => {
         <button onClick={StartAgain}>Start Again!</button>
       </div>
       {resultMessage && <p>{resultMessage}</p>}
-    </div>
+      {/* // mikael edit */}
+     <button onClick={NextQuestion}>Next</button></div>
+    //  mikael edit end
+    
   );
+
 };
