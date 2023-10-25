@@ -1,11 +1,22 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import useQuestions from "../../stores/useQuestions"; // Adjust the path accordingly
 import { Timer } from "../Timer";
 import "./questions.css";
+import useQuizStore from "../../stores/useQuestions";
 
 export const Questions = ({ param }) => {
   const [showImage, setShowImage] = useState(true);
-  
+
+  const { submitAnswer } = useQuizStore();
+  const [answerIndex, setAnswerIndex] = useState(null);
+
+  const navigate = useNavigate();
+
+  const handleOptionChange = (event) => {
+    setAnswerIndex(Number(event.target.value));
+    console.log("answerIndex = " + answerIndex);
+  };
   /*
   const [correctAnswer, setCorrectAnswer] = useState(false);
   if the answer is correct, set to true and have connection to global state that affects the board
@@ -14,7 +25,7 @@ export const Questions = ({ param }) => {
 */
 
   const questions = useQuestions((state) => state.questions);
-  const question = questions[param-1];
+  const question = questions[param - 1];
   const qImageURL = question.qImage;
   const qOptions = question.options;
 
@@ -43,16 +54,34 @@ export const Questions = ({ param }) => {
           <Timer time={timerInterval} />
         </>
       )}
-      {!showImage && <p className="question-text">Question: {question.questionText}</p>}
+      {!showImage && (
+        <p className="question-text">Question: {question.questionText}</p>
+      )}
       {!showImage && (
         <form className="the-answer-options">
-          {qOptions.map((item) => (
+          {qOptions.map((item, index) => (
             <label key={item}>
-              <input type="radio" id={item} name="answer" value={item} />
+              <input
+                type="radio"
+                id={item}
+                name="answer"
+                value={index}
+                onChange={handleOptionChange}
+              />
               {item}
             </label>
           ))}
-          <button type="submit">SUBMIT</button>
+
+          <button
+            type="submit"
+            onClick={(e) => {
+              e.preventDefault();
+              submitAnswer(question.id, answerIndex);
+              navigate("/");
+            }}
+          >
+            SUBMIT
+          </button>
         </form>
       )}
     </div>
