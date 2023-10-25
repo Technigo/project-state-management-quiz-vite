@@ -13,8 +13,9 @@ export const CurrentQuestionZustand = () => {
 
   return (
     <div className="managed-component">
-      <h2>Good morning!</h2>
-      <h1>Question: {question.questionText}</h1>
+      <h1>Trivia Time</h1>
+      <h2>whit lemons 🍋</h2>
+      <h3>{question.questionText}</h3>
     </div>
   );
 };
