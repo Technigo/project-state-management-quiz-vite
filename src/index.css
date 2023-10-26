@@ -19,15 +19,10 @@ body {
   padding: 0 auto;
 }
 
-
 img {
   width: 700px;
   padding: 20px;
 }
-
-
-
-
 
 /* Components Structure */
 
@@ -39,10 +34,10 @@ img {
 }
 
 .start button {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: rgb(228, 239, 255);
-  color: #0B24F5;
-  border: 1px solid #0B24F5;
+  color: #0b24f5;
+  border: 1px solid #0b24f5;
   border-radius: 15px;
   padding: 10px 20px;
   font-size: 26px;
@@ -51,7 +46,7 @@ img {
 }
 
 .start button:hover {
-  background-color: #0B24F5;
+  background-color: #0b24f5;
   color: white;
 }
 
@@ -71,7 +66,6 @@ img {
   place-items: center;
   padding: 50px 0px 100px 200px;
 }
-
 
 .managed-component h2 {
   text-align: center;

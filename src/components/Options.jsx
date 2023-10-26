@@ -1,11 +1,29 @@
+import "./options.css";
+import useQuizStore from "../stores/useQuizStore";
+
 export const Options = ({ options, onOptionSelect }) => {
-    return (
-        <div>
-            {options.map((option, index) => (
-                <button key={index} onClick={() => onOptionSelect(index)}>
-                    {option}
-                </button>
-            ))}
-        </div>
-    );
+  const currentQuestionIndex = useQuizStore(
+    (state) => state.currentQuestionIndex
+  );
+
+  const questions = useQuizStore((state) => state.questions);
+  const userAnswer = useQuizStore((state) => state.userAnswer);
+  const correctAnswerIndex = questions[currentQuestionIndex].correctAnswerIndex;
+  const isCorrect = userAnswer === correctAnswerIndex;
+
+  return (
+    <div>
+      {options.map((option, index) => (
+        <button
+          key={index}
+          onClick={() => onOptionSelect(index)}
+          className={
+            userAnswer === index ? (isCorrect ? "correct" : "incorrect") : ""
+          }
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  );
 };

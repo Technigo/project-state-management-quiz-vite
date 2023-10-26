@@ -1,9 +1,9 @@
 import { create } from "zustand";
-import image1 from '../assets/image1.jpg';
-import image2 from '../assets/image2.jpg';
-import image3 from '../assets/image3.jpg';
-import image4 from '../assets/image4.jpg';
-import image5 from '../assets/image5.jpg';
+import image1 from "../assets/image1.jpg";
+import image2 from "../assets/image2.jpg";
+import image3 from "../assets/image3.jpg";
+import image4 from "../assets/image4.jpg";
+import image5 from "../assets/image5.jpg";
 
 const questions = [
   {
@@ -17,30 +17,37 @@ const questions = [
     id: 2,
     questionText:
       "The Mariana Trench, the deepest part of the world's oceans, is located in which ocean?",
-    options: ["Atlantic ocean", "Pacific ocean", "Southern ocean", "Indian Ocean"],
+    options: [
+      "Atlantic ocean",
+      "Pacific ocean",
+      "Southern ocean",
+      "Indian Ocean",
+    ],
     correctAnswerIndex: 1,
     imagesrc: image2,
   },
   {
     id: 3,
-    questionText:
-      "What percentage of Earth's surface is covered by oceans?",
-    options: ["Approximately 50%", "Approximately 61%", "Approximately 71%", "Approximately 85%"],
+    questionText: "What percentage of Earth's surface is covered by oceans?",
+    options: [
+      "Approximately 50%",
+      "Approximately 61%",
+      "Approximately 71%",
+      "Approximately 85%",
+    ],
     correctAnswerIndex: 2,
     imagesrc: image3,
   },
   {
     id: 4,
-    questionText:
-      "What type of shark is pictured above?",
+    questionText: "What type of shark is pictured above?",
     options: ["Angel shark", "Tiger shark", "Whale shark", "Nurse shark"],
     correctAnswerIndex: 3,
     imagesrc: image4,
   },
   {
     id: 5,
-    questionText:
-      "Who is the actor who plays Aquaman?",
+    questionText: "Who is the actor who plays Aquaman?",
     options: ["Liam Hemsworth", "Jason Segel", "Chris Evans", "Jason Momoa"],
     correctAnswerIndex: 3,
     imagesrc: image5,
@@ -52,9 +59,14 @@ const useQuizStore = create((set) => ({
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
+  userAnswer: null,
+  setUserAnswer: (answer) => {
+    set({ userAnswer: answer });
+  },
 
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
+    set({ userAnswer: answerIndex });
 
     if (!question) {
       throw new Error(
@@ -97,6 +109,7 @@ const useQuizStore = create((set) => ({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
+      userAnswer: null,
     });
   },
 }));
