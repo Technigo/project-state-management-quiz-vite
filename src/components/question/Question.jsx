@@ -21,21 +21,27 @@ const Question = () => {
     // Get the current question based on the current index
     const currentQuestion = questions[currentQuestionIndex];
 
+    const colorMap = {
+        right: "bg-emerald-600 border-emerald-600",
+        wrong: "bg-red-500 border-red-500",
+        default: "bg-none border-slate-950",
+    }
+
     // Define a function to determine the background color of each option based on the user's answer
     const getQuestionBackgroundColor = (index) => {
         if (currentQuestion.givenAnswerIndex === null) {
-            return "bg-none border-slate-950"; // Default background when no answer is given
+            return colorMap.default; // Default background when no answer is given
         }
 
         if (index === currentQuestion.givenAnswerIndex) {
             return currentQuestion.givenAnswerIndex === currentQuestion.correctAnswerIndex
-                ? "bg-emerald-600 text-emerald-100 border-emerald-600" // Green background for correct answer
-                : "bg-red-500 border-red-500 text-red-100"; // Red background for incorrect answer
+                ? colorMap.right
+                : colorMap.wrong;
         }
 
         return index === currentQuestion.correctAnswerIndex
-            ? "bg-emerald-600 text-emerald-100 border-emerald-600" // Green background for correct answer (if not selected)
-            : "bg-none border-slate-950"; // Default background for other options
+            ? colorMap.right
+            : colorMap.default;
     }
 
     return (
@@ -59,11 +65,12 @@ const Question = () => {
                         <Button
                             key={index}
                             onClick={() => {
+                                // Playing different sounds depending on right or wrong answer.
                                 answerCurrentQuestion(index);
                                 if (index === currentQuestion.correctAnswerIndex) {
-                                    playRight()
+                                    playRight();
                                 } else {
-                                    playWrong()
+                                    playWrong();
                                 }
                             }}
                             disabled={currentQuestion.givenAnswerIndex !== null}

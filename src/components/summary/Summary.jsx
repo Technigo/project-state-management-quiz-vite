@@ -2,10 +2,21 @@ import Confetti from "react-confetti";
 import useQuizStore from "../../stores/useQuizStore"; // Custom hook for accessing quiz state
 import Button from "../button/Button"; // Custom Button component
 import Card from "../card/Card"; // Custom Card component
-import Title from "../title/Title";
+import nationalAnthem from '../../assets/anthem.mp3';
+import useSound from "use-sound";
+import { useEffect } from "react";
 
 // Creating the Summary component
 const Summary = () => {
+    const [playNationalAnthem, { stop }] = useSound(nationalAnthem);
+
+    // Hook that plays the nationalAnthem file everytime the summary component mounts
+    useEffect(() => {
+        playNationalAnthem();
+        // Stops playing music when the component is unmounted
+        return () => stop();
+    }, [playNationalAnthem, stop]);
+
     // Using the custom hook `useQuizStore` to access the quiz state
     const restart = useQuizStore((state) => state.restart); // Function to restart the quiz
     const questions = useQuizStore((state) => state.questions); // Array of quiz questions
