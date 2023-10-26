@@ -6,7 +6,7 @@
 
 # State Management Quiz
 
-The project for this week involves creating a dynamic quiz game utilizing Zustand for state management in a React application. This interactive game offers users a series of multiple-choice questions, where they can select their answers. React Router Dom has also been utilized for moving the user between different pages, like the startpage, errorpage questionpage and summarypage. Accessibility has been in the back of our minds during the entire project. 
+The project for this week involves creating a dynamic quiz game utilizing Zustand for state management in a React application. This interactive game offers users a series of multiple-choice questions, where they can select their answers. React Router Dom has also been utilized for moving the user between different pages, like the startpage, errorpage, questionpage and summarypage. Accessibility has been in the back of our minds during the entire project. 
 
 A group project by Laura Lyckholm, Anna Robertsson, Julia Holm and Susanne Ekenheim.
 

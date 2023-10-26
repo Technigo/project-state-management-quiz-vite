@@ -1,6 +1,5 @@
-//import { QuestionPage } from "./pages/QuestionPage/QuestionPage";
 import { BrowserRouter, Routes } from "react-router-dom";
-import { routes } from "./routes/routes";
+import routes from "./routes/routes";
 
 export const App = () => {
   return (
