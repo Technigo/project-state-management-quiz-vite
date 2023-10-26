@@ -7,11 +7,37 @@
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(10, 2, 41);
+  /*background-color: rgb(10, 2, 41);*/
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+html {
+  height: 100%;
+  background-color: rgb(13, 13, 46);
+}
+
+body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+
+body::before {
+  content: "";
+  background-image: url("./images/golden.png");
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 /*THIS IS WHERE WE CAN STYLE THE PAGE; F.EKS QA BOX IN GRIDS AND STYLE IT FURTHER*/
@@ -22,6 +48,7 @@ code {
   flex-direction: column;
   align-items: center;
   justify-items: center;
+  gap: 30px;
 }
 
 /*FOR STYLING THE QUESTION-BOX, CLASS IS IN APP*/

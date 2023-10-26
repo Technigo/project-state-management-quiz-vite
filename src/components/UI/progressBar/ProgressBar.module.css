@@ -3,6 +3,7 @@
   height: 46px;
   position: absolute;
   right: 0;
+  top: -48px;
   filter: invert(1);
 }
 
