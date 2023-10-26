@@ -3,11 +3,13 @@
   height: 46px;
   position: absolute;
   right: 0;
+  top: -48px;
+  filter: invert(1);
 }
 
 .bar {
-  background-color: #fff;
-  width: 600px;
+  background-color: transparent;
+  width: 800px;
   height: 50px;
   margin: 0 auto;
   display: flex;
@@ -20,5 +22,6 @@
   position: relative;
   height: 50%;
 
-  background-color: black;
+  background: linear-gradient(45deg, #daa520, #cd853f, #daa520);
+  border-radius: 20px;
 }
