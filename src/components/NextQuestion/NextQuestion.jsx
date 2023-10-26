@@ -50,7 +50,6 @@ export const NextQuestion = () => {
         <div>
           {/* Display error message if an option is not selected */}
           {errorMessage && (
-            // This <p> element displays error messages and is configured for screen readers using ARIA attributes. The error message content is dynamically generated and inserted using the "errorMessage" variable.
             <p className="error-message" role="alert" aria-live="assertive">
               {errorMessage}
             </p>

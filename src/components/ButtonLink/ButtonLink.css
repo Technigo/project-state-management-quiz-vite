@@ -1,15 +1,14 @@
+.btn-layout {
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+
 .btn-text {
   font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 0.125rem;
   color: #fff;
-}
-
-.btn-layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
 }
 
 .btn-gradient {
