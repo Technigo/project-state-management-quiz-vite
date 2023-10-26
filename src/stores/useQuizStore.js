@@ -94,7 +94,6 @@ const useQuizStore = create((set) => ({
           question,
           answer: question.options[answerIndex],
           isCorrect: question.correctAnswerIndex === answerIndex,
-          resultText: resultTextArray[0] || resultTextArray[1]
         },
       ]}
     ))
