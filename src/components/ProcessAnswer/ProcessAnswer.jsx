@@ -16,8 +16,60 @@ export const ProcessAnswer = () => {
 
   const [userChoice, setUserChoice] = useState(null);
   const [resultMessage, setResultMessage] = useState("");
+  /*add a "Check Answer" button that displays to the user "you are correct" or "you are incorrect" when they press on it, INSTEAD of having this display instantly when the user clicks the flag.
+    Could the "Check answer" button ONLY appear AFTER the user has made a selection on the radio.
+    for example:
+    User reads answer -> User selects the flag (the flag is selected and outlined pink) -> user then must click "Check Answer" -> THEN display "you are correct" or "you are incorrect" ->
+.   Mikael - summary page*/
+  const [isAnswerChecked, setIsAnswerChecked] = useState(false);
 
-  const CheckAnswer = (event) => {
+
+
+  // const CheckAnswer = (event) => {
+  //   const selectedAnswer = event.target.value.trim();
+  //   setUserChoice(selectedAnswer);
+
+  //   const question = questions[currentQuestionIndex];
+  //   const correctAnswerIndex = question.correctAnswerIndex;
+  //   const correctAnswer = question.options[correctAnswerIndex].trim();
+
+  //   console.log("Selected answer:", selectedAnswer);
+  //   console.log("Correct answer:", correctAnswer);
+
+  //   if (selectedAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+  //     setResultMessage("You are correct!");
+  //   } else {
+  //     setResultMessage("You are incorrect.");
+  //   }
+
+  //   submitAnswer(question.id, question.options.indexOf(selectedAnswer));
+  // };
+
+  //commented the StartAgain function out as the next question button now calls the restart function declared in the useQuizStore. Could be deleted?
+  // const StartAgain = () => {
+  //   setUserChoice(null);
+  //   setResultMessage("");
+  // };
+
+  // mikael edit
+  // const NextQuestion = () => {
+  //   const selectedAnswer = answers[currentQuestionIndex];
+  //   const question = questions[currentQuestionIndex];
+  //   const correctAnswerIndex = question.correctAnswerIndex;
+  //   const correctAnswer = question.options[correctAnswerIndex].trim();
+
+  //   if (selectedAnswer === correctAnswer) {
+  //     setResultMessage("Correct!");
+  //   } else {
+  //     setResultMessage("Incorrect.");
+  //   }
+
+  //   goToNextQuestion();
+  // };
+  //mikael edit end
+
+  //testing 
+  const handleCheckAnswer = (event) => {
     const selectedAnswer = event.target.value.trim();
     setUserChoice(selectedAnswer);
 
@@ -28,23 +80,24 @@ export const ProcessAnswer = () => {
     console.log("Selected answer:", selectedAnswer);
     console.log("Correct answer:", correctAnswer);
 
-    if (selectedAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-      setResultMessage("You are correct!");
-    } else {
-      setResultMessage("You are incorrect.");
+    if (userChoice !== null) {
+      if (userChoice.toLowerCase() === correctAnswer.toLowerCase()) {
+        setResultMessage("You are correct!");
+      } else {
+        setResultMessage("You are incorrect.");
+      }
+      submitAnswer(question.id, question.options.indexOf(selectedAnswer));
+      setIsAnswerChecked(true);
     }
-
-    submitAnswer(question.id, question.options.indexOf(selectedAnswer));
   };
 
-  //commented the StartAgain function out as the next question button now calls the restart function declared in the useQuizStore. Could be deleted?
-  // const StartAgain = () => {
-  //   setUserChoice(null);
-  //   setResultMessage("");
-  // };
+  const handleRadioChange = (event) => {
+    setUserChoice(event.target.value);
+    setResultMessage("");
+    setIsAnswerChecked(false);
+  };
 
-  // mikael edit
-  const NextQuestion = () => {
+  const handleNextQuestion = () => {
     const selectedAnswer = answers[currentQuestionIndex];
     const question = questions[currentQuestionIndex];
     const correctAnswerIndex = question.correctAnswerIndex;
@@ -55,10 +108,11 @@ export const ProcessAnswer = () => {
     } else {
       setResultMessage("Incorrect.");
     }
-
     goToNextQuestion();
+    setUserChoice(null);
+    setResultMessage("");
+    setIsAnswerChecked(false);
   };
-  //mikael edit end
 
   useEffect(() => {
     // Add an event listener when the component mounts
@@ -86,7 +140,8 @@ export const ProcessAnswer = () => {
             <input
               type="radio"
               value="Estonia"
-              onChange={CheckAnswer}
+              // onChange={CheckAnswer}
+              onChange={handleRadioChange}
               checked={userChoice === "Estonia"}
             />
             <img src="/assets/ee.svg" alt="Flag of Estonia" />
@@ -95,7 +150,8 @@ export const ProcessAnswer = () => {
             <input
               type="radio"
               value="Finland"
-              onChange={CheckAnswer}
+              // onChange={CheckAnswer}
+              onChange={handleRadioChange}
               checked={userChoice === "Finland"}
             />
             <img src="/assets/fi.svg" alt="Flag of Finland" />
@@ -104,7 +160,8 @@ export const ProcessAnswer = () => {
             <input
               type="radio"
               value="Indonesia"
-              onChange={CheckAnswer}
+              // onChange={CheckAnswer}
+              onChange={handleRadioChange}
               checked={userChoice === "Indonesia"}
             />
             <img src="/assets/id.svg" alt="Flag of Indonesia" />
@@ -113,15 +170,33 @@ export const ProcessAnswer = () => {
             <input
               type="radio"
               value="Australia"
-              onChange={CheckAnswer}
+              // onChange={CheckAnswer}
+              onChange={handleRadioChange}
               checked={userChoice === "Australia"}
             />
             <img src="/assets/au.svg" alt="Flag of Australia" />
           </label>
         </div>
-        {resultMessage && <p>{resultMessage}</p>}
-        <button onClick={NextQuestion}>Next Question</button>
+        {/* {resultMessage && <p>{resultMessage}</p>}
+        <button onClick={NextQuestion}>Next Question</button> */}
+        {/* {userChoice !== null && (
+          <button onClick={handleCheckAnswer}>Check Answer</button>
+        )} */}
+       
       </div>
+      {/* {isAnswerChecked && <p>{resultMessage}</p>}
+        {!isAnswerChecked && userChoice !== null && (
+          <button onClick={handleNextQuestion}>Next Question</button>
+        )} */}
+
+        <button onClick={handleCheckAnswer}>Check Answer</button>
+
+        {isAnswerChecked && <p>{resultMessage}</p>}
+
+        {userChoice !== null && (
+          <button onClick={handleNextQuestion}>Next Question</button>
+        )}
+
 
       <button onClick={restart}>Restart Quiz</button>
     </div>
