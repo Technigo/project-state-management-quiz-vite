@@ -30,16 +30,17 @@ export const Board = () => {
           >
             <div className="a-question" key={question.id}>
               <p>{question.id}</p>
-              {/* {answers.length > 0 ? (
-                <div className="circle"></div>
-              ) : (
-                <div className="x">❌</div>
-              )} */}
-              {answers.map((answer) => {
-                answer.questionId === question.id && answer.isCorrect === true
-                  ? console.log("CHECK!" + answer.questionId + question.id)
-                  : console.log("TRY AGAIN" + question.id);
-              })}
+
+              {answers.length > 0 &&
+                answers.map((answer) =>
+                  answer.questionId === question.id ? (
+                    answer.isCorrect === true ? (
+                      <div className="circle"></div>
+                    ) : (
+                      <div className="x">❌</div>
+                    )
+                  ) : null
+                )}
             </div>
           </Link>
         ))}
