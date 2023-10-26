@@ -22,11 +22,11 @@ export const NextQuestion = () => {
       useQuizStore.getState().goToNextQuestion();
       setErrorMessage(null);
     } else {
-      // If no answer is selected, set an error message and clear it after 2 seconds
+      // If no answer is selected, set an error message and clear it after 1,5 seconds
       setErrorMessage("Oopsie 👻, choose an option!");
       setTimeout(() => {
         setErrorMessage(null);
-      }, 2000); // 2000 milliseconds = 2 seconds
+      }, 1500); // 1500 milliseconds = 2 seconds
     }
   };
 
