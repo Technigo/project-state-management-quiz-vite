@@ -43,7 +43,7 @@ export const CurrentQuestionZustand = () => {
   return (
     <div className="managed-component">
       {/* Question tilte */}
-      <h1>Question: {question.questionText}</h1>
+      <h1>Question {question.id}: {question.questionText}</h1>
       {/* radio button answers  and check if it is correct, if it is correct, show the correct emoji✅, wrong emoji❌*/}
       <div className="radio-button-wrapper">
         {question.options.map(
@@ -79,7 +79,9 @@ export const CurrentQuestionZustand = () => {
       </div>
       <div className="next-btn-wrapper">
         {currentQuestionIndex + 1 === totalQuestions ? (
-          <button className="summary-btn">
+          <button className="summary-btn" 
+          disabled={selectedAnswer === null}
+          >
             <p>Summary</p>
           </button>
         ) : (
