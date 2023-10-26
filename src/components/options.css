@@ -1,8 +1,16 @@
+.option-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .option {
   display: flex;
   flex-direction: row;
   gap: 2em;
 }
+
 .option-button {
   background-color: #0078d0;
   border: 0;
@@ -41,6 +49,11 @@
   box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
     rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
   transform: scale(1.05);
+}
+
+.result-text h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
 }
 
 @media (min-width: 768px) {

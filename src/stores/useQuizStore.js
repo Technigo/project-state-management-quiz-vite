@@ -54,12 +54,17 @@ const questions = [
   },
 ];
 
+const resultTextArray = ["You absolutely got this!", "Oops, not this time!"];
+
 const useQuizStore = create((set) => ({
   questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
   userAnswer: null,
+  resultTextArray,
+  resultText: "",
+
   setUserAnswer: (answer) => {
     set({ userAnswer: answer });
   },
@@ -89,9 +94,10 @@ const useQuizStore = create((set) => ({
           question,
           answer: question.options[answerIndex],
           isCorrect: question.correctAnswerIndex === answerIndex,
+          resultText: resultTextArray[0] || resultTextArray[1]
         },
-      ],
-    }));
+      ]}
+    ))
   },
 
   goToNextQuestion: () => {
@@ -99,7 +105,11 @@ const useQuizStore = create((set) => ({
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         return { quizOver: true };
       } else {
-        return { currentQuestionIndex: state.currentQuestionIndex + 1 };
+        return { 
+          currentQuestionIndex: state.currentQuestionIndex + 1,
+          userAnswer: null,
+          resultText: ""
+        };
       }
     });
   },
@@ -110,6 +120,7 @@ const useQuizStore = create((set) => ({
       currentQuestionIndex: 0,
       quizOver: false,
       userAnswer: null,
+      resultText: ""
     });
   },
 }));

@@ -18,8 +18,8 @@ export const CurrentQuestionZustand = () => {
   const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
   const question = questions[currentQuestionIndex];
   const handleAnswerSubmission = useQuizStore((state) => state.submitAnswer);
+  const resultTextArray = useQuizStore((state) => state.resultTextArray);
   const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
-  const goToPreviousQuestion = useQuizStore((state) => state.goToPreviousQuestion);
   const restart = useQuizStore((state) => state.restart);
 
   if (showSummary) {
@@ -45,6 +45,7 @@ export const CurrentQuestionZustand = () => {
   const handleOptionSelect = (index) => {
     handleAnswerSubmission(question.id, index);
   };
+
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
 
   const isLastQuestion = currentQuestionIndex === questions.length - 1;
@@ -63,7 +64,7 @@ export const CurrentQuestionZustand = () => {
 
       <h1>Question: {question.questionText}</h1>
       <img src={question.imagesrc} alt="Lake" />
-      <Options options={question.options} onOptionSelect={handleOptionSelect} />
+      <Options options={question.options} onOptionSelect={handleOptionSelect} resultTextArray={resultTextArray} />
       {submitAnswerButton}
       {nextQuestionButton}
     </div>
