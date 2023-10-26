@@ -1,0 +1,24 @@
+.icon {
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  right: 0;
+}
+
+.bar {
+  background-color: #fff;
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.progressBar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 50%;
+
+  background-color: black;
+}
