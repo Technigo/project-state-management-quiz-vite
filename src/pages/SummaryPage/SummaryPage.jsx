@@ -15,11 +15,11 @@ export const SummaryPage = () => {
 
   return (
     <div className="summary-wrapper">
-      <div className="summary-headings">
-        <h1>Quiz Completed!</h1>
+      
+        <h1 className="completed-text">Quiz Completed!</h1>
         {/* Shows the users total score */}
-        <h2>Your Score: {score} / 10</h2>
-      </div>
+        <h2 className="score-text">Your Score: {score} / 10</h2>
+      
       {/* Show the response text that comes from the store */}
       <p className="response-text">{response.text}</p>
       {/* Button to restart the quiz */}

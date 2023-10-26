@@ -99,26 +99,29 @@ export const questions = [
 ];
 
 export const responses = [
-  { score: 0, text: "Boo-hoo! Time to haunt the Halloween library. 👻📚" },
-  { score: 1, text: "Boo-hoo! Time to haunt the Halloween library. 👻📚" },
-  { score: 2, text: "You're on the right track, but a long way to go." },
+  { score: 0, text: "Boo-hoo! You suck 🪦" },
+  { score: 1, text: "Boo-hoo! Time to haunt the Halloween library 👻📚" },
+  { score: 2, text: "Boo-hoo! Time to haunt the Halloween library 👻📚" },
   {
     score: 3,
-    text: "Boo! You can do better with some more Halloween knowledge.",
+    text: "Boo! You can do better with some more Halloween knowledge 👻📚",
   },
   {
     score: 4,
-    text: "You're getting there, but the spirits are not impressed.",
+    text: "You're getting there, but the spirits are not impressed 👻",
   },
-  { score: 5, text: "You might need a witch's brew to improve your score!" },
+  {
+    score: 5,
+    text: "You might need a witch's brew to improve your score! 🧪🧙‍♀️",
+  },
   {
     score: 6,
-    text: "Your Halloween knowledge is in the cauldron, brewing and improving! 🎃📚",
+    text: "Your Halloween knowledge is in the cauldron, brewing and improving! 🎃📚⚗️a",
   },
-  { score: 7, text: "You've got a graveyard of knowledge on Halloween!" },
-  { score: 8, text: "Impressive! You're a Halloween aficionado." },
-  { score: 9, text: "You're so spooky-smart, it's scary!" },
-  { score: 10, text: "You're a Halloween wizard! 🎃✨" },
+  { score: 7, text: "You've got a graveyard of knowledge on Halloween! 🦴🩻🪦" },
+  { score: 8, text: "Impressive! You're a Halloween aficionado 🧛🦇" },
+  { score: 9, text: "You're so spooky-smart, it's scary! 🤓👻" },
+  { score: 10, text: "You're a Halloween wizard! 🫶🎃✨" },
 ];
 
 // This is the main state store for the quiz. It contains the variable "questions", an array empty for the answers, a default index of 0 for the "currentQuestionIndex" and a default state of false for the variable "quizOver"

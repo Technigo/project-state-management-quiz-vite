@@ -6,9 +6,10 @@
   display: flex;
   flex-direction: column;
   gap: 2.75rem;
+  padding-top: 3rem;
 }
 
-h2 {
+.slogan {
   font-size: 20px;
   font-style: italic;
   font-weight: 800;
@@ -23,7 +24,7 @@ h2 {
     gap: 0;
   }
 
-  h2 {
+  .slogan {
     width: 100%;
     margin-bottom: 4rem;
   }
