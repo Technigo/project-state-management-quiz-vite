@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useStore } from "zustand";
+// import { useStore } from "zustand";
 
 
 const Score = ({ correctCount, totalCount }) => {
@@ -21,3 +21,4 @@ Score.propTypes = {
 };
 
 export default Score;
+
