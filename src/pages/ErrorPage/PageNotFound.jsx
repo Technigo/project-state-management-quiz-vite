@@ -2,7 +2,7 @@ import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 import "./ErrorPage.css";
 
 // Pagecomponent that displays an error message if the route isn't one specified in the routes component
-export const ErrorPage = () => {
+export const PageNotFound = () => {
   return (
     <div className="error-page-wrapper">
       <h1>Whoops, something went wrong! 💀</h1>
