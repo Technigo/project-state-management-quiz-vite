@@ -71,6 +71,7 @@ const useQuizStore = create((set) => ({
 
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
+
     set({ userAnswer: answerIndex });
 
     if (!question) {
@@ -86,17 +87,8 @@ const useQuizStore = create((set) => ({
     }
 
     set((state) => ({
-      answers: [
-        ...state.answers,
-        {
-          questionId,
-          answerIndex,
-          question,
-          answer: question.options[answerIndex],
-          isCorrect: question.correctAnswerIndex === answerIndex
-        },
-      ]}
-    ))
+      answers: [...state.answers, question.options[answerIndex]],
+    }))
   },
 
   goToNextQuestion: () => {

@@ -11,7 +11,7 @@ export const SummaryPage = () => {
       {questions.map((question, index) => (
         <div key={question.id}>
           <h3>{question.questionText}</h3>
-          <p>Your Answer: {question.options[answers[index]]}</p>
+          <p>Your Answer: {answers[index]}</p>
           <p>Correct Answer: {question.options[question.correctAnswerIndex]}</p>
         </div>
       ))}
