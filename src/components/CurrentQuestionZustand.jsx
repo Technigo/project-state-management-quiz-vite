@@ -53,13 +53,14 @@ export const CurrentQuestionZustand = () => {
           ) => (
             <label
               className="radio-button-label"
-              htmlFor="radio-btn"
+              htmlFor={`option-${question.id}-${index}`}
               key={option}
             >
               <input
                 type="radio"
                 className="radio-button"
                 name="radio-btn"
+                id={`option-${question.id}-${index}`}
                 value={option}
                 onChange={() => handleAnswerSelection(index)}
                 disabled={selectedAnswer !== null} // Disable the radio buttons after selection
