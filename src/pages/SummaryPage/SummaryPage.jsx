@@ -25,7 +25,6 @@ export const SummaryPage = () => {
       {/* Button to restart the quiz */}
       <ButtonLink
         path="/" // or use 'to' for routing, e.g., "/question-page"
-        className="restart-btn"
         onClick={restartQuiz}
         ariaLabel="Restart the Quiz"
         label="Do the quiz again!"

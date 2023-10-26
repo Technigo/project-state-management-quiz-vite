@@ -12,7 +12,6 @@ export const StartPage = () => {
       {/* Button to start the quiz */}
       <ButtonLink
         path="/question-page"
-        className="startquiz-btn"
         label="Start quiz!"
         ariaLabel="Click to start the quiz"
       />

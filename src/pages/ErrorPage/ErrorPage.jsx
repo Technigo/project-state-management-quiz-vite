@@ -8,7 +8,6 @@ export const ErrorPage = () => {
       <h1>Whoops, something went wrong! 💀</h1>
       <ButtonLink
         path="/"
-        className="errorpage-btn"
         ariaLabel="Back to the startpage"
         label="Go back to the startpage"
       />

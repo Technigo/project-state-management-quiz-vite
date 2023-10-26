@@ -32,7 +32,7 @@ export const CurrentOptions = ({ question, currentQuestionIndex }) => {
     submitAnswer(question.id, index);
 
     // Set focus to the next interactive element after an option is selected.
-    const nextElement = document.querySelector(".next-button");
+    const nextElement = document.querySelector(".next-btn");
     if (nextElement) {
       nextElement.focus();
     }
@@ -54,7 +54,6 @@ export const CurrentOptions = ({ question, currentQuestionIndex }) => {
           type="button"
           onClick={() => handleOptionClick(index)} // Handle a click event when an option is selected.
           onKeyDown={(event) => handleOptionKeyDown(event, index)} // Handle keydown events to allow users to press Enter to select an option.
-          disabled={selectedAnswerIndex !== undefined} // Disable the button if an answer is already selected.
           aria-label={`Select option: ${option}`} // Provide an accessible label for screen readers.
           // Apply a CSS class based on whether the option that is selected is correct or incorrect.
           className={
