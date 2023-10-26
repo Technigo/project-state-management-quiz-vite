@@ -2,12 +2,16 @@ import styles from "./ProcessAnswer.module.css";
 import useQuizStore from "../../stores/useQuizStore";
 import { useState, useEffect } from "react";
 
-
-
 export const ProcessAnswer = () => {
-  
   // mikael edit
-  const { answers, questions, currentQuestionIndex, submitAnswer, goToNextQuestion } = useQuizStore();
+  const {
+    answers,
+    questions,
+    currentQuestionIndex,
+    submitAnswer,
+    restart,
+    goToNextQuestion,
+  } = useQuizStore();
   // mikael edit end
 
   const [userChoice, setUserChoice] = useState(null);
@@ -33,28 +37,28 @@ export const ProcessAnswer = () => {
     submitAnswer(question.id, question.options.indexOf(selectedAnswer));
   };
 
-  
+  //commented the StartAgain function out as the next question button now calls the restart function declared in the useQuizStore. Could be deleted?
+  // const StartAgain = () => {
+  //   setUserChoice(null);
+  //   setResultMessage("");
+  // };
 
-  const StartAgain = () => {
-    setUserChoice(null);
-    setResultMessage("");
+  // mikael edit
+  const NextQuestion = () => {
+    const selectedAnswer = answers[currentQuestionIndex];
+    const question = questions[currentQuestionIndex];
+    const correctAnswerIndex = question.correctAnswerIndex;
+    const correctAnswer = question.options[correctAnswerIndex].trim();
+
+    if (selectedAnswer === correctAnswer) {
+      setResultMessage("Correct!");
+    } else {
+      setResultMessage("Incorrect.");
+    }
+
+    goToNextQuestion();
   };
-// mikael edit
-const NextQuestion = () => {
-  const selectedAnswer = answers[currentQuestionIndex];
-  const question = questions[currentQuestionIndex];
-  const correctAnswerIndex = question.correctAnswerIndex;
-  const correctAnswer = question.options[correctAnswerIndex].trim();
-
-  if (selectedAnswer === correctAnswer) {
-    setResultMessage("Correct!");
-  } else {
-    setResultMessage("Incorrect.");
-  }
-
-  goToNextQuestion();
-};
-//mikael edit end
+  //mikael edit end
 
   useEffect(() => {
     // Add an event listener when the component mounts
@@ -76,10 +80,8 @@ const NextQuestion = () => {
 
   return (
     <div>
-      <p>Process Answer component</p>
       <div className={styles.answerOptionsBox}>
-        
-      <div className={styles.flags}>
+        <div className={styles.flags}>
           <label>
             <input
               type="radio"
@@ -117,103 +119,11 @@ const NextQuestion = () => {
             <img src="/assets/au.svg" alt="Flag of Australia" />
           </label>
         </div>
-        <button onClick={StartAgain}>Start Again!</button>
+        {resultMessage && <p>{resultMessage}</p>}
+        <button onClick={NextQuestion}>Next Question</button>
       </div>
-      {resultMessage && <p>{resultMessage}</p>}
-      {/* // mikael edit */}
-     <button onClick={NextQuestion}>Next</button></div>
-    //  mikael edit end
-    
+
+      <button onClick={restart}>Restart Quiz</button>
+    </div>
   );
-
 };
-
-// import React, { useState, useEffect } from "react";
-// import useQuizStore from "../../stores/useQuizStore"; // Import your custom store
-// import styles from "./ProcessAnswer.module.css";
-// import { Question } from "../Question/Question";
-
-
-// import { Score } from "../Score/Score";
-
-
-// export const ProcessAnswer = () => {
-//   const {
-//     questions,
-//     currentQuestionIndex,
-//     submitAnswer,
-//     restart,
-//   } = useQuizStore(); // Use your custom store
-
-//   const [userChoice, setUserChoice] = useState(null);
-//   const [resultMessage, setResultMessage] = useState("");
-//   const [correctCount, setCorrectCount] = useState(0);
-
-//   const handleAnswer = (selectedAnswer) => {
-//     setUserChoice(selectedAnswer);
-
-//     const question = questions[currentQuestionIndex];
-//     const correctAnswerIndex = question.correctAnswerIndex;
-//     const correctAnswer = question.options[correctAnswerIndex];
-
-//     if (selectedAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim()) {
-//       setResultMessage("You are correct!");
-//       setCorrectCount(correctCount + 1);
-//     } else {
-//       setResultMessage("You are incorrect.");
-//     }
-
-//     submitAnswer(question.id, question.options.indexOf(selectedAnswer));
-//   };
-
-//   const handleNext = () => {
-//     setUserChoice(null);
-//     setResultMessage("");
-//     if (currentQuestionIndex + 1 < questions.length) {
-//       restart();
-//     }
-//   };
-
-//   useEffect(() => {
-//     // Add an event listener when the component mounts
-//     window.addEventListener("beforeunload", (event) => {
-//       // Cancel the event to prevent the browser prompt
-//       event.preventDefault();
-//       // Chrome requires returnValue to be set
-//       event.returnValue = "";
-//     });
-
-//     // Return a cleanup function to remove the event listener when the component unmounts
-//     return () => {
-//       window.removeEventListener("beforeunload", (event) => {
-//         event.preventDefault();
-//         event.returnValue = "";
-//       });
-//     };
-//   }, []); // The empty dependency array ensures this effect only runs on component mount and unmount.
-
-//   const showQuestion = currentQuestionIndex < questions.length;
-
-//   return (
-    
-//     <div>
-//       {showQuestion ? (
-//         <div>
-//           <Question question={questions[currentQuestionIndex]} onAnswer={handleAnswer} />
-//           <button onClick={handleNext}>Next</button>
-//         </div>
-//       ) : (
-//         <div>
-//           <Score correctCount={correctCount} totalCount={questions.length} />
-//           <button onClick={restart}>Start Again!</button>
-//         </div>
-//       )}
-//       {resultMessage && <p>{resultMessage}</p>}
-//     </div>
-//   );
-// };
-
-
-
-
-
