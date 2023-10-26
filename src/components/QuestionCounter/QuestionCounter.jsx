@@ -11,11 +11,6 @@ export const QuestionCounter = ({ totalQuestions }) => {
       useQuizStore.getState().goToNextQuestion();
     }
   };
-  // const handleNext = () => {
-  //   if (currentQuestionIndex < totalQuestions - 1) {
-  //     useQuizStore.setState({ currentQuestionIndex: currentQuestionIndex + 1 });
-  //   }
-  // };
 
   const handleBack = () => {
     if (currentQuestionIndex > 0) {

@@ -1,13 +1,13 @@
 .submit-button {
-  width: 130px;
-  height: 36px;
+  width: 124px;
+  height: 32px;
   flex-shrink: 0;
   border-radius: 25px;
   background: #8c8fb0;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   transition: 0.3s;
   font-family: Arvo;
@@ -18,20 +18,28 @@
   background-color: #7e5fc0;
 }
 
+.message p {
+  font-size: 16px;
+}
+
 /* Tablet styles */
 @media (min-width: 768px) and (max-width: 1024px) {
   .submit-button {
-    font-size: 20px;
+    font-size: 16px;
     width: 147px;
     height: 40px;
+  }
+  .message p {
+    font-size: 16px;
   }
 }
 
 /* Desktop styles */
 @media (min-width: 1025px) {
   .submit-button {
-    font-size: 22px;
-    width: 193px;
-    height: 48px;
+    font-size: 16px;
+    width: 136px;
+    height: 36px;
+    margin-top: 8px;
   }
 }

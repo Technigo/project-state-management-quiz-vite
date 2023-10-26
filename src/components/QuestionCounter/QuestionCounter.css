@@ -11,7 +11,7 @@
 }
 
 .progress-bar {
-  width: 290px;
+  width: 100%;
   background-color: #8c8fb0;
   height: 18px;
   border-radius: 20px;
@@ -79,26 +79,22 @@
 
 /* Desktop styles */
 @media (min-width: 1025px) {
-  .question-counter {
-    font-size: 22px;
-  }
   .progress-bar {
-    width: 920px;
     height: 14px;
     flex-shrink: 0;
   }
   .two-buttons {
     display: flex;
     justify-content: space-between;
-    padding: 25px;
+    width: 100%;
+    padding: 0 15px;
   }
   .previous-button,
   .next-button {
     width: 186px;
     height: 40px;
-    margin-top: 8%;
-    margin-right: 3%;
-    padding: 10px 20px;
+    margin: 20px;
+    padding: 10px;
     font-size: 16px;
   }
 }

@@ -35,7 +35,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .managed-component h1 {
@@ -72,19 +72,16 @@ body {
 /* Tablet styles */
 @media (min-width: 768px) and (max-width: 1024px) {
   .managed-component h1 {
-    font-size: 64px;
-    /* margin-top: 30px;
-    margin-bottom: 0;
-    padding-top: 25px; */
+    font-size: 48px;
   }
 
   .managed-component h2 {
     margin-bottom: 40px;
-    font-size: 48px;
+    font-size: 38px;
     margin-top: 0;
   }
   .managed-component img {
-    width: 200px;
+    width: 150px;
     max-width: 100%;
     height: auto;
   }
@@ -93,21 +90,16 @@ body {
 /* Desktop styles */
 @media (min-width: 1025px) {
   .managed-component h1 {
-    font-size: 5vw;
-    /* margin-bottom: 0;
-    padding-top: 25px;*/
-    margin-top: 40px;
+    font-size: 54px;
+    margin-top: 20px;
   }
   .managed-component h2 {
-    font-size: 48px;
-    margin-bottom: 50px;
-    margin-left: 160px;
+    font-size: 40px;
+    margin-bottom: 34px;
     margin-top: 10px;
-    align-self: flex-start;
   }
   .managed-component img {
     width: 200px;
-
     height: auto;
   }
 }

@@ -3,22 +3,42 @@ import "./SubmitAnswer.css";
 import { useState } from "react";
 
 export const SubmitAnswer = ({ questionId, selectedOption }) => {
+  const questions = useQuizStore((state) => state.questions);
   const submitAnswer = useQuizStore((state) => state.submitAnswer);
   const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
-  const correctAnswerIndex = useQuizStore((state) => state.correctAnswerIndex);
 
+  const [wasLastAnswerCorrect, setWasLastAnswerCorrect] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
 
-  const handleSubmission = (event) => {
-    event.preventDefault();
+  const selectedOptionObj = questions.find((q) => q.id === questionId).options[
+    selectedOption
+  ];
 
-    if (selectedOption === undefined) {
-      console.log("Selected option is undefined");
-      // Handle the case where no option is selected
-      // You can show an error message or handle it as needed
-      return;
+  const handleSubmission = (event) => {
+    event.preventDefault(); // Prevent the form from submitting first
+
+    /*if (selectedOption === undefined) {
+      // Show an alert message to the user if no option has been chosen
+
+      return; // Exit the function early
+    }*/
+
+    // Safeguard against undefined selectedOptionObj
+    if (!selectedOptionObj) {
+      alert("Please select an option before submitting.");
+      return; // Exit the function early
     }
+
     console.log("Submitting answer...");
+
+    if (selectedOptionObj.isCorrect) {
+      console.log("Correct answer selected!");
+      setWasLastAnswerCorrect(true);
+    } else {
+      console.log("Incorrect answer selected!");
+      setWasLastAnswerCorrect(false);
+    }
+
     submitAnswer(questionId, selectedOption);
     goToNextQuestion();
     setShowMessage(true);
@@ -29,12 +49,12 @@ export const SubmitAnswer = ({ questionId, selectedOption }) => {
       <button
         className="submit-button"
         onClick={handleSubmission}
-        type="button">
+        type="submit">
         Submit
       </button>
       {showMessage && (
-        <p>
-          {selectedOption === correctAnswerIndex
+        <p className="message">
+          {wasLastAnswerCorrect
             ? "Woho! You've got the correct answer!"
             : "Oh no, that's unfortunately wrong!"}
         </p>
@@ -42,65 +62,3 @@ export const SubmitAnswer = ({ questionId, selectedOption }) => {
     </div>
   );
 };
-
-// export const SubmitAnswer = ({ questionId, selectedOption }) => {
-//   const correctAnswerIndex = useQuizStore((state) => state.correctAnswerIndex);
-//   const submitAnswer = useQuizStore((state) => state.submitAnswer);
-//   const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
-
-//   const isCorrect = selectedOption === correctAnswerIndex;
-//   const showMessage = isCorrect
-//     ? "Woho! You've got the correct answer!"
-//     : "Oh no, that's unfortunately wrong!";
-
-//   const handleSubmission = (event) => {
-//     event.preventDefault();
-//     submitAnswer(questionId, selectedOption);
-//     goToNextQuestion();
-//   };
-
-//   return (
-//     <div>
-//       <button className="submit-button" onClick={handleSubmission}>
-//         Submit
-//       </button>
-//       {showMessage && <p>{showMessage}</p>}
-//     </div>
-//   );
-// };
-
-// export const SubmitAnswer = ({ questionId, selectedOption }) => {
-//   const submitAnswer = useQuizStore((state) => state.submitAnswer);
-//   const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
-
-//   const handleSubmission = (event) => {
-//     event.preventDefault(); // This will prevent the default form submission behavior
-//     submitAnswer(questionId, selectedOption);
-//     goToNextQuestion();
-//   };
-
-//   let showMessage = false;
-
-//   if (showMessage) {
-//     if (submitAnswer === useQuizStore.correctAnswerIndex) {
-//       showMessage = "Woho! You've got the correct answer!";
-//     } else {
-//       showMessage = "Oh no, that's unfortunately wrong!";
-//     }
-//   }
-
-//   return (
-//     <div>
-//       <button className="submit-button" onClick={handleSubmission}>
-//         Submit
-//       </button>
-//       {showMessage && (
-//         <p>
-//           {submitAnswer === useQuizStore.correctAnswerIndex
-//             ? "Woho! You've got the correct answer!"
-//             : "Oh no, that's unfortunately wrong!"}
-//         </p>
-//       )}
-//     </div>
-//   );
-// };

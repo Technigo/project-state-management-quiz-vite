@@ -9,51 +9,57 @@ const questions = [
   {
     id: 1,
     questionText: "Science: What is the largest planet in our solar system?",
-    options: ["Mars", "Venus", "Earth", "Jupiter"],
-    correctAnswerIndex: 3,
+
+    options: [
+      { text: "Mars", isCorrect: false },
+      { text: "Venus", isCorrect: false },
+      { text: "Earth", isCorrect: false },
+      { text: "Jupiter", isCorrect: true },
+    ],
     image: scienceImage,
   },
   {
     id: 2,
     questionText: "History: Who was the first president of the United States?",
     options: [
-      "Benjamin Franklin",
-      "Thomas Jefferson",
-      "George Washington",
-      "Abraham Lincoln",
+      { text: "Benjamin Franklin", isCorrect: false },
+      { text: "Thomas Jefferson", isCorrect: false },
+      { text: "George Washington", isCorrect: true },
+      { text: "Abraham Lincoln", isCorrect: false },
     ],
-    correctAnswerIndex: 2,
     image: historyImage,
   },
   {
     id: 3,
     questionText: "Geography: Which river is the longest in the world?",
     options: [
-      "Amazon River",
-      "Nile River",
-      "Yangtze River",
-      "Mississippi River",
+      { text: "Amazon River", isCorrect: false },
+      { text: "Nile River", isCorrect: true },
+      { text: "Yangtze River", isCorrect: false },
+      { text: "Mississippi River", isCorrect: false },
     ],
-    correctAnswerIndex: 1,
     image: geographyImage,
   },
   {
     id: 4,
     questionText: "Literature: Who wrote the play Romeo and Juliet?",
     options: [
-      "William Wordsworth",
-      "Charles Dickens",
-      "William Shakespeare",
-      "John Keats",
+      { text: "William Wordsworth", isCorrect: false },
+      { text: "Charles Dickens", isCorrect: false },
+      { text: "William Shakespeare", isCorrect: true },
+      { text: "John Keats", isCorrect: false },
     ],
-    correctAnswerIndex: 2,
     image: literatureImage,
   },
   {
     id: 5,
     questionText: "Sports: Which country hosted the 2016 Summer Olympics?",
-    options: ["Brazil", "China", "Australia", "United Kingdom"],
-    correctAnswerIndex: 0,
+    options: [
+      { text: "Brazil", isCorrect: true },
+      { text: "China", isCorrect: false },
+      { text: "Australia", isCorrect: false },
+      { text: "United Kingdom", isCorrect: false },
+    ],
     image: sportsImage,
   },
 ];
@@ -66,7 +72,7 @@ const useQuizStore = create((set) => ({
   userAnswer: null, // Added this new state variable
   showMessage: false,
 
-  submitAnswer: (questionId, answerIndex) => {
+  submitAnswer: (questionId, selectedOption) => {
     const question = questions.find((q) => q.id === questionId);
 
     if (!question) {
@@ -75,29 +81,33 @@ const useQuizStore = create((set) => ({
       );
     }
 
-    if (question.options[answerIndex] === undefined) {
+    // Convert selectedOption to Number for consistency
+    const answerIndex = Number(selectedOption);
+
+    // logs for debugging
+    console.log("Correct Answer Index:", question.options);
+    console.log("Selected Answer Index:", answerIndex);
+
+    if (!question.options[answerIndex]) {
       throw new Error(
         `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
       );
     }
+
+    const isCorrect = question.options[answerIndex].isCorrect;
 
     set((state) => ({
       answers: [
         ...state.answers,
         {
           questionId,
-          answerIndex,
+          selectedOption,
           question,
           answer: question.options[answerIndex],
-          isCorrect: question.correctAnswerIndex === answerIndex,
+          isCorrect: isCorrect,
         },
       ],
-    }));
-    set((state) => ({
-      ...state,
-      userAnswer: state.questions.find((q) => q.id === questionId).options[
-        answerIndex
-      ],
+      userAnswer: question.options[selectedOption],
       showMessage: true,
     }));
   },

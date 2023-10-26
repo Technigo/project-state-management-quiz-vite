@@ -1,5 +1,4 @@
 import useQuizStore from "../../stores/useQuizStore";
-import "./Restart.css";
 
 export const Restart = () => {
   const restartQuiz = useQuizStore((state) => state.restart);
