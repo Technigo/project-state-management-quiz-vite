@@ -2,6 +2,8 @@ import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand/Curr
 import { Header } from "./components/Header/Header";
 import { ProcessAnswer } from "./components/ProcessAnswer/ProcessAnswer";
 import { QuestionCounter } from "./components/QuestionCounter/QuestionCounter";
+import { Quiz } from "./components/Quiz/Quiz"; // Note the relative path and filename
+
 
 export const App = () => {
   return (
@@ -10,6 +12,7 @@ export const App = () => {
       <CurrentQuestionZustand />
       <QuestionCounter />
       <ProcessAnswer />
+      <Quiz />
     </div>
   );
 };

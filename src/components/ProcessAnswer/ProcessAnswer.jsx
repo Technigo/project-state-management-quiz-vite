@@ -1,6 +1,8 @@
 import styles from "./ProcessAnswer.module.css";
 import useQuizStore from "../../stores/useQuizStore";
 import { useState, useEffect } from "react";
+//import { QuizSummary } from "./QuizSummary";
+
 
 export const ProcessAnswer = () => {
   // mikael edit
