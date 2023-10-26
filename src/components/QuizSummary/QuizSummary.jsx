@@ -2,7 +2,6 @@
 // component created by Mikael
 import useQuizStore from "../../stores/useQuizStore";
 import styles from "./QuizSummary.module.css";
-import Score from "../Score/Score";
 
 export const QuizSummary = () => {
   const { answers, questions, restart } = useQuizStore();
