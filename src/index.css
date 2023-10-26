@@ -40,8 +40,9 @@ body {
   background-position: center;
   /* For mobile, becuase by default background is white which you can see at the top of the device */
   background-color: #06191f;
-  height: 100vh;
   position: relative;
+  height: 100vh;
+  overflow: hidden; /* Hide body overflow to prevent scrollbars */
 }
 
 /*---------- LAYOUT ----------*/
