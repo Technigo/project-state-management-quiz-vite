@@ -25,7 +25,7 @@ export const Questions = ({ param }) => {
 */
 
   const questions = useQuestions((state) => state.questions);
-  const question = questions[param];
+  const question = questions[param-1];
   const qImageURL = question.qImage;
   const qOptions = question.options;
 
