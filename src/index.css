@@ -41,15 +41,13 @@ body {
   /* For mobile, becuase by default background is white which you can see at the top of the device */
   background-color: #06191f;
   height: 100vh;
-}
-
-/*---------- REUSABLE CSS CLASSES ----------*/
-/*---------- LAYOUT ----------*/
-.main-wrapper {
-  margin: 0 1rem;
   position: relative;
 }
 
-.questions-card {
-  margin: auto;
+/*---------- LAYOUT ----------*/
+.main-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

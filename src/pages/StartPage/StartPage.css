@@ -1,12 +1,11 @@
 .start-game-wrapper {
   max-width: 590px;
-  margin: 0 auto;
   color: #fff;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 2.75rem;
-  padding-top: 3rem;
+}
+
+.title img {
+  min-width: 300px;
 }
 
 .slogan {
@@ -15,7 +14,7 @@
   font-weight: 800;
   letter-spacing: 1px;
   width: 13rem;
-  margin: auto;
+  margin: 1rem auto 4rem;
 }
 
 /* For medium devices */
@@ -24,8 +23,12 @@
     gap: 0;
   }
 
+  .title img {
+    max-width: 500px;
+  }
+
   .slogan {
     width: 100%;
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
   }
 }

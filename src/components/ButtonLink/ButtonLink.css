@@ -7,9 +7,9 @@
 
 .btn-layout {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  align-items: center;
+  margin: auto;
 }
 
 .btn-gradient {
@@ -27,7 +27,7 @@
   transition: 1s;
   background-size: 200% auto;
   padding: 1rem 2rem;
-  min-width: 206px;
+  min-width: 13rem;
 }
 
 .btn-gradient:hover {
