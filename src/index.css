@@ -3,9 +3,6 @@
 
 /*---------- CSS VARIABLES ----------*/
 :root {
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -35,6 +32,7 @@ button {
   font-family: Montserrat;
 }
 
+/* Sets the background for the entire application */
 body {
   background-image: url(/trees-background.png);
   background-repeat: no-repeat;
@@ -43,7 +41,6 @@ body {
 }
 
 /*---------- REUSABLE CSS CLASSES ----------*/
-
 /*---------- LAYOUT ----------*/
 .main-wrapper {
   margin: 0 1rem;
@@ -53,14 +50,4 @@ body {
 
 .questions-card {
   margin: auto;
-}
-
-/*---------- BREAKPOINTS ----------*/
-
-/* For large devices */
-@media (min-width: 1024px) {
-}
-
-/* For medium devices */
-@media (min-width: 744px) {
 }

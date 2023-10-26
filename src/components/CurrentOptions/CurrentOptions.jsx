@@ -67,9 +67,11 @@ export const CurrentOptions = ({ question, currentQuestionIndex }) => {
         >
           {option}
           {/* Use conditional rendering to display icons based on the answer correctness */}
+          {/* If the answer is correct, display a checkmark. */}
           {isAnswerCorrect && selectedAnswerIndex === index && (
             <GoCheckCircleFill className="correct-icon" />
           )}
+          {/* If the answer is incorrect, display a X. */}
           {!isAnswerCorrect && selectedAnswerIndex === index && (
             <AiFillCloseCircle className="incorrect-icon" />
           )}

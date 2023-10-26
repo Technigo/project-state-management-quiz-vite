@@ -5,12 +5,11 @@ import { routes } from "./routes/routes";
 export const App = () => {
   return (
     <BrowserRouter>
-        {/* <QuestionPage /> */}
-        {/* The Routes component renders the defined routes in the application. 
+      {/* The Routes component renders the defined routes in the application. 
            The 'routes' variable contains the route configuration. */}
-        <main className="main-wrapper">
-          <Routes>{routes}</Routes>
-        </main>
+      <main className="main-wrapper">
+        <Routes>{routes}</Routes>
+      </main>
     </BrowserRouter>
   );
 };

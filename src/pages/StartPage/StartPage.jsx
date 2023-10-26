@@ -1,6 +1,7 @@
 import "./StartPage.css";
 import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 
+// Pagecomponent that displays the startpage
 export const StartPage = () => {
   return (
     <div className="start-game-wrapper">

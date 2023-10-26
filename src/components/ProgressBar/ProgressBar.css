@@ -8,6 +8,7 @@
   gap: 0.5rem;
 }
 
+/* Styling for the entire progress bar */
 .progress-bar {
   border-radius: 6rem;
   background: rgba(255, 255, 255, 0.5);
@@ -16,11 +17,13 @@
   display: flex;
 }
 
+/* Styling for the part of the progressbar that expands when you go to the next question */
 .bar {
   height: 100%;
   width: 2rem;
   border-radius: 6rem;
   transition: width 0.7s;
   border: 1px solid #431c52;
+  /* Adds a linear gradient to the bar */
   background: linear-gradient(90deg, #ff9033 0%, #c1405a 100%);
 }
