@@ -15,7 +15,9 @@ export const App = () => {
           <QuizMultichoise />
         </form>
       </section>
-      <ProgressBar />
+      <div className="progressBar">
+        <ProgressBar />
+      </div>
     </div>
   );
 };
