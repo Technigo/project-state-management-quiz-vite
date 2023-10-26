@@ -1,7 +1,7 @@
 import { useQuizStore } from "../../stores/useQuizStore";
-import "./CurrentOptions.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { GoCheckCircleFill } from "react-icons/go";
+import "./CurrentOptions.css";
 
 export const CurrentOptions = ({ question, currentQuestionIndex }) => {
   // Get the available options.

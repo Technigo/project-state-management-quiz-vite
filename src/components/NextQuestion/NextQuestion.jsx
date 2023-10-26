@@ -1,8 +1,8 @@
 import { useQuizStore } from "../../stores/useQuizStore";
 import { useState } from "react";
-import "./nextQuestion.css";
 import { BiSolidChevronRight } from "react-icons/bi";
 import { ButtonLink } from "../ButtonLink/ButtonLink";
+import "./nextQuestion.css";
 
 export const NextQuestion = () => {
   const [errorMessage, setErrorMessage] = useState(null); // State variable for error message

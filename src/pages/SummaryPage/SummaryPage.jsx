@@ -1,6 +1,6 @@
-import "./SummaryPage.css";
 import { useQuizStore } from "../../stores/useQuizStore";
 import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
+import "./SummaryPage.css";
 
 export const SummaryPage = () => {
   // Gets the score and saves it in a variable named score

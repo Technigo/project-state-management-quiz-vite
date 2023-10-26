@@ -99,12 +99,10 @@ export const questions = [
 ];
 
 export const responses = [
-  { score: 0, text: "Boo-hoo! You suck 🪦" },
+  { score: 0, text: "Boo-hoo! You suck at this spooky quiz🪦" },
   { score: 1, text: "Boo-hoo! Time to haunt the Halloween library 👻📚" },
   { score: 2, text: "Boo-hoo! Time to haunt the Halloween library 👻📚" },
-  {
-    score: 3,
-    text: "Boo! You can do better with some more Halloween knowledge 👻📚",
+  { score: 3, text: "Boo! You can do better with some more Halloween knowledge 👻📚",
   },
   {
     score: 4,

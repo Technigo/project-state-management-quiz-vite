@@ -1,5 +1,5 @@
-import "./ButtonLink.css";
 import { Link } from "react-router-dom";
+import "./ButtonLink.css";
 
 // Component for the button-element, utilizes the Link-component from react-router-dom
 export const ButtonLink = ({ path, onClick, label, className, ariaLabel }) => {

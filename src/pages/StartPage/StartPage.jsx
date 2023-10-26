@@ -1,5 +1,5 @@
-import "./StartPage.css";
 import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
+import "./StartPage.css";
 
 // Pagecomponent that displays the startpage
 export const StartPage = () => {
