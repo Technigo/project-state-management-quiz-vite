@@ -5,3 +5,11 @@
 .quizMultichoise {
     padding: 30px;
 }
+
+.levelWand {
+    width: 40px;
+}
+
+.levelText {
+    color: white;
+}
