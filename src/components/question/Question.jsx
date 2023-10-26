@@ -1,4 +1,7 @@
 import Confetti from 'react-confetti';
+import useSound from 'use-sound';
+import right from '../../assets/right.mp3'
+import wrong from '../../assets/wrong.mp3'
 import useQuizStore from "../../stores/useQuizStore";
 import Button from "../button/Button";
 import Card from "../card/Card";
@@ -6,6 +9,9 @@ import Title from "../title/Title";
 
 // Creating the Question component
 const Question = () => {
+    const [playRight] = useSound(right)
+    const [playWrong] = useSound(wrong)
+
     // Accessing necessary state and actions using custom hook
     const questions = useQuizStore((state) => state.questions); // Array of questions
     const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion); // Function to go to the next question
@@ -52,7 +58,14 @@ const Question = () => {
                     {currentQuestion.options.map((option, index) => (
                         <Button
                             key={index}
-                            onClick={() => answerCurrentQuestion(index)}
+                            onClick={() => {
+                                answerCurrentQuestion(index);
+                                if (index === currentQuestion.correctAnswerIndex) {
+                                    playRight()
+                                } else {
+                                    playWrong()
+                                }
+                            }}
                             disabled={currentQuestion.givenAnswerIndex !== null}
                             className={`border-2 text-gray-900 ${getQuestionBackgroundColor(index)}`}
                         >
