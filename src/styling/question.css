@@ -1,7 +1,7 @@
 .managed-component {
     width: 100%;
     height: 600px;
-    background: rgb(17, 32, 38, 0.9);
+    background: rgb(17, 32, 38, 0.9); 
     padding: 3rem;
     color: rgb(242, 232, 182);
     display: flex;
@@ -26,8 +26,6 @@
     display: flex;
     align-items: center;
 }
-
-
 
 .radio-button-label input[type="radio"] {
     accent-color: rgb(17, 32, 38);
@@ -58,7 +56,7 @@
 
 .progress-bar::-webkit-progress-value {
     /* Change the progress bar fill color for WebKit browsers (Chrome, Safari) */
-    background: #da5525;
+    background: rgb(218, 85, 37);
     border-radius: 10px;
 }
 
@@ -76,13 +74,22 @@
 }
 
 /* button */
-.next-btn-wrapper button {
+
+ button {
     background: rgb(242, 232, 182);
+    box-shadow: 2px 2px 3px rgba(17, 32, 38, 0.9);
     color: rgb(17, 32, 38);
+    font-weight: bold;
     border-radius: 10px;
     border: none;
     width: 10rem;
 }
+
+.next-btn-wrapper button:hover {
+    cursor: pointer;
+    background: rgb(247, 241, 212);
+  }
+
 
 .next-btn-wrapper button p {
     padding: 3px 0;
