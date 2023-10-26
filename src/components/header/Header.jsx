@@ -1,6 +1,8 @@
-import useQuizStore from "../../stores/useQuizStore"; // Custom hook for accessing quiz state
+import useQuizStore from "../../stores/useQuizStore";
 
+// Defining a functional component named Header
 const Header = () => {
+    // Accessing 'questions' and 'currentQuestionIndex' from the quiz state using the custom hook
     const questions = useQuizStore((state) => state.questions);
     const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
 
@@ -14,4 +16,4 @@ const Header = () => {
     );
 }
 
-export default Header; // Exporting the Header component
+export default Header;

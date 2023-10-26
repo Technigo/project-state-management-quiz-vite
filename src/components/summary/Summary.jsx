@@ -1,4 +1,3 @@
-// Importing custom hooks and components
 import useQuizStore from "../../stores/useQuizStore"; // Custom hook for accessing quiz state
 import Button from "../button/Button"; // Custom Button component
 import Card from "../card/Card"; // Custom Card component
@@ -29,4 +28,4 @@ const Summary = () => {
     );
 };
 
-export default Summary; // Exporting the Summary component
+export default Summary;
