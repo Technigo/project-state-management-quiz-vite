@@ -1,5 +1,6 @@
-.a-question {
+.the-question {
   position: relative;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   place-content: center;
@@ -8,28 +9,35 @@
 
 .question-text {
   margin: 0 0 20px 0;
+  justify-content: center;
+  display: flex;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif; /* Change to something fun */
 }
 
 .an-image {
   width: 100%;
-  height: 100%;
+  height: 80vh;
   object-fit: cover;
 }
 
 .timer-display {
-  font-size: 16px;
-  color: grey;
+  font-size: 30px;
+  color: red;
   position: absolute;
   right: 15px;
   top: 5px;
   z-index: 1;
+  margin-right: 20px;
 }
 
 .the-answer-options {
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 5px;
+  gap: 10px;
+  margin: 200px 0 100px 0;
+  align-items: center;
 }
 .the-answer-options button {
   align-self: center;

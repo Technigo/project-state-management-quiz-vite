@@ -25,11 +25,11 @@ export const Questions = ({ param }) => {
 */
 
   const questions = useQuestions((state) => state.questions);
-  const question = questions[param - 1];
+  const question = questions[param];
   const qImageURL = question.qImage;
   const qOptions = question.options;
 
-  const timerInterval = 2000;
+  const timerInterval = 5000;
   const flipCard = () => {
     setTimeout(() => {
       setShowImage(!showImage);
@@ -43,7 +43,7 @@ export const Questions = ({ param }) => {
   }
 
   return (
-    <div className="a-question">
+    <div className="the-question">
       {showImage && (
         <>
           <img

@@ -33,5 +33,5 @@ export const Timer = ({ time }) => {
   let minutes = displayTime.minutes.toString().padStart(2, "0");
   let seconds = displayTime.seconds.toString().padStart(2, "0");
 
-  return <p className="timer-display">{`${minutes}:${seconds}`}</p>;
+  return <p className="timer-display">{`⏱️ ${minutes}:${seconds}`}</p>;
 };
