@@ -23,12 +23,12 @@ const Question = () => {
 
         if (index === currentQuestion.givenAnswerIndex) {
             return currentQuestion.givenAnswerIndex === currentQuestion.correctAnswerIndex
-                ? "bg-emerald-600 border-emerald-600" // Green background for correct answer
+                ? "bg-emerald-600 text-emerald-100 border-emerald-600" // Green background for correct answer
                 : "bg-red-500 border-red-500 text-red-100"; // Red background for incorrect answer
         }
 
         return index === currentQuestion.correctAnswerIndex
-            ? "bg-emerald-600 border-emerald-600" // Green background for correct answer (if not selected)
+            ? "bg-emerald-600 text-emerald-100 border-emerald-600" // Green background for correct answer (if not selected)
             : "bg-none border-slate-950"; // Default background for other options
     }
 

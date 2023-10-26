@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Defining a functional component named Title that accepts 'children' as a prop
 const Title = ({ children }) => {
     return (

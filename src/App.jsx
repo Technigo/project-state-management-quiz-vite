@@ -8,7 +8,7 @@ export const App = () => {
     const hasCompleted = useQuizStore((state) => state.hasCompleted);
 
     return (
-        <div className="max-w-lg mx-auto px-4 py-4">
+        <div className="max-w-lg mx-auto px-4 py-16">
             <Header />
             {/* Conditional rendering based on quiz completion */}
             {!hasCompleted && (

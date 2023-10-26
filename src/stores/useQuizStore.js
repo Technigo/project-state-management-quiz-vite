@@ -1,10 +1,9 @@
 import { create } from "zustand";
 
-
 const initialQuestions = [
     {
         text: "When is the fermented herring premiere in 2024?",
-        image: "src/assets/QuizGame_5.jpg",
+        image: "/img/5.jpg",
         options: [
             "July 1",
             "August 10",
@@ -17,7 +16,7 @@ const initialQuestions = [
     },
     {
         text: "A significant holiday in Sweden is Midsummer. Midsummer night was associated with various supernatural beliefs. What was considered health-promoting?",
-        image: "src/assets/QuizGame_3.jpg",
+        image: "/img/3.jpg",
         options: [
             "Wearing a crown of thorns",
             "Climbing a tree at midnight",
@@ -30,7 +29,7 @@ const initialQuestions = [
     },
     {
         text: "Astrid Lindgren is one of Sweden's most famous authors of all time. However, during World War II, she had a top-secret task, what was it?",
-        image: "src/assets/QuizGame_7.jpg",
+        image: "/img/7.jpg",
         options: [
             "Opening mail and censoring information that was deemed potentially revealing about the Swedish defense.",
             "Coordinating espionage missions",
@@ -43,7 +42,7 @@ const initialQuestions = [
     },
     {
         text: "When is the first time meatballs are mentioned in Swedish history?",
-        image: "src/assets/QuizGame_2.jpg",
+        image: "/img/2.jpg",
         options: [
             "In a royal decree from 1605",
             "In Kajsa Warg's cookbook from 1754",
@@ -56,7 +55,7 @@ const initialQuestions = [
     },
     {
         text: "How many cars does the king own?",
-        image: "src/assets/QuizGame_10.jpg",
+        image: "/img/10.jpg",
         options: [
             "5 cars",
             "2 cars",

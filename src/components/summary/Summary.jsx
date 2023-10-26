@@ -1,3 +1,4 @@
+import Confetti from "react-confetti";
 import useQuizStore from "../../stores/useQuizStore"; // Custom hook for accessing quiz state
 import Button from "../button/Button"; // Custom Button component
 import Card from "../card/Card"; // Custom Card component
@@ -14,9 +15,17 @@ const Summary = () => {
 
     return (
         <>
+            {/* If you answered all the questions correctly it will return confetti. */}
+            {score === questions.length && (
+                <Confetti />
+            )}
             <Card>
-                <Title>Summary</Title>
-                <p className="text-gray-900 font-semibold">{`You scored ${score} out of a possible ${questions.length}. Good job!`}</p>
+                <img
+                    alt="A picture of the king of Sweden."
+                    src="/img/11.jpg"
+                    className="rounded-full h-24 w-24 object-cover mx-auto mb-8"
+                />
+                <p className="text-gray-900 font-semibold mb-8">{`You scored ${score} out of a possible ${questions.length}. Good job!`}</p>
             </Card>
             <Button
                 onClick={restart}
