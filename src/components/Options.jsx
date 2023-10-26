@@ -12,14 +12,14 @@ export const Options = ({ options, onOptionSelect }) => {
   const isCorrect = userAnswer === correctAnswerIndex;
 
   return (
-    <div>
+    <div className="option">
       {options.map((option, index) => (
         <button
           key={index}
           onClick={() => onOptionSelect(index)}
-          className={
+          className={`option-button ${
             userAnswer === index ? (isCorrect ? "correct" : "incorrect") : ""
-          }
+          }`}
         >
           {option}
         </button>
