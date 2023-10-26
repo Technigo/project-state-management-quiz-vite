@@ -6,57 +6,64 @@ const useQuizStore = create((set) => ({
   currentQuestionIndex: 0,
   answers: [],
   quizOver: false,
-questions : [
-  {
-    id: 1,
-    questionText:
-      "Uluru, The Great Barrier Reef, and Mount Kosciuszko, are found in which country?",
-    options: ["Estonia", "Finland", "Indonesia", "Australia"],
-    correctAnswerIndex: 3,
-  },
-  {
-    id: 2,
-    questionText: "Which country is known for its love of technology and once declared internet access a basic human right, ensuring that even a squirrel in the forest can livestream its hoarding activities?",
-    options: ["Estonia", "Finland", "Indonesia", "Australia"],
-    correctAnswerIndex: 0,
-  },
-  {
-    id: 3,
-    questionText: "put new Question 3 here!",
-    options: ["Estonia", "Finland", "Indonesia", "Australia"],
-    correctAnswerIndex: 2,
-  },
-  {
-    id: 4,
-    questionText: "put new Question 4 here!",
-    options: ["Estonia", "Finland", "Indonesia", "Australia"],
-    correctAnswerIndex: 2,
-  },
-  {
-    id: 5,
-    questionText: "put new Question 5 here!",
-    options: ["Estonia", "Finland", "Indonesia", "Australia"],
-    correctAnswerIndex: 2,
-  },
-],
-
-
+  questions: [
+    {
+      id: 1,
+      questionText:
+        "Uluru, The Great Barrier Reef, and Mount Kosciuszko, are found in which country?",
+      options: ["Estonia", "Finland", "Indonesia", "Australia"],
+      correctAnswerIndex: 3, //correct answer for Q1 is Australia
+    },
+    {
+      id: 2,
+      questionText:
+        "Which country is known for its love of technology and once declared internet access a basic human right, ensuring that even a squirrel in the forest can livestream its hoarding activities?",
+      options: ["Estonia", "Finland", "Indonesia", "Australia"],
+      correctAnswerIndex: 0, //correct answer for Q2 is Estonia
+    },
+    {
+      id: 3,
+      questionText: "Nasi Goreng is a popular dish is which country?",
+      options: ["Estonia", "Finland", "Indonesia", "Australia"],
+      correctAnswerIndex: 2, //correct answer for Q3 is Indonesia
+    },
+    {
+      id: 4,
+      questionText: "put new Question 4 here!",
+      options: ["Estonia", "Finland", "Indonesia", "Australia"],
+      correctAnswerIndex: 2, //correct answer for Q4 is Finland
+    },
+    {
+      id: 5,
+      questionText: "Komodo Dragons can only be found in which country?",
+      options: ["Estonia", "Finland", "Indonesia", "Australia"],
+      correctAnswerIndex: 2, //correct answer for Q5 is Indonesia
+    },
+  ],
 
   // This function takes a question id and an answer index, validates them, and then updates the answers array with the user's answer.
   submitAnswer: (answer) =>
-  set((state) => ({
-    answers: [...state.answers, answer],
-  })),
+    set((state) => ({
+      answers: [...state.answers, answer],
+    })),
 
+  goToNextQuestion: () =>
+    set((state) => {
+      if (state.currentQuestionIndex + 1 === state.questions.length) {
+        return { quizOver: true };
+      } else {
+        return { currentQuestionIndex: state.currentQuestionIndex + 1 };
+      }
+    }),
 
-goToNextQuestion: () =>
-  set((state) => {
-    if (state.currentQuestionIndex + 1 === state.questions.length) {
-      return { quizOver: true };
-    } else {
-      return { currentQuestionIndex: state.currentQuestionIndex + 1 };
-    }
-  }),
+  //restart quiz - r-eadded from starter code by Beckie for the restart quiz button
+  restart: () => {
+    set({
+      answers: [],
+      currentQuestionIndex: 0,
+      quizOver: false,
+    });
+  },
 }));
 
 // The useQuizStore is exported for use in other parts of the application.

@@ -8,8 +8,8 @@ export const App = () => {
     <div>
       <Header />
       <CurrentQuestionZustand />
-      <ProcessAnswer />
       <QuestionCounter />
+      <ProcessAnswer />
     </div>
   );
 };
