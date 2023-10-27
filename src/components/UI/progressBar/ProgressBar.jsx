@@ -16,7 +16,7 @@ export const ProgressBar = () => {
     <>
       <div className={styles.num}>
         <p>
-          {currentQuestionIndex} / {questions.length}
+          {currentQuestionIndex + 1} / {questions.length}
         </p>
       </div>
       <div className={styles.bar}>
