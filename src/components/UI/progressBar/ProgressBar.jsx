@@ -10,7 +10,8 @@ export const ProgressBar = () => {
     }))
   );
 
-  const currentPosition = (currentQuestionIndex + 1 / questions.length) * 100;
+  console.log(currentQuestionIndex, questions.length);
+  const currentPosition = ((currentQuestionIndex + 1) / questions.length) * 100;
 
   return (
     <>
