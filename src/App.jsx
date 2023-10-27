@@ -11,7 +11,7 @@ import useQuizStore from "./stores/useQuizStore";
 export const App = () => {
   const startQuiz = useQuizStore((state) => state.startQuiz);
   const quizOver = useQuizStore((state) => state.quizOver);
-  console.log(startQuiz, quizOver);
+  //console.log(startQuiz, quizOver);
   return (
     <div className="layout_wrapper">
       {!startQuiz && (

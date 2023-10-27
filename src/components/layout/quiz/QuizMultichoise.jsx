@@ -1,27 +1,24 @@
-//I have added "TODO" but also comments so that I will remember why I structured the code like this. They do not need to stay when we hand in. *Elba
-
 import useQuizStore from "../../../stores/useQuizStore";
 import { AllText } from "../../UI/text/AllText";
 import style from "./QuizQandA.module.css";
 
 export const QuizMultichoise = () => {
 
-    // Retrieve the list of questions from our state/store (initialized with data from data.js).
     const questions = useQuizStore(state => state.questions);
-
-    // We get the current position (index) of the question that is being displayed. See useQuizStore.
     const currentQuestionIndex = useQuizStore(state => state.currentQuestionIndex);
-
-    // Wer use the currentQuestionIndex to retrieve the active question from our list.
     const currentQuestion = questions[currentQuestionIndex];
 
     //Added these 3 const to be able to display the right answer *Elin
-    const correctAnswerIndex = questions.correctAnswerIndex;
-console.log("correct:", correctAnswerIndex);
+    const correctAnswerIndex = currentQuestion.correctAnswerIndex;
+    //console.log("correct:", correctAnswerIndex);
+    const selectedAnswerIndex = useQuizStore((state) => state.answers[currentQuestionIndex]?.answerIndex);
+    const isAnswerCorrect = useQuizStore((state) => state.answers[currentQuestionIndex]?.isCorrect);
 
-const selectedAnswerIndex = useQuizStore((state) => state.answers[currentQuestionIndex]?.answerIndex);
-
-const isAnswerCorrect = useQuizStore((state) => state.answers[currentQuestionIndex]?.isCorrect); //end of my consts *Elin
+    const handleOptionClick = (index) => {
+        //console.log("Option clicked:", index);
+        if (selectedAnswerIndex !== undefined) return;
+        useQuizStore.getState().submitAnswer(currentQuestion.id, index);
+    };
 
     // Safety check: Ensure the current question exists, if not, display an error.
     if (!currentQuestion) {
@@ -29,46 +26,36 @@ const isAnswerCorrect = useQuizStore((state) => state.answers[currentQuestionInd
     }
 
     return (
-        <div>
+        <>
             <div className={style.quizMultichoise}>
                 <AllText header="ANSWER OPTIONS:" />
                 {/* Display each answer option for the current question. */}
                 {currentQuestion.options.map((option, index) => (
-                
-<AllText>
-    <button 
-    key={index} 
-    regularText={option}
-    type="button"
-    onClick={() => handleOptionClick(index)}
-    classname={
-        selectedAnswerIndex === index
-        ? isAnswerCorrect
-            ? "correct" //correct or incorrect class showing depending on if answer is correct or not *Elin
-            : "incorrect"
-            :
-            index === correctAnswerIndex && selectedAnswerIndex !== undefined
-            ? "correct" 
-            : ""
-    }
-    >
-    {questions.options}
-    </button>
-    </AllText>
-    //not displaying answer options right now. Remember to start here!! <-----
 
+                    <button
+                        key={index}
+                        type="button"
+                        onClick={() => handleOptionClick(index)}
 
-                /*old code ---------------
-                <AllText key={index} regularText={option} />*/
+                        className={`${style.ButtonNext} ${selectedAnswerIndex === index
+                            ? isAnswerCorrect
+                                ? style.correct
+                                : style.incorrect
+                            :
+                            index === correctAnswerIndex && selectedAnswerIndex !== undefined
+                                ? style.correct
+                                : ""
+                            }`
+                        } >
+                        {option}
+                    </button>
 
-                    // TODO: Elin, I think you can add buttons here for each option. 
-                    // Please add some way to check the selected option against the correct answer when clicked. *Elba
                 ))}
             </div>
             <div className={style.levelContainer}>
                 <span className={style.levelText}>Level: </span>
                 <img className={style.levelWand} src={currentQuestion.questionLevel} alt="Question Level" />
             </div>
-        </div>
+        </>
     );
 };

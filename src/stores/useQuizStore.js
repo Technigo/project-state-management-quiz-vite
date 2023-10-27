@@ -10,6 +10,7 @@ const useQuizStore = create((set) => ({
   finishQuiz: false,
 
   submitAnswer: (questionId, answerIndex) => {
+    //console.log("Submitting answer:", questionId, answerIndex);
     const question = questions.find((q) => q.id === questionId);
 
     if (!question) {

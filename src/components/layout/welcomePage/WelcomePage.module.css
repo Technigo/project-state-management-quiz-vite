@@ -31,7 +31,6 @@
     color: #ffcc66;
     /* backupcolor older web browser */
     background-image: linear-gradient(to bottom, #ffcc66, #000);
-    /* Gradient fra gull til svart */
     -webkit-background-clip: text;
     color: transparent;
     margin-top: 0px;

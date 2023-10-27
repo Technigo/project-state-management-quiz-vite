@@ -13,3 +13,13 @@
 .levelText {
     color: white;
 }
+
+.correct {
+    background-color: rgb(22, 234, 22);
+    color: white;
+}
+
+.incorrect {
+    background-color: hotpink;
+    color: white;
+}
