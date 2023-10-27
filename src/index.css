@@ -51,11 +51,8 @@ body::before {
 
 /*FOR STYLING THE WHOLE PAGE, CLASS IS IN APP*/
 .layout_wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  gap: 30px;
+  display: grid;
+  justify-content: center;
 }
 
 /*FOR STYLING THE QUESTION-BOX, CLASS IS IN APP*/
@@ -83,6 +80,7 @@ body::before {
 
 .progressBar {
   max-width: 800px;
+  margin: 0 auto;
 }
 
 
