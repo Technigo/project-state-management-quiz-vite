@@ -12,7 +12,7 @@ place-content: center;
 margin: 0 0 20px 0;
 justify-content: center;
 display: flex;
-font-size: 50px;
+font-size: 20px;
 font-family: Georgia, "Times New Roman", Times, serif; /* Change to something fun */
 }
 
@@ -37,26 +37,13 @@ margin-right: 20px;
 }
 
 .the-answer-options {
-  display: grid;
-  gap: 40px;
-  font-size: 200%;
-  margin: 200px 0 100px 0;
-  align-items: center;
-  justify-content: center;
-  grid-template-areas: "sidebar main";
+display: flex;
+flex-direction: column;
+align-items: start;
+gap: 10px;
+margin: 200px 0 100px 0;
+align-items: center;
 }
-
-.the-answer-options label {
-  display: flex;
-  align-items: center;
-}
-
-.the-answer-options input[type="radio"] {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-}
-
 .the-answer-options button {
 align-self: center;
 font-size: 150%;
