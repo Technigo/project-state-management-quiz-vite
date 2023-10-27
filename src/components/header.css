@@ -91,3 +91,20 @@
         font-size: 12px;
     }
 }
+
+/* Tablet small */
+@media (min-width: 393px) and (max-width: 744px) {
+
+    .header h1 {
+        font-size: 65px;
+    }
+}
+
+
+/* Tablet */
+@media (min-width: 745px) and (max-width: 1024px) {
+
+    .header h1 {
+        font-size: 80px;
+    }
+}

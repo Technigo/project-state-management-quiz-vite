@@ -23,10 +23,54 @@
     text-align: left;
 }
 
+/* Mobile */
 @media (max-width: 392px) {
     .summary {
         margin: 0 auto;
         padding-left: 10px;
+    }
+
+    .summary h2 {
+        font-size: 25px;
+    }
+
+    .summary h3 {
+        font-size: 15px;
+    }
+
+    .summary p {
+        font-size: 13px;
+    }
+}
+
+/* Tablet small */
+@media (min-width: 393px) and (max-width: 744px) {
+
+    .summary {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .summary h2 {
+        font-size: 25px;
+    }
+
+    .summary h3 {
+        font-size: 15px;
+    }
+
+    .summary p {
+        font-size: 13px;
+    }
+}
+
+
+/* Tablet */
+@media (min-width: 745px) and (max-width: 1024px) {
+
+    .summary {
+        width: 80%;
+        margin: 0 auto;
     }
 
     .summary h2 {

@@ -65,3 +65,29 @@
         font-size: 15px;
     }
 }
+
+/* Tablet small */
+@media (min-width: 393px) and (max-width: 744px) {
+
+    .restart-button {
+        font-size: 18px;
+    }
+
+    .restart-button:hover {
+        font-size: 18px;
+    }
+
+}
+
+
+/* Tablet */
+@media (min-width: 745px) and (max-width: 1024px) {
+
+    .restart-button {
+        font-size: 22px;
+    }
+
+    .restart-button:hover {
+        font-size: 22px;
+    }
+}
