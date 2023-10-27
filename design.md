@@ -1,20 +1,18 @@
 # Design reference
 
 ## Colors
-- **Gold**: `linear-gradient(45deg, #DAA520, #CD853F, #DAA520);`
-- **Darker gold**: `linear-gradient(45deg, #B8860B, #8B6914, #B8860B);`
+- **Gold**: `background: linear-gradient(to bottom, #ffcc66, #000);`
 - **Backgroundcolor html**: `rgb(13, 13, 46)`
 - **Textcolor header**: `#fafafa;`
 - **textcolor regularText**: `#fafafa;`
 
 ## Effects
 - **Backgroundimage**: `opacity: 0.6;`
+- **BorderWelcomepage**: `border: 2px solid #b78f41bd;`
 
 ## Buttons
 - **might look good**:
-`background: linear-gradient(45deg, #DAA520, #CD853F, #DAA520);`
-`or:`
-`background: linear-gradient(45deg, #B8860B, #8B6914, #B8860B);`
+`background: linear-gradient(to bottom, #ffcc66, #000);`
 `border: none;`
 `padding: px px;`
 `color: #fafafa;`
