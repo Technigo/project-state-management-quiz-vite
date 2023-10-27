@@ -14,7 +14,8 @@
 .option-button {
   background-color: #0078d0;
   border: 0;
-  border-radius: 56px;
+  border-radius: 15px;
+  padding: 10px 20px;
   color: #fff;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
@@ -34,7 +35,8 @@
 .option-button:before {
   background-color: initial;
   background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
-  border-radius: 125px;
+  border-radius: 15px;
+  padding: 10px 20px;
   content: "";
   height: 50%;
   left: 4%;
@@ -60,7 +62,8 @@
 .correct {
   background-color: #4caf50;
   border: 0;
-  border-radius: 56px;
+  border-radius: 15px;
+  padding: 10px 20px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -68,7 +71,6 @@
   font-size: 15px;
   font-weight: 600;
   outline: 0;
-  padding: 1em;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -81,7 +83,8 @@
 .incorrect {
   background-color: #ff1010;
   border: 0;
-  border-radius: 56px;
+  border-radius: 15px;
+  padding: 10px 20px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -89,7 +92,6 @@
   font-size: 15px;
   font-weight: 600;
   outline: 0;
-  padding: 1em;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -148,5 +150,7 @@
 @media (min-width: 1025px) {
   .option-button {
     font-size: 15px;
+    border-radius: 15px;
+    padding: 10px 20px;
   }
 }
