@@ -16,7 +16,6 @@ export const QuizQuestion = () => {
 
     return (
         <div className={style.quizQuestion}>
-            <AllText header="QUESTION:" />
             < AllText regularText={`${question.questionText}`} />
         </div >
     );

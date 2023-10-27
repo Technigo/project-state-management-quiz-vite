@@ -28,7 +28,6 @@ export const QuizMultichoise = () => {
     return (
         <>
             <div className={style.quizMultichoise}>
-                <AllText header="ANSWER OPTIONS:" />
                 {/* Display each answer option for the current question. */}
                 {currentQuestion.options.map((option, index) => (
 

@@ -3,6 +3,7 @@ import { QuizQuestion } from "./components/layout/quiz/QuizQuestion";
 import { QuizMultichoise } from "./components/layout/quiz/QuizMultichoise";
 import { ProgressBar } from "./components/UI/progressBar/ProgressBar";
 import { NextButton } from "./components/UI/nextButton/NextButton";
+//import { AllText } from "./components/UI/text/AllText";
 import { SummaryPage } from "./components/layout/summaryPage/SummaryPage";
 import useQuizStore from "./stores/useQuizStore";
 
@@ -21,17 +22,22 @@ export const App = () => {
       )}
 
       {startQuiz && !quizOver && (
-        <div>
+        <div className="questionsFullPage" >
+          <div className="tasks">
+            <h1>QUIZZARD TASK:</h1>
+          </div>
           <section className="questionBox">
             <div className="quizQuestion">
               <QuizQuestion />
             </div>
-            <div className="quizMultichoise">
+            <div className="quizMultichoiseItem">
               <QuizMultichoise />
-              <NextButton />
             </div>
           </section>
-          <div className="progressBar">
+          <div className="nextButtonItem">
+            <NextButton />
+          </div>
+          <div className="progress-Bar">
             <ProgressBar />
           </div>
         </div>
