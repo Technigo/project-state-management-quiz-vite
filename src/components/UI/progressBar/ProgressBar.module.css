@@ -21,7 +21,6 @@
   align-items: center;
   position: relative;
   height: 50%;
-
-  background: linear-gradient(45deg, #daa520, #cd853f, #daa520);
+  background: linear-gradient(to bottom, #ffcc66, #000);
   border-radius: 20px;
 }
