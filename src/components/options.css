@@ -120,8 +120,6 @@
 
   .option-button {
     font-size: 10px;
-    border-radius: 15px;
-    padding: 10px 20px;
   }
 }
 
@@ -130,8 +128,6 @@
 
   .option-button {
     font-size: 12px;
-    border-radius: 15px;
-    padding: 10px 20px;
   }
 }
 
@@ -141,16 +137,5 @@
 
   .option-button {
     font-size: 13px;
-    border-radius: 15px;
-    padding: 10px 20px;
-  }
-}
-
-
-@media (min-width: 1025px) {
-  .option-button {
-    font-size: 15px;
-    border-radius: 15px;
-    padding: 10px 20px;
   }
 }
