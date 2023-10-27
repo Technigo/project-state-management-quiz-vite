@@ -36,7 +36,7 @@ export const QuizMultichoise = () => {
                         key={index}
                         type="button"
                         onClick={() => handleOptionClick(index)}
-                        className={`${style.ButtonNext} ${selectedAnswerIndex === index
+                        className={`${style.optionButton} ${selectedAnswerIndex === index
                             ? isAnswerCorrect
                                 ? style.correct
                                 : style.incorrect

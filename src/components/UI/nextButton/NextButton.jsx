@@ -1,5 +1,6 @@
 import React from "react";
 import useQuizStore from "../../../stores/useQuizStore"
+import style from "./NextButton.module.css"
 
 export const NextButton = () => {
 
@@ -15,7 +16,13 @@ export const NextButton = () => {
   return (
     <div>
       {/*--- commented "back inn" the disabled function. *Elba ---*/}
-      <button onClick={goToNextQuestion} disabled={selectedAnswerIndex === undefined}>Next question</button>
+      <button
+        onClick={goToNextQuestion}
+        disabled={selectedAnswerIndex === undefined}
+        className={style.nextButton} // Legg til denne linjen
+      >
+        Next question
+      </button>
     </div>
   );
 }
