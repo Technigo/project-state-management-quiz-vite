@@ -12,7 +12,7 @@ const questions = [
   {
     id: 2,
     qImage: "/sugar-apple.png",
-    questionText: "what is this fruit called?",
+    questionText: "What is this fruit called?",
     options: ["Seedbox", "Sugar Apple", "Papijaja", "Lotusicous"],
     correctAnswerIndex: 1,
     hasBeenAnswered: false,
@@ -42,7 +42,7 @@ const questions = [
     id: 5,
     qImage: "/kanelbulle.png",
     questionText: "What is this?",
-    options: ["Crab Cake", "Shepherd's Pie", "Apple Pie", "Cinnamon roll"],
+    options: ["Crab Cake", "Shepherd's Pie", "Apple Pie", "Cinnamon Roll"],
     correctAnswerIndex: 3,
     hasBeenAnswered: false,
   },

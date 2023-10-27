@@ -20,6 +20,7 @@
   height: 50vh;
   object-fit: contain;
   margin: 0 auto;
+  max-width: 100%;
 }
 
 /* .timer-display {
@@ -67,8 +68,9 @@
   max-width: 600px;
 }
 
-.the-answer-options button {
-  display: inline-block;
+.button {
+  display: block;
+  margin: 0 auto;
   text-align: center;
   background: white;
   color: black;
@@ -82,11 +84,12 @@
   font-size: 1.25rem;
   border: none;
   margin-top: 2rem;
-  grid-column: 1 / span 2;
+  filter: url('#goo');
+  width: auto;
 }
 
-.the-answer-options button:before,
-.the-answer-options button:after {
+.button:before,
+.button:after {
   width: 7em;
   height: 3em;
   position: absolute;
@@ -99,24 +102,24 @@
   z-index: -1;
 }
 
-.the-answer-options button:before {
+.button:before {
   top: -20%;
   left: 40%;
 }
 
-.the-answer-options button:after {
-  bottom: -25%;
+.button:after {
+  bottom: -20%;
   right: 40%;
 }
 
-.the-answer-options button:hover:before,
-.the-answer-options button:hover:after {
+.button:hover:before,
+.button:hover:after {
   transform: none;
+  background-color: #88c1b2;
 }
-/* .the-answer-options label {
-  display: flex;
-  align-items: center;
-} */
+.button:hover{
+  background-color: #88c1b2;
+}
 
 .the-answer-options input[type="radio"] {
   width: 20px;

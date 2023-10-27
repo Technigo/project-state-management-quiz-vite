@@ -84,9 +84,9 @@ a {
   height: 40px;
   background: transparent;
   border-radius: 100%;
-  box-shadow: inset 0px 0px 0px 2px black;
-  border: 8px solid green;
-  outline: 2px solid black;
+  /* box-shadow: inset 0px 0px 0px 2px black; */
+  border: 8px solid limegreen;
+  /* outline: 2px solid black; */
 }
 
 @media (min-width: 667px) {
