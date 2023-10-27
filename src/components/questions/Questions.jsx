@@ -70,16 +70,21 @@ export const Questions = ({ param }) => {
               {item}
             </label>
           ))}
-
-          <button
-            className="button"
-            type="submit"
-            onClick={handleSubmit}
-          >
-            SUBMIT
-          </button>
         </form>
       )}
+        {!showImage && (
+      <button
+        className="button"
+        type="submit"
+        onClick={(e) => {
+          e.preventDefault();
+          submitAnswer(question.id, answerIndex);
+          navigate("/");
+        }}
+      >
+        SUBMIT
+      </button>
+    )}
     </div>
   );
 };

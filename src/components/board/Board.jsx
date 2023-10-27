@@ -2,11 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import useQuestions from "../../stores/useQuestions";
 import useQuizStore from "../../stores/useQuestions";
 import "./board.css";
-import { useEffect, useState } from "react";
 
 export const Board = () => {
-  const [isDisabled, setIsDisabled] = useState(false);
-  
   const { answers } = useQuizStore();
 
   const questions = useQuestions((state) => state.questions);
@@ -24,8 +21,6 @@ export const Board = () => {
     answers.map(answer => row[0].find(num => num === answer.questionId) ? lose[0][answer.questionId-1] = !answer.isCorrect : null)
     answers.map(answer => row[1].find(num => num === answer.questionId) ? lose[1][answer.questionId-4] = !answer.isCorrect : null)
     answers.map(answer => row[2].find(num => num === answer.questionId) ? lose[2][answer.questionId-7] = !answer.isCorrect: null)
-
-
 
     let winningRow1 = win[0][0] && win[0][1] && win[0][2]
     let winningRow2 = win[1][0] && win[1][1] && win[1][2]
@@ -58,28 +53,36 @@ export const Board = () => {
   return (
     <>
       <div className="board-container">
-        {questions.map((question) => (
-          <Link
-            key={question.id}
-            to={`/quest/${question.id}`}
-            disabled={isDisabled}
-          >
-            <div key={question.id} className="a-question" >
-              <p>{question.id}</p>
+        {questions.map((question) => {
+          const hasAnswer = answers.some(
+            (answer) => answer.questionId === question.id
+          );
 
-              {answers.length > 0 &&
-                answers.map((answer) =>
-                  answer.questionId === question.id ? (
-                    answer.isCorrect === true ? (
-                      <div className="circle"></div>
-                    ) : (
-                      <div className="x">❌</div>
-                    )
-                  ) : null
-                )}
-            </div>
-          </Link>
-        ))}
+          return (
+            <Link
+              key={question.id}
+              to={`/quest/${question.id}`}
+              style={{ pointerEvents: hasAnswer ? "none" : "" }}
+            >
+              <div className="a-question" key={question.id}>
+                <p>{question.id}</p>
+
+                {answers.length > 0 &&
+                  answers.map((answer) =>
+                    answer.questionId === question.id ? (
+                      answer.isCorrect === true ? (
+                        <div className="circle" key={answer.questionId}></div>
+                      ) : (
+                        <div className="x" key={answer.questionId}>
+                          ❌
+                        </div>
+                      )
+                    ) : null
+                  )}
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </>
   );
