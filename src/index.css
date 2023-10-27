@@ -89,27 +89,50 @@ img {
   border-radius: 10px;
 }
 
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 392px) {
+
+  html,
+  body {
+    margin: 0 auto;
+    padding: 0 auto;
+  }
 
   img {
-    width: 100%;
+    width: 60%;
     padding: 10px;
   }
 
-  .start,
+  .start {
+    width: 100%;
+    padding: 5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
   .managed-component {
     width: 100%;
-    padding: 80px;
+    padding: 0px;
+  }
+
+  .progress-bar {
+    width: 70%;
+    margin-top: 20px;
   }
 
   .start button {
-    font-size: 18px;
+    font-size: 14px;
     margin: 10px;
   }
 
   .startImg img {
-    width: 170px;
+    width: 100px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
