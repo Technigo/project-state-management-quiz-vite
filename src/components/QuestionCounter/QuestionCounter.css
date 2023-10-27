@@ -1,0 +1,99 @@
+.question-counter {
+  color: #fff;
+  text-align: right;
+  font-family: Arvo;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #8c8fb0;
+  height: 14px;
+  border-radius: 20px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #7240dd;
+  transition: width 0.3s;
+  border-radius: 20px;
+}
+
+.two-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.previous-button,
+.next-button {
+  width: 130px;
+  height: 36px;
+  margin-right: 3%;
+  border-radius: 25px;
+  background: #8c8fb0;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: Arvo;
+}
+
+.previous-button:hover,
+.next-button:hover {
+  background-color: #7e5fc0;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .question-counter {
+    font-size: 20px;
+  }
+  .progress-bar {
+    width: 590px;
+    height: 18px;
+  }
+  .two-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+  }
+  .previous-button,
+  .next-button {
+    width: 180px;
+    height: 36px;
+    margin-top: 8%;
+    margin-right: 3%;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .progress-bar {
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .two-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 15px;
+  }
+  .previous-button,
+  .next-button {
+    width: 186px;
+    height: 40px;
+    margin: 20px;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
