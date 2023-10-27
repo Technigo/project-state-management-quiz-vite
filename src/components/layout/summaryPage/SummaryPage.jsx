@@ -26,12 +26,18 @@ export const SummaryPage = () => {
 
     return (
         <div className={style.summaryContainer}>
-            <h1 className={style.h1}> Award Ceremony </h1>
-            <h2 className={style.h2}> for the Qwizzard Tournament </h2>
+            <div className={style.h1}>
+                <AllText header="Award Ceremony" />
+                <AllText header="for the Qwizzard Tournament" />
+            </div>
             <div className={style.textSummary}>
-                <AllText regularText={`Amidst the trials and enchantments, you've used all your spells and tricks, earning a total of ... ${totalCorrect} out of ${totalQuestions} points!`} />
-                <AllText regularText={message} />
+                <p className={style.subHeader}>
+                    `Amidst the trials and enchantments, you've used all your spells and tricks, earning a total of ... ${totalCorrect} out of ${totalQuestions} points!`
+                </p>
+                <p>
+                    <AllText regularText={message} />
+                </p>
             </div>
         </div>
     );
-};
+}
