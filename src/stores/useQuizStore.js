@@ -6,6 +6,7 @@ const useQuizStore = create((set) => ({
   currentQuestionIndex: 0,
   answers: [],
   quizOver: false,
+  selectedAnswers: [], // Store user-selected answers
   questions: [
     {
       id: 1,
@@ -45,6 +46,7 @@ const useQuizStore = create((set) => ({
   submitAnswer: (answer) =>
     set((state) => ({
       answers: [...state.answers, answer],
+      
     })),
 
   goToNextQuestion: () =>
@@ -64,6 +66,12 @@ const useQuizStore = create((set) => ({
       quizOver: false,
     });
   },
+
+  getCorrectedAnswer: (answer) =>
+    set((state) => {
+      const updatedSelectedAnswers = [...state.selectedAnswers, answer];
+      return { selectedAnswers: updatedSelectedAnswers };
+    }),
 }));
 
 // The useQuizStore is exported for use in other parts of the application.
