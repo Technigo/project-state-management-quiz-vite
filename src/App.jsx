@@ -19,8 +19,9 @@ export const App = () => {
           <WelcomePage />
         </section>
       )}
+
       {startQuiz && !quizOver && (
-        <>
+        <div>
           <section className="questionBox">
             <div className="quizQuestion">
               <QuizQuestion />
@@ -33,7 +34,7 @@ export const App = () => {
           <div className="progressBar">
             <ProgressBar />
           </div>
-        </>
+        </div>
       )}
 
       {quizOver && (

@@ -24,3 +24,9 @@
   background: linear-gradient(to bottom, #ffcc66, #000);
   border-radius: 20px;
 }
+
+.num {
+  color: #fff;
+  text-align: end;
+  font-family: "Harry Potter", sans-serif;
+}
