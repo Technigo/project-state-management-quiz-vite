@@ -7,6 +7,7 @@ const questions = [
     questionText: "What’s the smallest bone in the body?",
     options: ["Patella", "Stirrup", "Thigh", "Teeny Peeny"],
     correctAnswerIndex: 0,
+    hasBeenAnswered: false,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const questions = [
     questionText: "what is this fruit called?",
     options: ["Seedbox", "Sugar Apple", "Papijaja", "Lotusicous"],
     correctAnswerIndex: 1,
+    hasBeenAnswered: false,
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const questions = [
       "Anita Wrinkle",
     ],
     correctAnswerIndex: 2,
+    hasBeenAnswered: false,
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ const questions = [
     questionText: "What country is this?",
     options: ["Germany", "Spain", "Poland", "France"],
     correctAnswerIndex: 2,
+    hasBeenAnswered: false,
   },
   {
     id: 5,
@@ -40,6 +44,7 @@ const questions = [
     questionText: "What is this?",
     options: ["Crab Cake", "Shepherd's Pie", "Apple Pie", "Cinnamon roll"],
     correctAnswerIndex: 3,
+    hasBeenAnswered: false,
   },
   {
     id: 6,
@@ -47,13 +52,15 @@ const questions = [
     questionText: "What type of cheese do you see in the photo? ",
     options: ["Feta", "Twarog", "Camembert", "Paneer"],
     correctAnswerIndex: 1,
+    hasBeenAnswered: false,
   },
   {
     id: 7,
     qImage: "/numbers.png",
     questionText: "How many zeros do you see?",
     options: ["0", "2", "4", "6"],
-    correctAnswerIndex: 3,
+    correctAnswerIndex: 2,
+    hasBeenAnswered: false,
   },
   {
     id: 8,
@@ -61,6 +68,7 @@ const questions = [
     questionText: "Where is Stonehenge located?",
     options: ["Wales", "England", "Scotland", "Sweden"],
     correctAnswerIndex: 1,
+    hasBeenAnswered: false,
   },
   {
     id: 9,
@@ -68,6 +76,7 @@ const questions = [
     questionText: "What kind of car is this??",
     options: ["Volvo", "KIA", "Nissan", "Saab"],
     correctAnswerIndex: 0,
+    hasBeenAnswered: false,
   },
 ];
 

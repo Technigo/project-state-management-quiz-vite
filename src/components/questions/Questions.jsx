@@ -25,7 +25,7 @@ export const Questions = ({ param }) => {
 */
 
   const questions = useQuestions((state) => state.questions);
-  const question = questions[param-1];
+  const question = questions[param - 1];
   const qImageURL = question.qImage;
   const qOptions = question.options;
 
@@ -54,9 +54,7 @@ export const Questions = ({ param }) => {
           <Timer time={timerInterval} />
         </>
       )}
-      {!showImage && (
-        <p className="question-text">{question.questionText}</p>
-      )}
+      {!showImage && <p className="question-text">{question.questionText}</p>}
       {!showImage && (
         <form className="the-answer-options">
           {qOptions.map((item, index) => (
@@ -72,7 +70,8 @@ export const Questions = ({ param }) => {
             </label>
           ))}
 
-          <button className="button"
+          <button
+            className="button"
             type="submit"
             onClick={(e) => {
               e.preventDefault();

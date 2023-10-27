@@ -2,21 +2,32 @@ import { Link } from "react-router-dom";
 import useQuestions from "../../stores/useQuestions";
 import useQuizStore from "../../stores/useQuestions";
 import "./board.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const Board = () => {
+  const [isDisabled, setIsDisabled] = useState(false);
   const { answers } = useQuizStore();
-  const checker = (qId) => {
-    answers.map((answer) => {
-      if (answer.questionId === qId && answer.isCorrect === true) {
-        console.log("YES", answer.questionId, qId);
-      }
-    });
-  };
-  useEffect(() => {
-    answers.map((answer) => console.log(answer.questionId, answer.isCorrect));
-  }, [answers]);
-  console.log(answers);
+
+  // const checker = (qId) => {
+  //   // setIsDisabled(true);
+  //   answers.map((answer) => {
+  //     if (answer.questionId === qId) {
+  //       console.log("YES", answer.questionId, qId);
+  //       setIsDisabled(true);
+  //     } else {
+  //       setIsDisabled(false);
+  //     }
+  //     // if (answer.questionId === qId && answer.isCorrect === true) {
+  //     //   console.log("YES", answer.questionId, qId);
+  //     // }
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   // answers.map((answer) => console.log(answer.questionId, answer.isCorrect));
+  //   checker();
+  // }, [answers]);
+  // console.log(answers);
   const questions = useQuestions((state) => state.questions);
 
   return (
@@ -26,7 +37,7 @@ export const Board = () => {
           <Link
             key={question.id}
             to={`/quest/${question.id}`}
-            onClick={checker(question.id)}
+            disabled={isDisabled}
           >
             <div className="a-question" key={question.id}>
               <p>{question.id}</p>
