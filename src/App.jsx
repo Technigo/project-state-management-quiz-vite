@@ -5,6 +5,7 @@ import { ProgressBar } from "./components/UI/progressBar/ProgressBar";
 import { NextButton } from "./components/UI/nextButton/NextButton";
 import { SummaryPage } from "./components/layout/summaryPage/SummaryPage";
 import useQuizStore from "./stores/useQuizStore";
+import { RestartButton } from "./components/UI/RestartButton/RestartButton";
 
 //import { QuizProvider } from "./context/QuizContext";
 
@@ -40,6 +41,7 @@ export const App = () => {
       {quizOver && (
         <div className="summaryPage">
           <SummaryPage />
+          <RestartButton />
         </div>
       )}
     </div>

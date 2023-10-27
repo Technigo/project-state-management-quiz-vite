@@ -1,6 +1,6 @@
 //When the user has answered all the questions, they should get to a summary screen that tells them how many they got correct or incorrect.//
 
-import useQuizStore from "../../../stores/useQuizStore"
+import useQuizStore from "../../../stores/useQuizStore";
 import { AllText } from "../../UI/text/AllText";
 import style from "./SummaryPage.module.css";
 
