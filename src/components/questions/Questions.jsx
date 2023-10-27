@@ -1,40 +1,41 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import useQuestions from "../../stores/useQuestions"; // Adjust the path accordingly
-import { Timer } from "../Timer";
-import "./questions.css";
 import useQuizStore from "../../stores/useQuestions";
+
+import { Timer } from "../Timer";
+
+import "./questions.css";
+
 
 export const Questions = ({ param }) => {
   const [showImage, setShowImage] = useState(true);
-
-  const { submitAnswer } = useQuizStore();
   const [answerIndex, setAnswerIndex] = useState(null);
 
   const navigate = useNavigate();
-
-  const handleOptionChange = (event) => {
-    setAnswerIndex(Number(event.target.value));
-    console.log("answerIndex = " + answerIndex);
-  };
-  /*
-  const [correctAnswer, setCorrectAnswer] = useState(false);
-  if the answer is correct, set to true and have connection to global state that affects the board
-  also reroute the user back to the board after having answered. delay optional
-  <Link to="/"/>
-*/
+  const { submitAnswer } = useQuizStore();
 
   const questions = useQuestions((state) => state.questions);
   const question = questions[param - 1];
   const qImageURL = question.qImage;
   const qOptions = question.options;
 
-  const timerInterval = 5000;
+  const timerInterval = 2000;
   const flipCard = () => {
     setTimeout(() => {
       setShowImage(!showImage);
     }, timerInterval);
   };
+
+  const handleOptionChange = (event) => {
+    setAnswerIndex(Number(event.target.value));
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    submitAnswer(question.id, answerIndex);
+    navigate("/");
+  }
 
   useEffect(() => flipCard, []);
 
@@ -73,11 +74,7 @@ export const Questions = ({ param }) => {
           <button
             className="button"
             type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              submitAnswer(question.id, answerIndex);
-              navigate("/");
-            }}
+            onClick={handleSubmit}
           >
             SUBMIT
           </button>
