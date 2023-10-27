@@ -2,7 +2,7 @@
   width: 46px;
   height: 46px;
   position: absolute;
-  right: 0;
+  right: left;
   top: -48px;
   filter: invert(1);
 }
