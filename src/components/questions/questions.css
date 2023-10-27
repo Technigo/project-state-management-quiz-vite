@@ -12,8 +12,8 @@ place-content: center;
 margin: 0 0 20px 0;
 justify-content: center;
 display: flex;
-font-size: 20px;
-font-family: Georgia, "Times New Roman", Times, serif; /* Change to something fun */
+font-size: 2em;
+/* font-family: Georgia, "Times New Roman", Times, serif; */
 }
 
 .an-image {
@@ -43,6 +43,7 @@ align-items: start;
 gap: 10px;
 margin: 200px 0 100px 0;
 align-items: center;
+font-size: 2em;
 }
 .the-answer-options button {
 align-self: center;
