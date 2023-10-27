@@ -124,12 +124,13 @@ h1 {
   }
 
   .managed-component {
-    width: 100%;
+    width: 80%;
     padding: 0px;
   }
 
   .managed-component h1 {
     width: 50%;
+    font-size: 20px;
   }
 
   .progress-bar {
