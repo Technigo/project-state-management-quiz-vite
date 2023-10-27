@@ -120,10 +120,8 @@
   }
 
   .option-button {
-    font-size: 12px;           
-    flex-basis: 48%;          
-    padding: 2px 4px;        
-    border-radius: 10px;
+    font-size: 12px;
+    flex-basis: 48%;
   }
 }
 
@@ -140,6 +138,6 @@
 @media (min-width: 745px) and (max-width: 1024px) {
 
   .option-button {
-    font-size: 13px;
+    font-size: 18px;
   }
 }
