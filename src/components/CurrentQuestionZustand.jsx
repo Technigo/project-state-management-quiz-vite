@@ -5,7 +5,10 @@ import { Options, GoToNextQuestion, Restart, SummaryPage } from "./index";
 const ProgressBar = ({ progress }) => {
   return (
     <div className="progress-bar">
-      <div className="progress-bar-fill" style={{ width: `${progress}%` }}></div>
+      <div
+        className="progress-bar-fill"
+        style={{ width: `${progress}%` }}
+      ></div>
       <span className="progress-bar-text">{progress}%</span>
     </div>
   );
@@ -15,11 +18,15 @@ export const CurrentQuestionZustand = () => {
   const [showSummary, setShowSummary] = React.useState(false); // State to determine whether to show the summary page
 
   const questions = useQuizStore((state) => state.questions);
-  const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
+  const currentQuestionIndex = useQuizStore(
+    (state) => state.currentQuestionIndex
+  );
   const question = questions[currentQuestionIndex];
   const handleAnswerSubmission = useQuizStore((state) => state.submitAnswer);
   const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
-  const goToPreviousQuestion = useQuizStore((state) => state.goToPreviousQuestion);
+  const goToPreviousQuestion = useQuizStore(
+    (state) => state.goToPreviousQuestion
+  );
   const restart = useQuizStore((state) => state.restart);
 
   if (showSummary) {
@@ -32,7 +39,6 @@ export const CurrentQuestionZustand = () => {
             // Reset currentQuestionIndex to 0 when restarting
             restart();
           }}
-
         />
       </>
     );
@@ -73,7 +79,3 @@ export const CurrentQuestionZustand = () => {
 export const SubmitAnswer = ({ onAnswerSubmit }) => {
   return <button onClick={onAnswerSubmit}>Submit Answer</button>;
 };
-
-
-
-

@@ -99,7 +99,10 @@ const useQuizStore = create((set) => ({
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         return { quizOver: true };
       } else {
-        return { currentQuestionIndex: state.currentQuestionIndex + 1 };
+        return {
+          userAnswer: null,
+          currentQuestionIndex: state.currentQuestionIndex + 1,
+        };
       }
     });
   },
