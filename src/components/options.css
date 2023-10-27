@@ -103,3 +103,7 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
+.hidden {
+  display: none;
+}

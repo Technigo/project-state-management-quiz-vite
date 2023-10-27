@@ -5,7 +5,10 @@ import { Options, GoToNextQuestion, Restart, SummaryPage } from "./index";
 const ProgressBar = ({ progress }) => {
   return (
     <div className="progress-bar">
-      <div className="progress-bar-fill" style={{ width: `${progress}%` }}></div>
+      <div
+        className="progress-bar-fill"
+        style={{ width: `${progress}%` }}
+      ></div>
       <span className="progress-bar-text">{progress}%</span>
     </div>
   );
@@ -15,7 +18,9 @@ export const CurrentQuestionZustand = () => {
   const [showSummary, setShowSummary] = React.useState(false); // State to determine whether to show the summary page
 
   const questions = useQuizStore((state) => state.questions);
-  const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
+  const currentQuestionIndex = useQuizStore(
+    (state) => state.currentQuestionIndex
+  );
   const question = questions[currentQuestionIndex];
   const handleAnswerSubmission = useQuizStore((state) => state.submitAnswer);
   const resultTextArray = useQuizStore((state) => state.resultTextArray);
@@ -32,7 +37,6 @@ export const CurrentQuestionZustand = () => {
             // Reset currentQuestionIndex to 0 when restarting
             restart();
           }}
-
         />
       </>
     );
@@ -64,7 +68,11 @@ export const CurrentQuestionZustand = () => {
 
       <h1>Question: {question.questionText}</h1>
       <img src={question.imagesrc} alt="Lake" />
-      <Options options={question.options} onOptionSelect={handleOptionSelect} resultTextArray={resultTextArray} />
+      <Options
+        options={question.options}
+        onOptionSelect={handleOptionSelect}
+        resultTextArray={resultTextArray}
+      />
       {submitAnswerButton}
       {nextQuestionButton}
     </div>
@@ -74,7 +82,3 @@ export const CurrentQuestionZustand = () => {
 export const SubmitAnswer = ({ onAnswerSubmit }) => {
   return <button onClick={onAnswerSubmit}>Submit Answer</button>;
 };
-
-
-
-

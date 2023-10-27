@@ -88,7 +88,7 @@ const useQuizStore = create((set) => ({
 
     set((state) => ({
       answers: [...state.answers, question.options[answerIndex]],
-    }))
+    }));
   },
 
   goToNextQuestion: () => {
@@ -96,10 +96,10 @@ const useQuizStore = create((set) => ({
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         return { quizOver: true };
       } else {
-        return { 
+        return {
           currentQuestionIndex: state.currentQuestionIndex + 1,
           userAnswer: null,
-          resultText: ""
+          resultText: "",
         };
       }
     });
@@ -111,7 +111,7 @@ const useQuizStore = create((set) => ({
       currentQuestionIndex: 0,
       quizOver: false,
       userAnswer: null,
-      resultText: ""
+      resultText: "",
     });
   },
 }));
