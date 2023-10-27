@@ -32,7 +32,7 @@ export const SummaryPage = () => {
             </div>
             <div className={style.textSummary}>
                 <p className={style.subHeader}>
-                    You answered {totalCorrect} out of {totalQuestions} questions correctly.
+                    `Amidst the trials and enchantments, you've used all your spells and tricks, earning a total of ... ${totalCorrect} out of ${totalQuestions} points!`
                 </p>
                 <p>
                     <AllText regularText={message} />
