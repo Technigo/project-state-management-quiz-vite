@@ -1,3 +1,30 @@
 .summaryContainer {
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "h1 h1"
+        "textSummary textSummary";
+    max-width: 800px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.h1 {
+    font-size: 48px;
+    color: #ffcc66;
+    background-image: linear-gradient(to bottom, #ffcc66, #000);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 10px;
+    margin-bottom: 7px;
+    grid-area: h1;
+}
+
+.textSummary {
+    border: 2px solid #b78f41bd;
+    background-color: #0b0a15b3;
+    padding: 35px;
+    line-height: 1.5;
+    grid-area: textSummary;
 }
