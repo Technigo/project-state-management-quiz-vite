@@ -6,29 +6,22 @@
 
 # State Management Quiz
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week we had a group project of 5, Sandra, Caro, Emmy, Namuun and Frida L. We have been focusing on global statements and we choosed to use Zustand in our project.
+The task was to build a Quiz with minimum 5 questions.
 
 ## Getting Started with the Project
 
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+We started to making a plan in figma, trying to figure out wich components we needed and devided them between us.
+We started to build the foundation of the site together and then split up in branches.
+With the design a design was made in figma and then implemented together via liveshare and also one by one.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We solved most of the problems together or using the info in notion and google. We had a good teamwork discussing and trying out different solutions.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lemons-quiz-project.netlify.app/
 
 ## Instructions
 

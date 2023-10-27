@@ -1,3 +1,4 @@
+/* The styling of the box containing the questions, alternatives and submitbutton. */
 .question-box {
   display: flex;
   align-items: center;

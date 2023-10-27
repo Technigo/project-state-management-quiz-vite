@@ -1,17 +1,21 @@
 import useQuizStore from "../../stores/useQuizStore";
 import "./QuestionCounter.css";
 
+// This is a React component named QuestionCounter that displays the current question number, the progress bar, and navigation buttons for our quiz.
 export const QuestionCounter = ({ totalQuestions }) => {
+  // Get the current question index from the store.
   const currentQuestionIndex = useQuizStore(
     (state) => state.currentQuestionIndex
   );
 
+  // Handle going to the next question.
   const handleNext = () => {
     if (currentQuestionIndex < totalQuestions - 1) {
       useQuizStore.getState().goToNextQuestion();
     }
   };
 
+  // Handle going back to the previous question.
   const handleBack = () => {
     if (currentQuestionIndex > 0) {
       useQuizStore.setState({ currentQuestionIndex: currentQuestionIndex - 1 });

@@ -2,14 +2,17 @@ import useQuizStore from "../../stores/useQuizStore";
 import { SubmitAnswer } from "../SubmitAnswer/SubmitAnswer";
 import "./QuestionBox.css";
 
+// This is a React component named QuestionBox that displays a question and a set of options.
 export const QuestionBox = ({ question }) => {
+  // Get the user's selected answer index and the disabled state from a store.
   const userAnswerIndex = useQuizStore((state) => state.userAnswer);
   const isDisabled = useQuizStore((state) => state.showMessage);
 
+  // Handle changes when the user selects an option.
   const handleOptionChange = (event) => {
     if (!isDisabled) {
       const value = parseInt(event.target.value, 10);
-      // useQuizStore.setState({ userAnswer: question.options[value] });
+
       useQuizStore.setState({ userAnswer: value });
     }
   };
@@ -24,7 +27,6 @@ export const QuestionBox = ({ question }) => {
               type="radio"
               name={`question${question.id}`}
               value={index}
-              // checked={userAnswer && userAnswer.text === option.text}
               checked={userAnswerIndex === index}
               onChange={handleOptionChange}
               disabled={isDisabled}
@@ -38,7 +40,6 @@ export const QuestionBox = ({ question }) => {
         <SubmitAnswer
           questionId={question.id}
           selectedOption={userAnswerIndex}
-          //selectedOption={question.options}
         />
       </form>
     </div>

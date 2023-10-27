@@ -2,6 +2,7 @@ import "./Summary.css";
 import useQuizStore from "../../stores/useQuizStore";
 import { Restart } from "../Restart/Restart";
 
+// Function that generates a summary message based on the number of correct answers.
 const getSummary = (correctAnswers) => {
   switch (correctAnswers) {
     case 0:
@@ -22,15 +23,18 @@ const getSummary = (correctAnswers) => {
 };
 
 export const Summary = () => {
-  const { numberOfCorrectAnswers, totalQuestions, answers } = useQuizStore(
-    (state) => ({
-      numberOfCorrectAnswers: state.answers.filter((answer) => answer.isCorrect)
-        .length,
-      totalQuestions: state.questions.length,
-      answers: state.answers,
-    })
-  );
-  console.log(answers);
+  // Extract relevant data from the quiz store using the custom hook.
+  const { numberOfCorrectAnswers, totalQuestions } = useQuizStore((state) => ({
+    numberOfCorrectAnswers: state.answers.filter((answer) => answer.isCorrect)
+      .length, // Calculate the number of correct answers.
+    totalQuestions: state.questions.length, // Get the total number of questions.
+    answers: state.answers, // Get the list of answers.
+  }));
+
+  // Log the answers for debugging purposes.
+  /*console.log(answers);*/
+
+  // Get the summary message based on the number of correct answers.
   const summaryMessage = getSummary(numberOfCorrectAnswers);
 
   return (
