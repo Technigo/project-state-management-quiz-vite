@@ -4,11 +4,9 @@ import "./CurrentQuestion.css";
 // Component that holds the current question
 export const CurrentQuestion = () => {
   const questions = useQuizStore((state) => state.questions);
-
   // Get the current question index from the store
   const currentQuestionIndex = useQuizStore(
-    (state) => state.currentQuestionIndex
-  );
+    (state) => state.currentQuestionIndex);
   // Get the current question from the store
   const question = questions[currentQuestionIndex];
 

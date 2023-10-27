@@ -6,20 +6,15 @@ import "./CurrentOptions.css";
 export const CurrentOptions = ({ question, currentQuestionIndex }) => {
   // Get the available options.
   const options = question.options;
-
   // Destructure values from useQuizStore.
   const { answers, submitAnswer } = useQuizStore();
-
   // Retrieve the selected answer for the current question.
   const selectedAnswer = answers[currentQuestionIndex];
-
   // Determine the index of the selected answer, if any.
   const selectedAnswerIndex = selectedAnswer?.answerIndex;
-
   // Determine if the selected answer is correct.
   // 'isCorrect' is a boolean indicating whether the selected answer is correct.
   const isAnswerCorrect = selectedAnswer?.isCorrect;
-
   // Handle the click event when an option is selected.
   const handleOptionClick = (index) => {
     // Check if option is already choosen.

@@ -102,7 +102,8 @@ export const responses = [
   { score: 0, text: "Boo-hoo! You suck at this spooky quiz🪦" },
   { score: 1, text: "Boo-hoo! Time to haunt the Halloween library 👻📚" },
   { score: 2, text: "Boo-hoo! Time to haunt the Halloween library 👻📚" },
-  { score: 3, text: "Boo! You can do better with some more Halloween knowledge 👻📚",
+  {
+    score: 3, text: "Boo! You can do better with some more Halloween knowledge 👻📚",
   },
   {
     score: 4,
@@ -127,8 +128,10 @@ export const useQuizStore = create((set) => ({
   questions,
   responses,
   answers: [],
+  errorMessage: null, // Adds errorMessage to the store instead of using useState
+  setErrorMessage: (message) => set({ errorMessage: message }), // Adds setErrorMessage function to the store instead of using useState
   currentQuestionIndex: 0,
-  score: 0,
+  score: 0, // Adds score to the store
   quizOver: false,
 
   // q = question - This function takes a question id and an answer index, validates them, and then updates the answers array with the user's answer.
@@ -189,6 +192,7 @@ export const useQuizStore = create((set) => ({
       currentQuestionIndex: 0,
       quizOver: false,
       score: 0,
+      responses: [],
     });
   },
 }));

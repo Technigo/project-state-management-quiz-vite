@@ -9,17 +9,16 @@ export const SummaryPage = () => {
   const responses = useQuizStore((state) => state.responses);
   // Gets the restart function from the store and saves it in a variable
   const restartQuiz = useQuizStore.getState().restart;
-
   // Determine the response text based on the user's score
   const response = responses.find((response) => response.score === score);
 
   return (
     <div className="summary-wrapper">
-      
-        <h1 className="completed-text">Quiz Completed!</h1>
-        {/* Shows the users total score */}
-        <h2 className="score-text">Your Score: {score} / 10</h2>
-      
+
+      <h1 className="completed-text">Quiz Completed!</h1>
+      {/* Shows the users total score */}
+      <h2 className="score-text">Your Score: {score} / 10</h2>
+
       {/* Show the response text that comes from the store */}
       <p className="response-text">{response.text}</p>
       {/* Button to restart the quiz */}
@@ -27,7 +26,7 @@ export const SummaryPage = () => {
         path="/" // or use 'to' for routing, e.g., "/question-page"
         onClick={restartQuiz}
         ariaLabel="Restart the Quiz"
-        label="Do the quiz again!"
+        label="Restart the Quiz"
       />
     </div>
   );
