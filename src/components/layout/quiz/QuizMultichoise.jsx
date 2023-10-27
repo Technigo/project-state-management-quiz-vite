@@ -29,11 +29,12 @@ const isAnswerCorrect = useQuizStore((state) => state.answers[currentQuestionInd
     }
 
     return (
-        <div className={style.quizMultichoise}>
-            <AllText header="ANSWER OPTIONS:" />
-            {/* Display each answer option for the current question. */}
-            {currentQuestion.options.map((option, index) => (
-            
+        <div>
+            <div className={style.quizMultichoise}>
+                <AllText header="ANSWER OPTIONS:" />
+                {/* Display each answer option for the current question. */}
+                {currentQuestion.options.map((option, index) => (
+                
 <AllText>
     <button 
     key={index} 
@@ -60,9 +61,14 @@ const isAnswerCorrect = useQuizStore((state) => state.answers[currentQuestionInd
                 /*old code ---------------
                 <AllText key={index} regularText={option} />*/
 
-                // TODO: Elin, I think you can add buttons here for each option. 
-                // Please add some way to check the selected option against the correct answer when clicked. *Elba
-            ))}
+                    // TODO: Elin, I think you can add buttons here for each option. 
+                    // Please add some way to check the selected option against the correct answer when clicked. *Elba
+                ))}
+            </div>
+            <div className={style.levelContainer}>
+                <span className={style.levelText}>Level: </span>
+                <img className={style.levelWand} src={currentQuestion.questionLevel} alt="Question Level" />
+            </div>
         </div>
     );
 };

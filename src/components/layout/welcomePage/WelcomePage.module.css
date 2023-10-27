@@ -1,0 +1,70 @@
+.welcome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "h3 h3"
+        "h1 h1"
+        "h2 h2"
+        "textWelcome textWelcome"
+        "startQuiz startQuiz";
+    max-width: 800px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.h3 {
+    font-size: 48px;
+    font-family: 'Harry Potter', sans-serif;
+    color: #ffcc66;
+    background-image: linear-gradient(to bottom, #ffcc66, #000);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 10px;
+    margin-bottom: 7px;
+    grid-area: h3;
+}
+
+.h1 {
+    font-size: 90px;
+    font-family: 'Harry Potter', sans-serif;
+    color: #ffcc66;
+    /* backupcolor older web browser */
+    background-image: linear-gradient(to bottom, #ffcc66, #000);
+    /* Gradient fra gull til svart */
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 0px;
+    margin-bottom: 7px;
+    grid-area: h1;
+
+}
+
+.h2 {
+    font-size: 48px;
+    font-family: 'Harry Potter', sans-serif;
+    color: #ffcc66;
+    background-image: linear-gradient(to bottom, #ffcc66, #000);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    grid-area: h2;
+}
+
+.textWelcome {
+    border: 2px solid #b78f41bd;
+    grid-area: textWelcome;
+    background-color: #0b0a15b3;
+    padding: 35px;
+    line-height: 1.5;
+}
+
+.visualForBtn {
+    color: #ffcc66;
+    background-image: linear-gradient(to bottom, #ffcc66, #000);
+    -webkit-background-clip: text;
+    color: transparent;
+    grid-area: startQuiz;
+
+}
