@@ -15,6 +15,13 @@ export const QuizMultichoise = () => {
     // Wer use the currentQuestionIndex to retrieve the active question from our list.
     const currentQuestion = questions[currentQuestionIndex];
 
+    //Added these 3 const to be able to display the right answer *Elin
+    const correctAnswerIndex = questions.correctAnswerIndex;
+console.log("correct:", correctAnswerIndex);
+
+const selectedAnswerIndex = useQuizStore((state) => state.answers[currentQuestionIndex]?.answerIndex);
+
+const isAnswerCorrect = useQuizStore((state) => state.answers[currentQuestionIndex]?.isCorrect); //end of my consts *Elin
 
     // Safety check: Ensure the current question exists, if not, display an error.
     if (!currentQuestion) {
@@ -26,7 +33,33 @@ export const QuizMultichoise = () => {
             <AllText header="ANSWER OPTIONS:" />
             {/* Display each answer option for the current question. */}
             {currentQuestion.options.map((option, index) => (
-                <AllText key={index} regularText={option} />
+            
+<AllText>
+    <button 
+    key={index} 
+    regularText={option}
+    type="button"
+    onClick={() => handleOptionClick(index)}
+    classname={
+        selectedAnswerIndex === index
+        ? isAnswerCorrect
+            ? "correct" //correct or incorrect class showing depending on if answer is correct or not *Elin
+            : "incorrect"
+            :
+            index === correctAnswerIndex && selectedAnswerIndex !== undefined
+            ? "correct" 
+            : ""
+    }
+    >
+    {questions.options}
+    </button>
+    </AllText>
+    //not displaying answer options right now. Remember to start here!! <-----
+
+
+                /*old code ---------------
+                <AllText key={index} regularText={option} />*/
+
                 // TODO: Elin, I think you can add buttons here for each option. 
                 // Please add some way to check the selected option against the correct answer when clicked. *Elba
             ))}
