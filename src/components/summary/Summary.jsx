@@ -36,7 +36,7 @@ const Summary = () => {
                     src="/img/11.jpg"
                     className="rounded-full h-24 w-24 object-cover mx-auto mb-8"
                 />
-                <p className="text-gray-900 font-semibold mb-8">{`You scored ${score} out of a possible ${questions.length} 🇸🇪`}</p>
+                <p className="text-gray-900 font-semibold mb-8 text-center">{`You scored ${score} out of a possible ${questions.length} 🇸🇪`}</p>
             </Card>
             <Button
                 onClick={restart}
