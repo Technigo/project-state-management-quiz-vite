@@ -4,34 +4,22 @@
   </a>
 </h1>
 
-# State Management Quizz
+# State Management Quiz
 
-Replace this readme with your own information about your project.
+In our endeavor to grasp state management through global state, we employed Zustand to craft an interactive quiz. This quiz not only engages users with multiple-choice questions but also provides immediate feedback on their responses. Upon completion, users are presented with a summary of their performance, including the tally of correct answers alongside the correct solutions for each question.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Problem Solving Journey
 
-## Getting Started with the Project
+Our journey commenced with displaying individual questions and their respective answer choices. The challenge then morphed into devising a mechanism to store the selections made by the user. Ultimately, we mastered how to collate and exhibit the results in a summary format. Our planning phase was heavily skewed towards design. Given more time, delving deeper into Zustand and exploring additional facets such as stretch goals would be our next endeavor.
 
-### Dependency Installation & Startup Development Server
+### Live Demonstration
 
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
+[Visit the Halloween Quiz App here](https://halloween-quiz-state-management.netlify.app/)
 
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
-
-### The Problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
-### View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
 
 ## Instructions
 
 <a href="instructions.md">
-   See instructions of this project
-  </a>
+   Dive into the project instructions
+</a>
+```

@@ -24,16 +24,16 @@ export const CurrentQuestionZustand = () => {
   // console.log("QuizOver Answer:", quizOver);
 
 
-   // Define isCorrect at the top of the component
-   const isCorrect = answer ? answer.isCorrect : false;
+  // Define isCorrect at the top of the component
+  const isCorrect = answer ? answer.isCorrect : false;
 
-   
+
   // Calculate the progress value and max based on the current question index
   const totalQuestions = questions.length;
   const progressValue = currentQuestionIndex + 1; // Add 1 to make it 1-based
   const progressMax = totalQuestions;
 
-  
+
   const handleSubmitAnswer = (event) => {
     const answerIndex = Number(event.target.value);
     // console.log(answerIndex);
@@ -61,57 +61,61 @@ export const CurrentQuestionZustand = () => {
           <h1 className="question-title">
             Question {currentQuestionIndex + 1}: {question.questionText}
           </h1>
+          <div className="question-wrapper">
+            {question.options.map((option, index) => {
+              const isSelected = answer && answer.answerIndex === index;
+              const isCorrectOption = question.correctAnswerIndex === index;
 
-          {question.options.map((option, index) => {
-            const isSelected = answer && answer.answerIndex === index;
-            const isCorrectOption = question.correctAnswerIndex === index;
+              return (
+                <form key={index}>
+                  <div className="radio-button-wrapper">
+                    <label 
+                    htmlFor={`option${index}`} 
+                    className="radio-button-label">
+                      <input
+                        type="radio"
+                        id={`option${index}`}
+                        name="option"
+                        required
+                        value={index}
+                        onChange={handleSubmitAnswer}
+                        checked={answer === option}
+                        disabled={answer}
+                      />
+                      <p>{option}</p>
+                      {isSelected && (
+                        <span className="answer-feedback">
+                          {isCorrectOption ? '✅ Correct Answer' : '❌ Wrong Answer'}
+                          {isCorrect ? null : ` (Correct Answer: ${question.options[question.correctAnswerIndex]})`}
+                        </span>
+                      )}
 
-            return (
-              <form key={index}>
-                <div className="radio-button-wrapper">
-                <input
-                  type="radio"
-                  id={`option${index}`}
-                  name="option"
-                  required
-                  value={index}
-                  onChange={handleSubmitAnswer}
-                  checked={answer=== option}
-                  disabled={answer}
-                />
-                <label htmlFor={`option${index}`}>
-                  <p>{option}</p>
-                  {isSelected && (
-                    <span className="answer-feedback">
-                      {isCorrectOption ? '✅ Correct Answer' : '❌ Wrong Answer'}
-                      {isCorrect ? null : ` (Correct Answer: ${question.options[question.correctAnswerIndex]})`}
-                    </span>
-                  )}
-                </label>
-                </div>
-              </form>
-            );
-          })}
-
-          <div className="nextBtn">
+                    </label>
+                  </div>
+                </form>
+              );
+            })}
+          </div>
+          <div className="next-btn-wrapper">
             <button
+            className="nextBtn"
               type="button"
               onClick={handleNextQuestion}
               disabled={!answer}
             >
-              Next
+              <p>Next</p>
             </button>
           </div>
           <div className="progress-wrapper">
-        <progress
-          className="progress-bar"
-          value={(progressValue / progressMax) * 100} // Set value as a percentage
-          max="100"
-        />
-        <div className="progress-text">
-          {`${progressValue}/${progressMax}`}
-        </div>
-      </div>
+            <progress
+              className="progress-bar"
+              value={(progressValue / progressMax) * 100} // Set value as a percentage
+              max="100"
+            />
+            <div className="progress-text">
+              {`${progressValue}/${progressMax}`}
+            </div>
+          </div>
         </section>
       )}
     </>
