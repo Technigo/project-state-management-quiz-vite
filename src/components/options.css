@@ -56,11 +56,6 @@
   font-weight: 300;
 }
 
-@media (min-width: 768px) {
-  .option-button {
-    padding: 1 em;
-  }
-}
 
 .correct {
   background-color: #4caf50;
@@ -106,4 +101,24 @@
 
 .hidden {
   display: none;
+}
+
+/* Mobile */
+@media (min-width: 392px) {
+
+  .option-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0px;
+  }
+
+  .option {
+    gap: 8px;
+  }
+
+  .option-button {
+    font-size: 10px;
+    border-radius: 15px;
+    padding: 10px 20px;
+  }
 }

@@ -53,3 +53,15 @@
     background-color: #0b24f5;
     color: white;
 }
+
+/* Mobile */
+@media (max-width: 392px) {
+
+    .restart-button {
+        font-size: 15px;
+    }
+
+    .restart-button:hover {
+        font-size: 15px;
+    }
+}
