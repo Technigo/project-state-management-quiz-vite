@@ -35,9 +35,9 @@ img {
 
 .start button {
   font-family: "Poppins", sans-serif;
-  background-color: rgb(228, 239, 255);
+  background-color: #d7f2fb;
   color: #0b24f5;
-  border: 1px solid #0b24f5;
+  border: 1px dotted #0b24f5;
   border-radius: 15px;
   padding: 10px 20px;
   font-size: 26px;
@@ -87,4 +87,31 @@ img {
   background-color: #4caf50;
   height: 100%;
   border-radius: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  img {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .start,
+  .managed-component {
+    width: 100%;
+    padding: 80px;
+  }
+
+  .start button {
+    font-size: 18px;
+    margin: 10px;
+  }
+
+  .startImg img {
+    width: 170px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }

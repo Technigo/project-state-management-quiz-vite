@@ -80,5 +80,5 @@ export const CurrentQuestionZustand = () => {
 };
 
 export const SubmitAnswer = ({ onAnswerSubmit }) => {
-  return <button onClick={onAnswerSubmit}>Submit Answer</button>;
+  return <button className="submit-button" onClick={onAnswerSubmit}>Submit Answers</button>;
 };

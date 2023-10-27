@@ -28,3 +28,37 @@
     color: black;
     font-size: 12px;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .footer {
+        margin-top: auto;
+        width: 100%;
+        background-color: #A0E9FF;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        text-align: center;
+        padding: 115px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .footer a:hover {
+        color: blue;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .footer p {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        color: black;
+        font-size: 12px;
+    }
+}
