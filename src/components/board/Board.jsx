@@ -13,30 +13,44 @@ export const Board = () => {
   const navigate = useNavigate();
 
   const checkIfWon = () => {
-    let row1 = [1,2,3];
-    let row2 = [4,5,6];
-    let row3 = [7,8,9];
+    let row = [[1,2,3],[4,5,6],[7,8,9]]
+    let win = [[false, false, false], [false, false, false], [false, false, false]]
+    let lose = [[false, false, false], [false, false, false], [false, false, false]]
 
-    let win1 = [false, false, false]
-    let win2 = [false, false, false]
-    let win3 = [false, false, false]
+    answers.map(answer => row[0].find(num => num === answer.questionId) ? win[0][answer.questionId-1] = answer.isCorrect : null)
+    answers.map(answer => row[1].find(num => num === answer.questionId) ? win[1][answer.questionId-4] = answer.isCorrect : null)
+    answers.map(answer => row[2].find(num => num === answer.questionId) ? win[2][answer.questionId-7] = answer.isCorrect: null)
+    
+    answers.map(answer => row[0].find(num => num === answer.questionId) ? lose[0][answer.questionId-1] = !answer.isCorrect : null)
+    answers.map(answer => row[1].find(num => num === answer.questionId) ? lose[1][answer.questionId-4] = !answer.isCorrect : null)
+    answers.map(answer => row[2].find(num => num === answer.questionId) ? lose[2][answer.questionId-7] = !answer.isCorrect: null)
 
-    answers.map(answer => row1.find(num => num === answer.questionId) ? win1[answer.questionId-1] = answer.isCorrect : null)
-    answers.map(answer => row2.find(num => num === answer.questionId) ? win2[answer.questionId-4] = answer.isCorrect : null)
-    answers.map(answer => row3.find(num => num === answer.questionId) ? win3[answer.questionId-7] = answer.isCorrect: null)
 
-    let winningRow1 = win1[0] && win1[1] && win1[2]
-    let winningRow2 = win2[0] && win2[1] && win2[2]
-    let winningRow3 = win3[0] && win3[1] && win3[2]
 
-    let winningCol1 = win1[0] && win2[0] && win3[0]
-    let winningCol2 = win1[1] && win2[1] && win3[1]
-    let winningCol3 = win1[2] && win2[2] && win3[2]
+    let winningRow1 = win[0][0] && win[0][1] && win[0][2]
+    let winningRow2 = win[1][0] && win[1][1] && win[1][2]
+    let winningRow3 = win[2][0] && win[2][1] && win[2][2]
 
-    let winningDia1 = win1[0] && win2[1] && win3[2]
-    let winningDia2 = win1[2] && win2[1] && win3[0]
+    let winningCol1 = win[0][0] && win[1][0] && win[2][0]
+    let winningCol2 = win[0][1] && win[1][1] && win[2][1]
+    let winningCol3 = win[0][2] && win[1][2] && win[2][2]
+
+    let winningDia1 = win[0][0] && win[1][1] && win[2][2]
+    let winningDia2 = win[0][2] && win[1][1] && win[2][0]
+
+    let losingRow2 = lose[1][0] || lose[1][1] || lose[1][2]
+    let losingRow1 = lose[0][0] || lose[0][1] || lose[0][2]
+    let losingRow3 = lose[2][0] || lose[2][1] || lose[2][2]
+
+    let losingCol1 = lose[0][0] || lose[1][0] || lose[2][0]
+    let losingCol2 = lose[0][1] || lose[1][1] || lose[2][1]
+    let losingCol3 = lose[0][2] || lose[1][2] || lose[2][2]
+
+    let losingDia1 = lose[0][0] || lose[1][1] || lose[2][2]
+    let losingDia2 = lose[0][2] || lose[1][1] || lose[2][0]
 
     if (winningRow1 || winningRow2 || winningRow3 || winningCol1 || winningCol2 || winningCol3 || winningDia1 || winningDia2) navigate("/summary")
+    else if (losingRow1 && losingRow2 && losingRow3 && losingCol1 && losingCol2 && losingCol3 && losingDia1 && losingDia2) navigate("/summary")
   }
 
   useEffect(checkIfWon, [answers])
