@@ -53,7 +53,7 @@ const useQuizStore = create((set) => ({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
-      finishQuiz: false,
+      startQuiz: false,
     });
   },
 
@@ -64,6 +64,7 @@ const useQuizStore = create((set) => ({
       startQuiz: true,
     });
   },
+
   // For the summary page, we can use quizOver. When it is true, we can show the summary page.
 }));
 
