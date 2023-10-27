@@ -36,7 +36,6 @@ export const QuizMultichoise = () => {
                         key={index}
                         type="button"
                         onClick={() => handleOptionClick(index)}
-
                         className={`${style.ButtonNext} ${selectedAnswerIndex === index
                             ? isAnswerCorrect
                                 ? style.correct
@@ -49,11 +48,10 @@ export const QuizMultichoise = () => {
                         } >
                         {option}
                     </button>
-
                 ))}
             </div>
             <div className={style.levelContainer}>
-                <span className={style.levelText}>Level: </span>
+                <span className={style.levelText}>Quizzard Level: </span>
                 <img className={style.levelWand} src={currentQuestion.questionLevel} alt="Question Level" />
             </div>
         </>
