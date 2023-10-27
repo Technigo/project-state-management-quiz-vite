@@ -21,6 +21,18 @@
     grid-area: h1;
 }
 
+.subHeader {
+    font-family: 'Harry Potter', sans-serif;
+    color: #ffcc66;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    grid-area: textSummary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
 .textSummary {
     border: 2px solid #b78f41bd;
     background-color: #0b0a15b3;

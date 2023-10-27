@@ -1,6 +1,6 @@
 //When the user has answered all the questions, they should get to a summary screen that tells them how many they got correct or incorrect.//
 
-import useQuizStore from "../../../stores/useQuizStore"
+import useQuizStore from "../../../stores/useQuizStore";
 import { AllText } from "../../UI/text/AllText";
 import style from "./SummaryPage.module.css";
 
@@ -31,9 +31,13 @@ export const SummaryPage = () => {
                 <AllText header="for the Qwizzard Tournament" />
             </div>
             <div className={style.textSummary}>
-                <AllText regularText={`You answered ${totalCorrect} out of ${totalQuestions} questions correctly.`} />
-                <AllText regularText={message} />
+                <p className={style.subHeader}>
+                    You answered {totalCorrect} out of {totalQuestions} questions correctly.
+                </p>
+                <p>
+                    <AllText regularText={message} />
+                </p>
             </div>
         </div>
     );
-};
+}
