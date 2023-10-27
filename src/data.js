@@ -13,7 +13,7 @@ export const questions = [
             "Dobby"
         ],
         correctAnswerIndex: 1,
-        questionLevel: "./images/level.svg"
+        questionLevel: "./images/Level1.svg"
     },
     {
         id: 2,
@@ -24,7 +24,8 @@ export const questions = [
             "Seeker",
             "Keeper"
         ],
-        correctAnswerIndex: 2
+        correctAnswerIndex: 2,
+        questionLevel: "./images/Level1.svg"
     },
     {
         id: 3,
@@ -35,7 +36,8 @@ export const questions = [
             "A wand",
             "A coin"
         ],
-        correctAnswerIndex: 1
+        correctAnswerIndex: 1,
+        questionLevel: "./images/Level1.svg"
     },
     {
         id: 4,
@@ -46,7 +48,8 @@ export const questions = [
             "Hippogriffs",
             "Merpeople"
         ],
-        correctAnswerIndex: 0
+        correctAnswerIndex: 0,
+        questionLevel: "./images/Level1.svg"
     },
     {
         id: 5,
@@ -57,7 +60,8 @@ export const questions = [
             "Sirius Black",
             "Severus Snape"
         ],
-        correctAnswerIndex: 3
+        correctAnswerIndex: 3,
+        questionLevel: "./images/Level1.svg"
     },
     {
         id: 6,
@@ -68,7 +72,8 @@ export const questions = [
             "Fleur Delacour",
             "Draco Malfoy"
         ],
-        correctAnswerIndex: 1
+        correctAnswerIndex: 1,
+        questionLevel: "./images/Level2.svg"
     },
     {
         id: 7,
@@ -79,7 +84,8 @@ export const questions = [
             "Nox",
             "Obscurus"
         ],
-        correctAnswerIndex: 0
+        correctAnswerIndex: 0,
+        questionLevel: "./images/Level2.svg"
     },
     {
         id: 8,
@@ -90,7 +96,8 @@ export const questions = [
             "Society for the Promotion of Elfish Welfare",
             "Society for the Promotion of Every Witch"
         ],
-        correctAnswerIndex: 2
+        correctAnswerIndex: 2,
+        questionLevel: "./images/Level2.svg"
     },
     {
         id: 9,
@@ -101,7 +108,8 @@ export const questions = [
             "Peter Pettigrew",
             "Severus Snape"
         ],
-        correctAnswerIndex: 2
+        correctAnswerIndex: 2,
+        questionLevel: "./images/Level2.svg"
     },
     {
         id: 10,
@@ -112,7 +120,8 @@ export const questions = [
             "Sirius Black",
             "Nymphadora Tonks"
         ],
-        correctAnswerIndex: 3
+        correctAnswerIndex: 3,
+        questionLevel: "./images/Level2.svg"
     },
     {
         id: 11,
@@ -123,7 +132,8 @@ export const questions = [
             "Rowena Ravenclaw's Diadem",
             "Tom Riddle's Diary"
         ],
-        correctAnswerIndex: 0
+        correctAnswerIndex: 0,
+        questionLevel: "./images/Level3.svg"
     },
     {
         id: 12,
@@ -134,7 +144,8 @@ export const questions = [
             "Kreacher",
             "Hokey"
         ],
-        correctAnswerIndex: 2
+        correctAnswerIndex: 2,
+        questionLevel: "./images/Level3.svg"
     },
     {
         id: 13,
@@ -145,7 +156,8 @@ export const questions = [
             "Alphard Percival Wulfric Brian Dumbledore",
             "Aberforth Percival Wulfric Brian Dumbledore"
         ],
-        correctAnswerIndex: 1
+        correctAnswerIndex: 1,
+        questionLevel: "./images/Level3.svg"
     },
     {
         id: 14,
@@ -156,8 +168,8 @@ export const questions = [
             "Bubotuber",
             "Devil's Snare"
         ],
-        correctAnswerIndex: 1
-
+        correctAnswerIndex: 1,
+        questionLevel: "./images/Level3.svg"
     },
     {
         id: 15,
@@ -168,6 +180,7 @@ export const questions = [
             "Draught of Living Death",
             "Draught of Despair"
         ],
-        correctAnswerIndex: 3
+        correctAnswerIndex: 3,
+        questionLevel: "./images/Level3.svg"
     },
 ];
