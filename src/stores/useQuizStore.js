@@ -65,13 +65,12 @@ const useQuizStore = create((set) => ({
   resultTextArray,
   resultText: "",
 
-  setUserAnswer: (answer) => {
-    set({ userAnswer: answer });
-  },
+  // setUserAnswer: (answer) => {
+  //   set({ userAnswer: answer });
+  // },
 
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
-
     set({ userAnswer: answerIndex });
 
     if (!question) {

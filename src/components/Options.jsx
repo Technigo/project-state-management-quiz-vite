@@ -1,6 +1,5 @@
 import "./options.css";
 import useQuizStore from "../stores/useQuizStore";
-import { useState } from "react";
 
 export const Options = ({ options, onOptionSelect, resultTextArray }) => {
   const currentQuestionIndex = useQuizStore(
@@ -8,15 +7,15 @@ export const Options = ({ options, onOptionSelect, resultTextArray }) => {
   );
 
   const questions = useQuizStore((state) => state.questions);
-  const userAnswer = useQuizStore((state) => state.userAnswer);
+  const userAnswer = useQuizStore(
+    (state) => state.answers[currentQuestionIndex]
+  );
   const correctAnswerIndex = questions[currentQuestionIndex].correctAnswerIndex;
-  const isCorrect = userAnswer === correctAnswerIndex;
-  const [answered, setAnswered] = useState(false); // Track if an answer has been selected
+  const isCorrect = userAnswer === options[correctAnswerIndex];
 
   const handleOptionSelect = (index) => {
-    if (!answered) {
+    if (!userAnswer) {
       // If no answer has been selected yet, allow selecting an answer
-      setAnswered(true);
       onOptionSelect(index);
     }
   };
@@ -29,11 +28,11 @@ export const Options = ({ options, onOptionSelect, resultTextArray }) => {
             key={index}
             onClick={() => handleOptionSelect(index)}
             className={`option-button ${
-              userAnswer === index && isCorrect
+              userAnswer === option && isCorrect
                 ? "correct"
-                : userAnswer === index && !isCorrect
+                : userAnswer === option && !isCorrect
                 ? "incorrect"
-                : answered && userAnswer !== index
+                : userAnswer && userAnswer !== option
                 ? "hidden"
                 : ""
             }`}
@@ -43,7 +42,7 @@ export const Options = ({ options, onOptionSelect, resultTextArray }) => {
         ))}
       </div>
       <div className="result-text">
-        {userAnswer === null ? (
+        {!userAnswer ? (
           ""
         ) : isCorrect ? (
           <h3>{resultTextArray[0]}</h3>
