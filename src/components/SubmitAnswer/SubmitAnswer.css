@@ -18,8 +18,8 @@
   background-color: #7e5fc0;
 }
 
-.message p {
-  font-size: 16px;
+p {
+  font-size: 14px;
 }
 
 /* Tablet styles */
@@ -29,7 +29,7 @@
     width: 147px;
     height: 40px;
   }
-  .message p {
+  p {
     font-size: 16px;
   }
 }
