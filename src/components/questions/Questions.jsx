@@ -55,7 +55,7 @@ export const Questions = ({ param }) => {
         </>
       )}
       {!showImage && (
-        <p className="question-text">Question: {question.questionText}</p>
+        <p className="question-text">{question.questionText}</p>
       )}
       {!showImage && (
         <form className="the-answer-options">
@@ -72,7 +72,7 @@ export const Questions = ({ param }) => {
             </label>
           ))}
 
-          <button
+          <button className="button"
             type="submit"
             onClick={(e) => {
               e.preventDefault();
