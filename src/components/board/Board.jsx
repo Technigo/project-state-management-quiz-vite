@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import useQuestions from "../../stores/useQuestions";
 import useQuizStore from "../../stores/useQuestions";
 import "./board.css";
@@ -9,6 +10,7 @@ export const Board = () => {
   const questions = useQuestions((state) => state.questions);
   const navigate = useNavigate();
 
+  //function to check which "board-cards" have been answered. Makes a 3x3 matrix where each element is changed to true if the answer was correct and a "lose"-matrix where the elements change to true if the answer was incorrect. Contructs each possible win-row/column/diagonal and each lose-row/col/diag. Lastly we use conditionals to determine if the user has won/lost and if so, sends him/her to the summary page
   const checkIfWon = () => {
     let row = [[1,2,3],[4,5,6],[7,8,9]]
     let win = [[false, false, false], [false, false, false], [false, false, false]]
@@ -48,6 +50,7 @@ export const Board = () => {
     else if (losingRow1 && losingRow2 && losingRow3 && losingCol1 && losingCol2 && losingCol3 && losingDia1 && losingDia2) navigate("/summary")
   }
 
+  //useEffect-hook which depends on the update of the answers-array. Runs checkIfWon-function.
   useEffect(checkIfWon, [answers])
 
   return (
