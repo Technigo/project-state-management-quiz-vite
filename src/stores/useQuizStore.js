@@ -114,7 +114,7 @@ export const responses = [
   },
   {
     score: 6,
-    text: "Your Halloween knowledge is in the cauldron, brewing and improving! 🎃📚⚗️a",
+    text: "Your Halloween knowledge is in the cauldron, brewing and improving! 🎃📚⚗️",
   },
   { score: 7, text: "You've got a graveyard of knowledge on Halloween! 🦴🩻🪦" },
   { score: 8, text: "Impressive! You're a Halloween aficionado 🧛🦇" },
