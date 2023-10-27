@@ -23,25 +23,27 @@ export const App = () => {
       )}
 
       {startQuiz && !quizOver && (
-        <div className="questionsFullPage" >
-          <div className="tasks">
-            <h1>QUIZZARD TASK:</h1>
-          </div>
-          <section className="questionBox">
-            <div className="quizQuestion">
-              <QuizQuestion />
+        <>
+          <div className="questionsFullPage" >
+            <div className="tasks">
+              <h1>QUIZZARD TASK:</h1>
             </div>
-            <div className="quizMultichoiseItem">
-              <QuizMultichoise />
+            <section className="questionBox">
+              <div className="quizQuestion">
+                <QuizQuestion />
+              </div>
+              <div className="quizMultichoiseItem">
+                <QuizMultichoise />
+              </div>
+            </section>
+            <div className="nextButtonItem">
+              <NextButton />
             </div>
-          </section>
-          <div className="nextButtonItem">
-            <NextButton />
           </div>
           <div className="progress-Bar">
             <ProgressBar />
           </div>
-        </div>
+        </>
       )}
 
       {quizOver && (
