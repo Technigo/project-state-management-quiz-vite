@@ -30,9 +30,11 @@ export const Board = () => {
                   answers.map((answer) =>
                     answer.questionId === question.id ? (
                       answer.isCorrect === true ? (
-                        <div className="circle"></div>
+                        <div className="circle" key={answer.questionId}></div>
                       ) : (
-                        <div className="x">❌</div>
+                        <div className="x" key={answer.questionId}>
+                          ❌
+                        </div>
                       )
                     ) : null
                   )}
