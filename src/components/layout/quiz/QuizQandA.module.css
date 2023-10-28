@@ -10,7 +10,7 @@
 .levelContainer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  padding: 30px;
 }
 
 .levelWand {
@@ -37,7 +37,8 @@
   width: 100%;
   margin-bottom: 10px;
 }
-git .correct {
+
+.correct {
   background-image: linear-gradient(to bottom, #08400d, #000);
 }
 
@@ -47,13 +48,16 @@ git .correct {
 
 @media (max-width: 900px) {
   .quizQuestion {
-    padding: 10px;
+    padding: 14px;
     padding-bottom: 20px;
   }
 
   .quizMultichoise {
-    padding: 10px;
-    padding-bottom: 20px;
+    padding: 24px 14px;
+  }
+
+  .levelContainer {
+    padding: 14px;
   }
 }
 

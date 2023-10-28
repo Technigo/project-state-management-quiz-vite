@@ -30,3 +30,18 @@
   text-align: end;
   font-family: "Harry Potter", sans-serif;
 }
+
+@media (max-width: 600px) {
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+  .bar {
+    margin-top: 40px;
+    margin-inline: 14px;
+  }
+
+  .num p {
+    margin: 0;
+  }
+}
