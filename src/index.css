@@ -57,32 +57,34 @@ body::before {
 .layout_wrapper {
   display: grid;
   justify-content: center;
+  padding: 10px;
 }
 
 /*FOR STYLING THE QUESTION-BOX, CLASS IS IN APP*/
 
 .questionsFullPage {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "questionTasks questionTasks"
     "questionBox questionBox"
-    "nextButtonItem nextButtonItem";
-  grid-template-rows: auto 1fr auto;
+    "nextButtonItem nextButtonItem"
+    "bar bar";
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-columns: 1fr;
   gap: 30px;
+  position: relative;
 }
 
 .questionBox {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "quizQuestion quizMultichoiseItem";
+  grid-template-areas: "quizQuestion quizMultichoiseItem";
   background-color: #0b0a15b3;
   /* rgb(14, 14, 29);*/
   border: 2px solid #b78f41bd;
   grid-area: questionBox;
   max-width: 800px;
-  height: 350px;
+  min-height: 350px;
 }
 
 /* ONLY GRID AREA DECLARED, REST OF STYLING IN MODULE FOR EACH CLASS: QuizQandA.module.css*/
@@ -97,7 +99,7 @@ body::before {
 
 h1 {
   font-size: 35px;
-  font-family: 'Harry Potter', sans-serif;
+  font-family: "Harry Potter", sans-serif;
   color: #fafafa;
   background-image: linear-gradient(to bottom, #ffcc66, #000);
   -webkit-background-clip: text;
@@ -119,6 +121,65 @@ h1 {
 }
 
 .progressBar {
-  max-width: 800px;
+  grid-area: bar;
+  width: 800px;
   margin: 0 auto;
+}
+
+/********************************/
+
+@media (max-width: 900px) {
+  .questionBox {
+    min-width: 600px;
+    /* margin: 20px 10px 0; */
+    max-width: 800px;
+  }
+
+  .progressBar {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* level text -> it doesn't fit with Alltext comp, so I make it extra small */
+  .small {
+    letter-spacing: 0;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .questionBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 100vw;
+    min-width: 90vw;
+    padding-bottom: 50px;
+    padding-top: 30px;
+  }
+
+  .questionsFullPage {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "questionTasks questionTasks"
+      "bar bar"
+      "questionBox questionBox"
+      "nextButtonItem nextButtonItem";
+    gap: 0;
+  }
+
+  .progressBar {
+    width: 100%;
+  }
+
+  .nextButtonItem {
+    margin-top: -20px;
+  }
+  h1 {
+    margin: 16px;
+    font-size: 30px;
+  }
 }

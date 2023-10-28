@@ -24,7 +24,7 @@ export const App = () => {
 
       {startQuiz && !quizOver && (
         <>
-          <div className="questionsFullPage" >
+          <div className="questionsFullPage">
             <div className="tasks">
               <h1>QUIZZARD TASK:</h1>
             </div>
@@ -39,9 +39,9 @@ export const App = () => {
             <div className="nextButtonItem">
               <NextButton />
             </div>
-          </div>
-          <div className="progress-Bar">
-            <ProgressBar />
+            <div className="progress-Bar">
+              <ProgressBar />
+            </div>
           </div>
         </>
       )}

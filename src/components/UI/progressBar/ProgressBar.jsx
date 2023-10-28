@@ -15,15 +15,15 @@ export const ProgressBar = () => {
 
   return (
     <>
-      <div className={styles.num}>
-        <p>
-          {currentQuestionIndex + 1} / {questions.length}
-        </p>
-      </div>
       <div className={styles.bar}>
         <div className={styles.progressBar} style={{ width: currentPosition + "%" }}>
           <img src="/progressBarIcon.png" className={styles.icon} />
         </div>
+      </div>
+      <div className={styles.num}>
+        <p>
+          {currentQuestionIndex + 1} / {questions.length}
+        </p>
       </div>
     </>
   );
