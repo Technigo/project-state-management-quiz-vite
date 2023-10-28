@@ -65,4 +65,7 @@
   .quizQuestion {
     max-width: 400px;
   }
+  .optionButton {
+    min-width: 100%;
+  }
 }
