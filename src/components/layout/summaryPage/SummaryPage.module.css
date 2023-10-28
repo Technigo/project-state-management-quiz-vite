@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "h1 h1"
+        "h2 h2"
         "textSummary textSummary";
     max-width: 800px;
     justify-items: center;
@@ -12,13 +13,35 @@
 
 .h1 {
     font-size: 48px;
+    font-family: 'Harry Potter', sans-serif;
+    color: #ffcc66;
+    /* backupcolor older web browser */
+    background-image: linear-gradient(to bottom, #ffcc66, #000);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 0px;
+    margin-bottom: 7px;
+    grid-area: h1;
+}
+
+.h2 {
+    font-size: 60px;
+    font-family: 'Harry Potter', sans-serif;
     color: #ffcc66;
     background-image: linear-gradient(to bottom, #ffcc66, #000);
     -webkit-background-clip: text;
     color: transparent;
-    margin-top: 10px;
-    margin-bottom: 7px;
-    grid-area: h1;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    grid-area: h2;
+}
+
+.subHeader {
+    font-family: 'Harry Potter', sans-serif;
+    color: #ffcc66;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    padding-bottom: 30px;
 }
 
 .textSummary {

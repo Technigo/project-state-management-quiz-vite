@@ -28,7 +28,6 @@ export const QuizMultichoise = () => {
     return (
         <>
             <div className={style.quizMultichoise}>
-                <AllText header="ANSWER OPTIONS:" />
                 {/* Display each answer option for the current question. */}
                 {currentQuestion.options.map((option, index) => (
 
@@ -49,10 +48,6 @@ export const QuizMultichoise = () => {
                         {option}
                     </button>
                 ))}
-            </div>
-            <div className={style.levelContainer}>
-                <span className={style.levelText}>Quizzard Level: </span>
-                <img className={style.levelWand} src={currentQuestion.questionLevel} alt="Question Level" />
             </div>
         </>
     );

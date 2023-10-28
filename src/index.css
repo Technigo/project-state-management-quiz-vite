@@ -57,26 +57,61 @@ body::before {
 }
 
 /*FOR STYLING THE QUESTION-BOX, CLASS IS IN APP*/
+
+.questionsFullPage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "questionTasks questionTasks"
+    "questionBox questionBox"
+    "nextButtonItem nextButtonItem";
+  grid-template-rows: auto 1fr auto;
+  gap: 30px;
+}
+
 .questionBox {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: "quizQuestion quizMultichoise";
+  grid-template-areas: "quizQuestion quizMultichoiseItem";
   background-color: #0b0a15b3;
   /* rgb(14, 14, 29);*/
-  border: 2px solid #fafafa;
-  margin: 40px;
+  border: 2px solid #b78f41bd;
   grid-area: questionBox;
   max-width: 800px;
+  height: 350px;
 }
 
 /* ONLY GRID AREA DECLARED, REST OF STYLING IN MODULE FOR EACH CLASS: QuizQandA.module.css*/
 
-.quizQuestion {
-  grid-area: quizQuestion;
+.tasks {
+  grid-area: questionTasks;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
 }
 
-.quizMultichoise {
-  grid-area: quizMultichoise;
+h1 {
+  font-size: 35px;
+  font-family: "Harry Potter", sans-serif;
+  color: #fafafa;
+  background-image: linear-gradient(to bottom, #ffcc66, #000);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 46px;
+}
+
+.quizMultichoiseItem {
+  grid-area: quizMultichoiseItem;
+}
+
+.nextButtonItem {
+  grid-area: nextButtonItem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: -40px;
 }
 
 .progressBar {

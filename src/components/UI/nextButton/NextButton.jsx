@@ -21,7 +21,7 @@ export const NextButton = () => {
         disabled={selectedAnswerIndex === undefined}
         className={style.nextButton} // Legg til denne linjen
       >
-        Next question
+        Next task
       </button>
     </div>
   );
