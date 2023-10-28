@@ -39,9 +39,9 @@ export const App = () => {
             <div className="nextButtonItem">
               <NextButton />
             </div>
-          </div>
-          <div className="progress-Bar">
-            <ProgressBar />
+            <div className="progress-Bar">
+              <ProgressBar />
+            </div>
           </div>
         </>
       )}
