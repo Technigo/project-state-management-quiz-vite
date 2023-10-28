@@ -49,10 +49,6 @@ export const QuizMultichoise = () => {
                     </button>
                 ))}
             </div>
-            <div className={style.levelContainer}>
-                <span className={style.levelText}>Quizzard Level: </span>
-                <img className={style.levelWand} src={currentQuestion.questionLevel} alt="Question Level" />
-            </div>
         </>
     );
 };
