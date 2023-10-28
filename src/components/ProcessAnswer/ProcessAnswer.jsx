@@ -144,7 +144,6 @@ export const ProcessAnswer = () => {
   }, []); // The empty dependency array ensures this effect only runs on component mount and unmount.
 
   return (
-    <div>
       <div className={styles.answerOptionsBox}>
         <div className={styles.flags}>
           <label>
@@ -194,22 +193,24 @@ export const ProcessAnswer = () => {
           <button onClick={handleCheckAnswer}>Check Answer</button>
         )} */}
        
-      </div>
       {/* {isAnswerChecked && <p>{resultMessage}</p>}
         {!isAnswerChecked && userChoice !== null && (
           <button onClick={handleNextQuestion}>Next Question</button>
         )} */}
 
-        <button onClick={handleCheckAnswer}>Check Answer</button>
+        <div className={styles.buttons}>
 
-        {isAnswerChecked && <p>{resultMessage}</p>}
+          <button onClick={handleCheckAnswer}>CHECK ANSWER</button>
 
-        {userChoice !== null && (
-          <button onClick={handleNextQuestion}>Next Question</button>
-        )}
+          {isAnswerChecked && <p>{resultMessage}</p>}
 
+          {userChoice !== null && (
+          <button onClick={handleNextQuestion}>NEXT QUESTION</button>
+          )}
 
-      <button onClick={restart}>Restart Quiz</button>
+        <button onClick={restart}>RESTART</button>
+
+      </div>
     </div>
   );
 };

@@ -9,8 +9,7 @@ export const QuestionCounter = () => {
   return (
     <div className={styles.counterBox}>
       <p>
-        Question {currentQuestionIndex + 1}
-        of 5
+        Question {currentQuestionIndex + 1} of 5
       </p>
     </div>
   );

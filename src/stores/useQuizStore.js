@@ -30,9 +30,9 @@ const useQuizStore = create((set) => ({
     },
     {
       id: 4,
-      questionText: "put new Question 4 here!",
+      questionText: "Which country has the highest consumption of coffee per capita in the world?",
       options: ["Estonia", "Finland", "Indonesia", "Australia"],
-      correctAnswerIndex: 2, //correct answer for Q4 is Finland
+      correctAnswerIndex: 1, //correct answer for Q4 is Finland
     },
     {
       id: 5,
