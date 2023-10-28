@@ -53,6 +53,7 @@ body::before {
 .layout_wrapper {
   display: grid;
   justify-content: center;
+  padding: 10px;
 }
 
 /*FOR STYLING THE QUESTION-BOX, CLASS IS IN APP*/
@@ -79,9 +80,45 @@ body::before {
 }
 
 .progressBar {
+  grid-area: bar;
   max-width: 800px;
   margin: 0 auto;
 }
 
-
 /********************************/
+
+@media (max-width: 900px) {
+  .questionBox {
+    margin: 20px auto;
+    max-width: 700px;
+  }
+
+  .progressBar {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .questionBox {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "quizQuestion"
+      "quizMultichoise";
+    max-width: 100vw;
+  }
+
+  .questionPage {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "bar"
+      "questionBox";
+  }
+
+  .progressBar {
+    width: 100%;
+  }
+}

@@ -21,7 +21,7 @@ export const App = () => {
       )}
 
       {startQuiz && !quizOver && (
-        <div>
+        <div className="questionPage">
           <section className="questionBox">
             <div className="quizQuestion">
               <QuizQuestion />
