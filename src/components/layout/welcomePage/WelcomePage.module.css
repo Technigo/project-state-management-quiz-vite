@@ -26,16 +26,18 @@
 }
 
 .h1 {
-  font-size: 90px;
-  font-family: "Harry Potter", sans-serif;
-  color: #ffcc66;
-  /* backupcolor older web browser */
-  background-image: linear-gradient(to bottom, #ffcc66, #000);
-  -webkit-background-clip: text;
-  color: transparent;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  grid-area: h1;
+
+    font-size: 90px;
+    font-family: 'Harry Potter', sans-serif;
+    color: #ffcc66;
+    /* backupcolor older web browser */
+    background-image: linear-gradient(to bottom, #ffcc66, #000);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    grid-area: h1;
+
 }
 
 .h2 {
@@ -51,12 +53,14 @@
 }
 
 .textWelcomeBox {
-  border: 2px solid #b78f41bd;
-  grid-area: textWelcome;
-  background-color: #0b0a15b3;
-  margin-top: 45px;
-  padding: 0 30px 30px 30px;
-  line-height: 1.5;
+
+    border: 2px solid #b78f41bd;
+    grid-area: textWelcome;
+    background-color: #0b0a15b3;
+    margin-top: 45px;
+    padding: 30px;
+    line-height: 1.5;
+
 }
 
 .welcomeText {
@@ -64,6 +68,7 @@
 }
 
 .startButton {
+
   color: #fafafa;
   font-size: 15px;
   font-family: "SPQR", sans-serif;
@@ -75,7 +80,7 @@
   padding: 15px;
   font-weight: bold;
   grid-area: startButton;
-  margin-top: -20px;
+   margin-top: -25px;
 }
 
 @media (max-width: 600px) {
@@ -92,3 +97,4 @@
     font-size: 30px;
   }
 }
+

@@ -24,6 +24,10 @@ html {
   /*rgb(14, 14, 29);*/
 }
 
+p {
+  margin: 0;
+}
+
 body {
   position: relative;
   min-height: 100vh;

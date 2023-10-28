@@ -42,6 +42,7 @@ const useQuizStore = create((set) => ({
   goToNextQuestion: () => {
     set((state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
+        console.log("Quiz should be over now");
         return { quizOver: true };
       } else {
         return { currentQuestionIndex: state.currentQuestionIndex + 1 };

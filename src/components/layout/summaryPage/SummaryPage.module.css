@@ -25,6 +25,7 @@
 }
 
 .h2 {
+
   font-size: 60px;
   font-family: "Harry Potter", sans-serif;
   color: #ffcc66;
@@ -32,16 +33,18 @@
   -webkit-background-clip: text;
   color: transparent;
   margin-top: 0px;
-  margin-bottom: 15px;
+   margin-bottom: 30px;
   grid-area: h2;
 }
 
 .subHeader {
-  font-family: "Harry Potter", sans-serif;
-  color: #ffcc66;
-  font-size: 20px;
-  letter-spacing: 0.1em;
-  padding-bottom: 30px;
+    font-family: 'Harry Potter', sans-serif;
+    color: #ffcc66;
+    background-image: linear-gradient(to bottom, #ffcc66, #b78f41bd);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 25px;
+    letter-spacing: 0.1em;
 }
 
 .textSummary {
@@ -50,6 +53,23 @@
   padding: 35px;
   line-height: 1.5;
   grid-area: textSummary;
+}
+
+.topOfHeader {
+    margin: 0;
+}
+
+.resultsSubHeader {
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 30px;
+}
+
+
+.lastSummary {
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 30px;
 }
 
 @media (max-width: 900px) {
@@ -68,3 +88,8 @@
     text-align: center;
   }
 }
+
+
+
+
+

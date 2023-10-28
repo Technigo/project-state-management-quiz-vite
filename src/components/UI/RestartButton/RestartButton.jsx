@@ -8,7 +8,7 @@ export const RestartButton = () => {
     <div className={style.restartButtonContainer}>
       <button className={style.restartButton}
         type="button" onClick={restart}>
-        New Quizzard Dual!
+        New Quizzard Duel
       </button>
     </div>
   );
