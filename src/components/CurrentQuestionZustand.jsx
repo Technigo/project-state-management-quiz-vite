@@ -16,6 +16,7 @@ const ProgressBar = ({ progress }) => {
 
 export const CurrentQuestionZustand = () => {
   const [showSummary, setShowSummary] = React.useState(false); // State to determine whether to show the summary page
+  const [answerSelected, setAnswerSelected] = React.useState(false);
 
   const questions = useQuizStore((state) => state.questions);
   const currentQuestionIndex = useQuizStore(
@@ -48,6 +49,12 @@ export const CurrentQuestionZustand = () => {
 
   const handleOptionSelect = (index) => {
     handleAnswerSubmission(question.id, index);
+    setAnswerSelected(true);
+  };
+
+  const goToNext = () => {
+    goToNextQuestion();
+    setAnswerSelected(false);  // Reset the answerSelected state
   };
 
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
@@ -58,8 +65,8 @@ export const CurrentQuestionZustand = () => {
   ) : null;
 
   // Conditionally render the "Next Question" button based on whether it's the last question
-  const nextQuestionButton = isLastQuestion ? null : (
-    <GoToNextQuestion onNext={goToNextQuestion} />
+    const nextQuestionButton = isLastQuestion || !answerSelected ? null : (
+    <GoToNextQuestion onNext={goToNext} />
   );
 
   return (
@@ -73,7 +80,7 @@ export const CurrentQuestionZustand = () => {
         onOptionSelect={handleOptionSelect}
         resultTextArray={resultTextArray}
       />
-      {submitAnswerButton}
+      {isLastQuestion && answerSelected ? <SubmitAnswer onAnswerSubmit={() => setShowSummary(true)} /> : null}
       {nextQuestionButton}
     </div>
   );
