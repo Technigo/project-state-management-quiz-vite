@@ -29,11 +29,12 @@ export const SummaryPage = () => {
             <h1 className={style.h1}> Award Ceremony </h1>
             <h2 className={style.h2}> for the Qwizzard Tournament </h2>
             <div className={style.textSummary}>
-                <p className={style.subHeader}>
-                    Amidst the trials and enchantments, you've used all your spells and tricks, earning a total of ... {totalCorrect} out of {totalQuestions} points!
-                </p>
+                <div className={style.subHeader}>
+                    <p className={style.topOfHeader}>Amidst the trials and enchantments, you've used all your spells and tricks, earning a total of:</p>
+                    <p className={style.resultsSubHeader}>{totalCorrect} out of {totalQuestions} points! </p>
+                </div>
                 <p>
-                    <AllText regularText={message} />
+                    <AllText regularText={message} textClassName={style.lastSummary} />
                 </p>
             </div>
         </div>
