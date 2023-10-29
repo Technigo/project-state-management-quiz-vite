@@ -3,16 +3,18 @@
 
 :root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Harry Potter", "SPQR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
   /*background-color: rgb(10, 2, 41);*/
 }
 
+/*
 code {
-  /*font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;*/
-}
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}*/
 
 html,
 body {
@@ -21,7 +23,6 @@ body {
 
 html {
   background-color: #0b0a15;
-  /*rgb(14, 14, 29);*/
 }
 
 p {
@@ -78,14 +79,13 @@ body::before {
   grid-template-areas:
     "quizQuestion quizMultichoiseItem";
   background-color: #0b0a15b3;
-  /* rgb(14, 14, 29);*/
   border: 2px solid #b78f41bd;
   grid-area: questionBox;
   max-width: 800px;
-  height: 350px;
+  height: 400px;
 }
 
-/* ONLY GRID AREA DECLARED, REST OF STYLING IN MODULE FOR EACH CLASS: QuizQandA.module.css*/
+/* QandA PAGE, REST OF STYLING IN MODULE FOR EACH CLASS: QuizQandA.module.css*/
 
 .tasks {
   grid-area: questionTasks;
@@ -96,13 +96,10 @@ body::before {
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 45px;
   font-family: 'Harry Potter', sans-serif;
   color: #fafafa;
-  background-image: linear-gradient(to bottom, #ffcc66, #000);
-  -webkit-background-clip: text;
-  color: transparent;
-  margin: 46px;
+  margin: 52px 46px 15px 46px;
 }
 
 .quizMultichoiseItem {
@@ -115,10 +112,19 @@ h1 {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  margin-top: -40px;
+  margin-top: -50px;
 }
 
 .progressBar {
   max-width: 800px;
   margin: 0 auto;
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  h1 {
+    background-image: linear-gradient(to bottom, #ffcc66, #000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 }

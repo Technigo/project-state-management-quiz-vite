@@ -18,7 +18,7 @@ export const QuizQuestion = () => {
     return (
         <div>
             <div className={style.levelContainer}>
-                <AllText regularText="Quizzard Level:" />
+                <AllText regularText="Task Level:" />
                 <img className={style.levelWand} src={currentQuestion.questionLevel} alt="Question Level" />
             </div>
             <div className={style.quizQuestion}>

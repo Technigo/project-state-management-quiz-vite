@@ -14,10 +14,6 @@
 .h1 {
     font-size: 48px;
     font-family: 'Harry Potter', sans-serif;
-    color: #ffcc66;
-    /* backupcolor older web browser */
-    background-image: linear-gradient(to bottom, #ffcc66, #000);
-    -webkit-background-clip: text;
     color: transparent;
     margin-top: 0px;
     margin-bottom: 7px;
@@ -28,38 +24,32 @@
     font-size: 60px;
     font-family: 'Harry Potter', sans-serif;
     color: #ffcc66;
-    background-image: linear-gradient(to bottom, #ffcc66, #000);
-    -webkit-background-clip: text;
-    color: transparent;
     margin-top: 0px;
     margin-bottom: 30px;
     grid-area: h2;
 }
 
-.subHeader {
-    font-family: 'Harry Potter', sans-serif;
-    color: #ffcc66;
-    background-image: linear-gradient(to bottom, #ffcc66, #b78f41bd);
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 25px;
-    letter-spacing: 0.1em;
-}
-
 .topOfHeader {
     margin: 0;
+    font-size: 20px;
 }
 
 .resultsSubHeader {
+
+    color: #ffcc66;
+    font-family: 'Harry Potter', sans-serif;
     text-align: center;
     padding-top: 18px;
     padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 0.1em;
 }
 
 .textSummary {
     border: 2px solid #b78f41bd;
     background-color: #0b0a15b3;
-    padding: 35px;
+    padding: 25px;
     line-height: 1.5;
     grid-area: textSummary;
 }
@@ -67,5 +57,24 @@
 .lastSummary {
     font-size: 15px;
     text-align: center;
-    padding-bottom: 30px;
+    padding: 10px 10px 30px 10px;
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+
+    .resultsSubHeader {
+        background-image: linear-gradient(to bottom, #ffcc66, #b78f41bd);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+
+    }
+
+    .h1,
+    .h2 {
+        background-image: linear-gradient(to bottom, #ffcc66, #000);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
 }
