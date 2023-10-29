@@ -1,4 +1,4 @@
-import { QuizSummary } from "../components/QuizSummary";
+import { QuizSummary } from "../components/quizsummary/QuizSummary";
 
 export const Summary = () => {
   return (
