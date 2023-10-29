@@ -38,7 +38,7 @@ export const QuizMultichoise = () => {
                         className={`${style.optionButton} ${selectedAnswerIndex === index
                             ? isAnswerCorrect
                                 ? style.correct
-                                : style.incorrect
+                                : `${style.incorrect} ${style.shake}`
                             :
                             index === correctAnswerIndex && selectedAnswerIndex !== undefined
                                 ? style.correct

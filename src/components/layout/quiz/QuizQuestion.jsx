@@ -13,14 +13,14 @@ export const QuizQuestion = () => {
   }
 
   return (
-    <div className={style.question_wrapper}>
+    <div>
       <div className={style.levelContainer}>
-        <AllText regularText="Quizzard Level:" textClassName="small" />
+        <AllText regularText="Task Level:" />
         <img className={style.levelWand} src={currentQuestion.questionLevel} alt="Question Level" />
       </div>
       <div className={style.quizQuestion}>
-        <AllText regularText={`${question.questionText}`} />
-      </div>
+        < AllText regularText={`${question.questionText}`} />
+      </div >
     </div>
   );
 };

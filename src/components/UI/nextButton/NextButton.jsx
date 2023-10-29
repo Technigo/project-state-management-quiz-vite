@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import useQuizStore from "../../../stores/useQuizStore"
 import style from "./NextButton.module.css"
 
@@ -6,22 +6,21 @@ export const NextButton = () => {
 
   const selectedAnswerIndex = useQuizStore((state) => state.answers[state.currentQuestionIndex]?.answerIndex);
   const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
-  /*
-      if (selectedAnswerIndex !== undefined) {
-          useQuizStore.getState().goToNextQuestion();
-      }
-  */
-  //removed because I think this would make it go to next question without giving the user the choise? or?
+
+  /* Add different text on last Question/task */
+  const currentQuestionIndex = useQuizStore((state) => state.currentQuestionIndex);
+  const totalQuestions = useQuizStore((state) => state.questions.length);
+  const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
+  const isAnswerSelected = selectedAnswerIndex !== undefined;
 
   return (
     <div>
-      {/*--- commented "back inn" the disabled function. *Elba ---*/}
       <button
         onClick={goToNextQuestion}
         disabled={selectedAnswerIndex === undefined}
-        className={style.nextButton} // Legg til denne linjen
+        className={style.nextButton}
       >
-        Next task
+        {isLastQuestion && isAnswerSelected ? 'To Results' : isLastQuestion ? 'Last Task' : 'Next Task'}
       </button>
     </div>
   );
