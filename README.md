@@ -6,9 +6,7 @@
 
 # State Management Quiz
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In our project, we employed React in conjunction with Zustand for global state management. This combination allowed us to create a dynamic and responsive web application with efficient global state management.
 
 ## Getting Started with the Project
 
@@ -24,11 +22,19 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+https://www.figma.com/file/q5ht0e5fPrff1rBUVGO9aA/week-10?type=design&node-id=0%3A1&mode=design&t=3MS79R4y132Ed0W6-1
+
+To approach this project, we utilized React for building the interactive quiz application. We organized the questions and related data in an array of objects to maintain structured content. We leveraged the Zustand library to manage the global state efficiently, enabling seamless communication between components.
+
+For planning, we divided the project into different sections, such as the welcome page, question rendering, feedback handling, and summary display. We created separate components for each section, making the codebase modular and maintainable.
+
+Technologies used include React, Zustand for state management, and HTML/CSS for styling. We also imported Google Fonts to enhance typography and utilized media queries for responsive design.
+
+If we had more time, we might consider adding features like a timer for each question, user authentication, and storing quiz results. Additionally, we could improve the user interface and add more interactive elements to enhance the overall user experience.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://foodiequiz.netlify.app/
 
 ## Instructions
 
