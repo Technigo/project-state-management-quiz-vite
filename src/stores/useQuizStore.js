@@ -6,6 +6,7 @@ const useQuizStore = create((set) => ({
   currentQuestionIndex: 0,
   answers: [],
   quizOver: false,
+  selectedAnswers: [], // Store user-selected answers
   questions: [
     {
       id: 1,
@@ -29,9 +30,9 @@ const useQuizStore = create((set) => ({
     },
     {
       id: 4,
-      questionText: "put new Question 4 here!",
+      questionText: "One of the most emotionally engaging and significant cultural traditions is the celebration of 'Juhannus,' or Midsummer. Which country is known for this tradition, and how does it hold a special place in the hearts of its people?",
       options: ["Estonia", "Finland", "Indonesia", "Australia"],
-      correctAnswerIndex: 2, //correct answer for Q4 is Finland
+      correctAnswerIndex: 1, //correct answer for Q4 is Finland
     },
     {
       id: 5,
@@ -45,6 +46,7 @@ const useQuizStore = create((set) => ({
   submitAnswer: (answer) =>
     set((state) => ({
       answers: [...state.answers, answer],
+      
     })),
 
   goToNextQuestion: () =>
@@ -64,6 +66,12 @@ const useQuizStore = create((set) => ({
       quizOver: false,
     });
   },
+
+  getCorrectedAnswer: (answer) =>
+    set((state) => {
+      const updatedSelectedAnswers = [...state.selectedAnswers, answer];
+      return { selectedAnswers: updatedSelectedAnswers };
+    }),
 }));
 
 // The useQuizStore is exported for use in other parts of the application.

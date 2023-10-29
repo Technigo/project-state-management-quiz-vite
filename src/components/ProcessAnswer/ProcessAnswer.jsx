@@ -13,6 +13,7 @@ export const ProcessAnswer = () => {
     submitAnswer,
     restart,
     goToNextQuestion,
+    getCorrectedAnswer,
   } = useQuizStore();
   // mikael edit end
 
@@ -94,9 +95,14 @@ export const ProcessAnswer = () => {
   };
 
   const handleRadioChange = (event) => {
-    setUserChoice(event.target.value);
+    // setUserChoice(event.target.value);
+    // setResultMessage("");
+    // setIsAnswerChecked(false);
+    const selectedAnswer = event.target.value.trim();
+    setUserChoice(selectedAnswer);
     setResultMessage("");
     setIsAnswerChecked(false);
+    getCorrectedAnswer(selectedAnswer); // Store the user's selected answer
   };
 
   const handleNextQuestion = () => {
@@ -114,6 +120,9 @@ export const ProcessAnswer = () => {
     setUserChoice(null);
     setResultMessage("");
     setIsAnswerChecked(false);
+
+    // Log the currentQuestionIndex after going to the next question
+    console.log("Current Question Index:", useQuizStore.getState().currentQuestionIndex);
   };
 
   useEffect(() => {
