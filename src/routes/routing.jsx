@@ -6,6 +6,7 @@ import { QuestionPage } from "../pages/QuestionPage";
 
 export const routing = (
   <>
+    {/* Route to Home page */}
     <Route path="/" element={<HomePage />} />
     {/* Dynamic route */}
     <Route path="/quest/:id" element={<QuestionPage />} />
