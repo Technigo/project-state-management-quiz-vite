@@ -110,7 +110,7 @@ export const Board = () => {
   };
 
   //useEffect-hook which depends on the update of the answers-array. Runs checkIfWon-function.
-  useEffect(checkIfWon, [answers]);
+  useEffect(checkIfWon, [answers, navigate, setGameResult]);
 
   return (
     <>
