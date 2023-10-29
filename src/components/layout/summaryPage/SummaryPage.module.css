@@ -78,6 +78,7 @@
 
   }
 
+
   .h1,
   .h2 {
     background-image: linear-gradient(to bottom, #ffcc66, #000);
@@ -85,20 +86,21 @@
     -webkit-background-clip: text;
     color: transparent;
   }
+}
 
-  @media (max-width: 900px) {
-    .h2 {
-      font-size: 44px;
-    }
+@media (max-width: 900px) {
+  .h2 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .h1 {
+    font-size: 38px;
   }
 
-  @media (max-width: 600px) {
-    .h1 {
-      font-size: 38px;
-    }
-
-    .h2 {
-      font-size: 40px;
-      text-align: center;
-    }
+  .h2 {
+    font-size: 40px;
+    text-align: center;
   }
+}
