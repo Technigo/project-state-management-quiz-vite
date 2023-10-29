@@ -44,14 +44,12 @@
 }
 
 .textWelcomeBox {
-
   border: 2px solid #b78f41bd;
   grid-area: textWelcome;
   background-color: #0b0a15b3;
   margin-top: 45px;
   padding: 50px;
   line-height: 1.5;
-
 }
 
 .welcomeText {
@@ -90,7 +88,7 @@
 @media (max-width: 600px) {
   .h3 {
     font-size: 38px;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .h1 {
@@ -99,5 +97,15 @@
 
   .h2 {
     font-size: 30px;
+  }
+
+  .textWelcomeBox {
+    padding: 36px;
+
+  }
+
+  .welcomeText {
+    font-size: 13px;
+    text-align: center;
   }
 }

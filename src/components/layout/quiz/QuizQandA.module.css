@@ -21,9 +21,12 @@
   color: white;
 }
 
+.questions {
+  font-size: 20px;
+}
+
 .optionButton {
   color: #fafafa;
-  font-size: 15px;
   font-family: 'SPQR', sans-serif;
   letter-spacing: 0.1em;
   padding: 15px;
@@ -101,9 +104,23 @@
 @media (max-width: 600px) {
   .quizQuestion {
     max-width: 400px;
+    padding-bottom: 5px;
   }
 
   .optionButton {
     min-width: 100%;
+    min-height: 50px;
+  }
+
+  .questionText {
+    font-size: 18px;
+  }
+
+  .quizMultichoise {
+    padding: 13px 14px;
+  }
+
+  .questions {
+    font-size: 16px;
   }
 }

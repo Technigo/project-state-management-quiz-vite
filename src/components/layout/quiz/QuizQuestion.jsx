@@ -19,7 +19,7 @@ export const QuizQuestion = () => {
         <img className={style.levelWand} src={currentQuestion.questionLevel} alt="Question Level" />
       </div>
       <div className={style.quizQuestion}>
-        < AllText regularText={`${question.questionText}`} />
+        < AllText regularText={`${question.questionText}`} textClassName={style.questions} />
       </div >
     </div>
   );

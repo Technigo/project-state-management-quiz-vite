@@ -40,6 +40,7 @@
 .topOfHeader {
   margin: 0;
   font-size: 20px;
+  text-align: center;
 }
 
 .resultsSubHeader {
@@ -102,5 +103,25 @@
   .h2 {
     font-size: 40px;
     text-align: center;
+  }
+
+  .topOfHeader {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .resultsSubHeader {
+    color: #ffcc66;
+    font-family: 'Harry Potter', sans-serif;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+  }
+
+  .lastSummary {
+    font-size: 15px;
   }
 }

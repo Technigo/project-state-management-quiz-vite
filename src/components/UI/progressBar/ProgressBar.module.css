@@ -26,19 +26,22 @@
 }
 
 .num {
-  color: #fff;
+  color: #fafafaa2;
   text-align: end;
   font-family: "Harry Potter", sans-serif;
 }
 
 @media (max-width: 600px) {
   .icon {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
+    top: -39px;
   }
+
   .bar {
     margin-top: 40px;
     margin-inline: 14px;
+    height: 13px;
   }
 
   .num p {
