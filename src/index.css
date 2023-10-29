@@ -33,12 +33,12 @@ body {
   position: relative;
   min-height: 100vh;
   margin: 0;
-  cursor: url("./images/snitchh.png"), auto;
+  cursor: url("/public/images/snitchh.png"), auto;
 }
 
 body::before {
   content: "";
-  background-image: url("./images/iStock.jpg");
+  background-image: url("/public/images/iStock.jpg");
   background-size: cover;
   background-attachment: scroll;
   background-position: center center;
