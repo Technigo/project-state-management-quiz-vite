@@ -15,9 +15,9 @@ export const QuizSummary = () => {
       <p>Correct Answers: {correctAnswers}</p>*/}
 
       {gameResult === "win" ? (
-        <h2>Congrats, you won!</h2>
+        <h3 className="result">🌟 Victory! Quiz mastery unlocked! 🔓</h3>
       ) : (
-        <h2>You lost. Git gud, mate. gg ez</h2>
+        <h3 className="result">😉 So close! The crown's just a quiz away. 👑</h3>
       )}
 
       {/* Display user answers and correct answers for each question */}
@@ -25,10 +25,10 @@ export const QuizSummary = () => {
         {answers.map((answer) => {
           return (
             <li key={answer.questionId}>
-              <strong>Question:</strong>
+              {/* <strong>Question:</strong> */}
 
               <p>{answer.question.questionText}</p>
-              <p style={{ color: answer.isCorrect ? "green" : "red" }}>
+              <p style={{ color: answer.isCorrect ? "limegreen" : "red" }}>
                 Your Answer: {answer.answer}
               </p>
               <p>

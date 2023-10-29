@@ -18,11 +18,12 @@ a {
   border: 6px solid white;
   background-color: #b3b2c0;
   border-radius: 2px;
-  font-family: Helvetica;
+  /* font-family: Helvetica; */
   height: 5rem;
   width: 5rem;
   font-weight: bold;
   font-size: 2em;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,9 +85,8 @@ a {
   height: 40px;
   background: transparent;
   border-radius: 100%;
-  /* box-shadow: inset 0px 0px 0px 2px black; */
   border: 8px solid limegreen;
-  /* outline: 2px solid black; */
+
 }
 
 @media (min-width: 667px) {
