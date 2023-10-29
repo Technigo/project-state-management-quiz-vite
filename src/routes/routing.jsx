@@ -1,12 +1,12 @@
 import { Route } from "react-router-dom";
-import { HomePage } from "../pages/homepage/HomePage";
 import { PageNotFound } from "../pages/pagenotfound/PageNotFound";
 import { QuestionPage } from "../pages/questionpage/QuestionPage";
 import { SummaryPage } from "../pages/summarypage/SummaryPage";
+import { HomePage } from "../pages/homepage/HomePage";
 
 export const routing = (
   <>
-    {/* Route to Home page */}
+    {/* Route to the Home page */}
     <Route path="/" element={<HomePage />} />
     {/* Dynamic route */}
     <Route path="/quest/:id" element={<QuestionPage />} />
