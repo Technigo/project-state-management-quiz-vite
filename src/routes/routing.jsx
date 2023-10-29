@@ -10,6 +10,7 @@ export const routing = (
     <Route path="/" element={<HomePage />} />
     {/* Dynamic route */}
     <Route path="/quest/:id" element={<QuestionPage />} />
+    {/* Route to summary page */}
     <Route path="/summary" element={<Summary />} />
     {/* This route leads to the element that displays when a user has entered an incorrect link/address */}
     <Route path="*" element={<PageNotFound />} />
