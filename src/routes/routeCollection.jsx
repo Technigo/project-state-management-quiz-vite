@@ -1,7 +1,7 @@
-import { HomePage } from "../pages/homepage/HomePage";
-import { PageNotFound } from "../pages/pagenotfound/PageNotFound";
-import { QuestionPage } from "../pages/questionpage/QuestionPage";
-import { SummaryPage } from "../pages/summarypage/SummaryPage";
+import { HomePage } from "../pagelist/homepage/HomePage";
+import { PageNotFound } from "../pagelist/pagenotfound/PageNotFound";
+import { QuestionPage } from "../pagelist/questionpage/QuestionPage";
+import { SummaryPage } from "../pagelist/summarypage/SummaryPage";
 import { Route } from "react-router-dom";
 
 export const routeCollection = (
