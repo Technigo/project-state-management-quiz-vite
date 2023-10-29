@@ -19,6 +19,8 @@ If we had more time, we would like to make a customized hero image for the welco
 
 Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
 
+See it live here: https://theharrypotterquiz.netlify.app/
+
 ## Instructions
 
 <a href="instructions.md">
