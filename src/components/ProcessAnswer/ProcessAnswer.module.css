@@ -1,31 +1,63 @@
 /* CSS for answer section, 4 buttons etc */
 
-.button {
-  background-color: red;
-}
-
 .answerOptionsBox {
-  color: blue;
-  border: 2px solid red;
-  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
-.answerOptionsBox img {
-  max-width: 150px;
-  border: 1px solid black;
-  padding: 1em;
+.flags {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0px;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  background-color: #7493A3;
+  color: white;
+  height: 40px;
+  width: 130px;
+  font-family: 'Inika';
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #7493A3;
+  background-color: white;
 }
 
 /* Styling for the radio buttons - country flags */
-
-/*Hiding the radio buttons*/
-.flags input[type="radio"] {
-  display: none;
+[type="radio"] + img {
+  max-width: 150px;
+  border-radius: 35px;
+  padding: 1em;
   cursor: pointer;
 }
 
 [type="radio"]:checked + img {
   border-radius: 40px;
-  border-color: #f266ab;
-  background: #f266ab;
+  background: #8199A4;
+}
+
+/* Hiding the radio buttons */
+.flags input[type="radio"] {
+  display: none;
+  cursor: pointer;
 }

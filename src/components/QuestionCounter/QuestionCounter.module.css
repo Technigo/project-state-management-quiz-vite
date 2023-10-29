@@ -1,5 +1,6 @@
 /* CSS for the counter component component, put styling here */
 
 .counterBox {
-  text-align: right;
+  text-align: center;
+  font-size: 20px;
 }

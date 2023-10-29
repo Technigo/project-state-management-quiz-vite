@@ -1,0 +1,52 @@
+body {
+    background-image: url('./assets/background.jpg');
+    background-size: cover;
+    font-family: 'Inika';
+}
+
+.mainWrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.appContainer {
+    grid-column: 2 / 4;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quizWrapper {
+    background-color: #E9F1F5;
+    color: #7493A3;
+    border-radius: 30px;
+    max-width: 90%;
+    padding: 20px;
+}
+
+.currentQuestion {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 667px) {
+    .mainWrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .appContainer {
+        grid-column: 1 / 2;
+    }
+}
+
+@media screen and (min-width: 668px) and (max-width: 1024px) {
+    .mainWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .appContainer {
+        grid-column: 1 / 3;
+    }
+}

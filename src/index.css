@@ -1,4 +1,4 @@
-:root {
+/* :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -14,7 +14,7 @@ code {
 }
 
 /* Components Structure */
-.managed-component {
+/* .managed-component {
   outline: 1px solid red;
   padding: 2em;
   margin-bottom: 1em;
@@ -26,4 +26,4 @@ code {
 }
 .managed-component h1 {
   font-size: 1em;
-}
+}  */

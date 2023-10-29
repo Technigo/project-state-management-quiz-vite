@@ -30,7 +30,7 @@ const useQuizStore = create((set) => ({
     },
     {
       id: 4,
-      questionText: "One of the most emotionally engaging and significant cultural traditions is the celebration of 'Juhannus,' or Midsummer. Which country is known for this tradition, and how does it hold a special place in the hearts of its people?",
+      questionText: "Which country has the highest consumption of coffee per capita in the world?",
       options: ["Estonia", "Finland", "Indonesia", "Australia"],
       correctAnswerIndex: 1, //correct answer for Q4 is Finland
     },
