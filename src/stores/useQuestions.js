@@ -38,7 +38,7 @@ const questions = [
     id: 5,
     qImage: "/kanelbulle.png",
     questionText: "What is this?",
-    options: ["Crab Cake", "Shepherd's Pie", "Apple Pie", "Cinnamon Roll"],
+    options: ["Crab Cake", "Shepherd's Pie", "Apple Pie", "Cinnamon Bun"],
     correctAnswerIndex: 3,
   },
   {
@@ -76,6 +76,7 @@ const useQuizStore = create((set) => ({
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
+  gameResult: "",
 
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
@@ -106,23 +107,26 @@ const useQuizStore = create((set) => ({
     }));
   },
 
-  goToNextQuestion: () => {
-    set((state) => {
-      if (state.currentQuestionIndex + 1 === state.questions.length) {
-        return { quizOver: true };
-      } else {
-        return { currentQuestionIndex: state.currentQuestionIndex + 1 };
-      }
-    });
-  },
+  // goToNextQuestion: () => {
+  //   set((state) => {
+  //     if (state.currentQuestionIndex + 1 === state.questions.length) {
+  //       return { quizOver: true };
+  //     } else {
+  //       return { currentQuestionIndex: state.currentQuestionIndex + 1 };
+  //     }
+  //   });
+  // },
 
   restart: () => {
     set({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
+      gameResult: 0,
     });
   },
+
+  setGameResult: (result) => set({ gameResult: result }),
 }));
 
 export default useQuizStore;

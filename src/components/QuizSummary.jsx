@@ -1,27 +1,56 @@
-//import questions from ;
-export const Summary = () => {
-  return <></>;
-  // if (!formData) {
-  //   return null;
+import { useNavigate } from "react-router-dom";
+import useQuizStore from "../stores/useQuestions";
+import "./QuizSummary.css";
 
-  // const { questions all nine } = formData;
+export const QuizSummary = () => {
+  const { answers, restart, gameResult } = useQuizStore();
+  //restart, gameResult
+  // Calculate the number of correct answers
+  // const correctAnswers = answers.filter((answer) => answer.isCorrect).length;
+  const navigate = useNavigate();
+  return (
+    <div>
+      <h2 className="quiz-header">Quiz Summary</h2>
+      {/* <p>Total Questions: {questions.length}</p>
+      <p>Correct Answers: {correctAnswers}</p>*/}
 
-  // const formattedData = `
-  // Questions 1: ${answer}
-  // Questions 2: ${answer}
-  // Questions 3: ${answer}
-  // Questions 4: ${answer}
-  // Questions 5: ${answer}
-  // Questions 6: ${answer}
-  // Questions 7: ${answer}
-  // Questions 8: ${answer}
-  // Questions 9: ${answer}
-  // `
-  //   return (
+      {gameResult === "win" ? (
+        <h2>Congrats, you won!</h2>
+      ) : (
+        <h2>You lost. Git gud, mate. gg ez</h2>
+      )}
 
-  //   <div className="summary">
-  //     <h2>Summary</h2>
-  //     <pre>{formattedData}</pre>
-  //     </div>
-  //   );
+      {/* Display user answers and correct answers for each question */}
+      <ul className="answer-summary">
+        {answers.map((answer) => {
+          return (
+            <li key={answer.questionId}>
+              <strong>Question:</strong>
+
+              <p>{answer.question.questionText}</p>
+              <p style={{ color: answer.isCorrect ? "green" : "red" }}>
+                Your Answer: {answer.answer}
+              </p>
+              <p>
+                Correct Answer:{" "}
+                {answer.question.options[answer.question.correctAnswerIndex]}
+              </p>
+              {/* <p>{answer.isCorrect ? "Correct" : "Incorrect"}</p> */}
+            </li>
+          );
+        })}
+      </ul>
+      {console.log(gameResult)}
+
+      <button
+        className="restart-btn"
+        onClick={() => {
+          restart();
+          navigate("/");
+        }}
+      >
+        Restart Quiz
+      </button>
+    </div>
+  );
 };

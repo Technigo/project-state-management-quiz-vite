@@ -8,7 +8,6 @@ import { Timer } from "../Timer";
 
 import "./questions.css";
 
-
 export const Questions = ({ param }) => {
   const [showImage, setShowImage] = useState(true);
   const [answerIndex, setAnswerIndex] = useState(null);
@@ -31,11 +30,11 @@ export const Questions = ({ param }) => {
   const handleOptionChange = (event) => {
     setAnswerIndex(Number(event.target.value));
   };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    submitAnswer(question.id, answerIndex);
-    navigate("/");
-  }
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   submitAnswer(question.id, answerIndex);
+  //   navigate("/");
+  // }
 
   useEffect(() => flipCard, []);
 
@@ -72,19 +71,19 @@ export const Questions = ({ param }) => {
           ))}
         </form>
       )}
-        {!showImage && (
-      <button
-        className="button"
-        type="submit"
-        onClick={(e) => {
-          e.preventDefault();
-          submitAnswer(question.id, answerIndex);
-          navigate("/");
-        }}
-      >
-        SUBMIT
-      </button>
-    )}
+      {!showImage && (
+        <button
+          className="button"
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            submitAnswer(question.id, answerIndex);
+            navigate("/");
+          }}
+        >
+          SUBMIT
+        </button>
+      )}
     </div>
   );
 };

@@ -1,5 +1,9 @@
-import { Summary } from "../components/QuizSummary";
+import { QuizSummary } from "../components/QuizSummary";
 
-export const SummaryPage = () => {
-  return <Summary />;
+export const Question = () => {
+  return (
+    <>
+      <QuizSummary />
+    </>
+  );
 };
