@@ -4,7 +4,7 @@ import { QuestionPage } from "../pages/questionpage/QuestionPage";
 import { SummaryPage } from "../pages/summarypage/SummaryPage";
 import { Route } from "react-router-dom";
 
-export const routeCollection = () => {
+export const routeCollection = (
   <>
     {/* Route to the Home page */}
 
@@ -18,5 +18,5 @@ export const routeCollection = () => {
     {/* Route to the summary page */}
 
     <Route path="/summary" element={<SummaryPage />} />
-  </>;
-};
+  </>
+);
