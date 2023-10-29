@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import useQuizStore from "../stores/useQuestions";
+import Confetti from "react-confetti";
 import "./QuizSummary.css";
 
 export const QuizSummary = () => {
@@ -11,11 +12,11 @@ export const QuizSummary = () => {
   return (
     <div>
       <h2 className="quiz-header">Quiz Summary</h2>
-  
+      {gameResult === "win" && <Confetti />} 
       {gameResult === "win" ? (
         <h3 className="result">🌟 Victory! Quiz mastery unlocked! 🔓</h3>
       ) : (
-        <h3 className="result">😉 So close! The crown's just a quiz away. 👑</h3>
+        <h3 className="result">😉 So close! The crown&apos; s just a quiz away. 👑</h3>
       )}
 
       {/* Display user answers and correct answers for each question */}
@@ -37,6 +38,7 @@ export const QuizSummary = () => {
           );
         })}
       </ul>
+  
       {console.log(gameResult)}
 
       <button
