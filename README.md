@@ -1,37 +1,11 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/quiz.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
 # State Management Quiz
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+Group project Technigo boot camp week 10 by: Inna Kokic, Jenny Larsen, Vera Witting, Emmy Dieden and Idah Collin. Multiple-choice quiz using Zustand for state management.
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Course material, discussing within the group/team and chatGPT was used to build the project. Good communication in the beginning with going through schedules and how to build the project helped. It was a bit tricky to divide the project and at the same time learn as much as possible. Figma was used for planning and design, this helped a lot as well as clear comments and time to hand over the project to make sure everyone was onboard.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+https://state-management-quiz-groupproject.netlify.app/

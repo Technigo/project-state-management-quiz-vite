@@ -1,14 +1,21 @@
-import { CurrentQuestionUseContext } from "./components/CurrentQuestionUseContext";
-import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand";
-import { QuizProvider } from "./context/QuizContext";
+// Entry point. Basic structure for the React application. Handling and defines the 'Routes' component. Enables routing.
+
+import { BrowserRouter, Routes } from "react-router-dom";
+import { routes } from "./routes/routes";
 
 export const App = () => {
   return (
-    <QuizProvider>
-      <div>
-        <CurrentQuestionUseContext />
-        <CurrentQuestionZustand />
-      </div>
-    </QuizProvider>
+    <>
+     <BrowserRouter>
+     <header className="question-header-h1">
+        <h1>QUIZ</h1>
+      </header>
+     <div className="app-content-wrapper">
+     <Routes>
+      {routes}
+     </Routes>
+     </div>
+     </BrowserRouter>
+    </>
   );
 };

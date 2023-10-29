@@ -1,20 +1,34 @@
-import useQuizStore from "../stores/useQuizStore"; // Adjust the path accordingly
+// This component is mounted in the page 'Questions.jsx'
+
+import useQuizStore from "../stores/useQuizStore";
+import "./CurrentQuestion.css";
 
 export const CurrentQuestionZustand = () => {
-  const questions = useQuizStore((state) => state.questions);
-  const currentQuestionIndex = useQuizStore(
-    (state) => state.currentQuestionIndex
-  );
-  const question = questions[currentQuestionIndex];
+  // Retrieve the questions and current question index from the quiz store 
+    const questions = useQuizStore((state) => state.questions);
+    const currentQuestionIndex = useQuizStore(
+        (state) => state.currentQuestionIndex
+    );
 
-  if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>;
-  }
+    // Get the current questions based on the current index
+    const question = questions[currentQuestionIndex];
 
-  return (
-    <div className="managed-component">
-      <h2>Using Zustand</h2>
-      <h1>Question: {question.questionText}</h1>
-    </div>
-  );
+    // Check if a valid question was found; if not, display an error message
+    if (!question) {
+        return <h1>Oh no! I could not find the current question!</h1>;
+    }
+
+    // Render the current question and question number
+    return (
+        <div className="question-card">
+            
+            <div className="question-heading-wrapper">
+                <h1>{question.questionHeading}</h1>
+                <p>Question {currentQuestionIndex + 1}/5</p>
+            </div>
+            <img src={question.imageURL} alt="Sunrise" />
+            <p>{question.questionText}</p>
+            
+        </div>
+    );
 };
