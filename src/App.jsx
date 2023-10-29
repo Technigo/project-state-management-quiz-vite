@@ -1,14 +1,11 @@
-import { CurrentQuestionUseContext } from "./components/CurrentQuestionUseContext";
-import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand";
-import { QuizProvider } from "./context/QuizContext";
+import { BrowserRouter, Routes } from "react-router-dom";
+import { routeCollection } from "./routes/routeCollection";
 
 export const App = () => {
   return (
-    <QuizProvider>
-      <div>
-        <CurrentQuestionUseContext />
-        <CurrentQuestionZustand />
-      </div>
-    </QuizProvider>
+    <BrowserRouter>
+      {/* Routes are taken from a list inside routeCollection */}
+      <Routes>{routeCollection}</Routes>
+    </BrowserRouter>
   );
 };

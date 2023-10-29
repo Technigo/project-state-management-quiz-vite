@@ -1,0 +1,105 @@
+.quiz-header {
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin: 3rem;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
+  color: #0fa;
+}
+
+.answer-summary {
+  font-size: 1em;
+  text-align: center;
+  margin-bottom: 3em;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.answer-summary li{
+margin-bottom: 1em;
+}
+
+.restart-btn {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  color: black;
+  font-weight: bold;
+  padding: 1.18em 3em 1.03em;
+  line-height: 1;
+  border-radius: 1em;
+  position: relative;
+  min-width: 8.23em;
+  text-decoration: none;
+  font-size: 1.25rem;
+  border: none;
+  margin-top: 2rem;
+  filter: url("#goo");
+  width: auto;
+}
+
+.restart-btn:before,
+.restart-btn:after {
+  width: 7em;
+  height: 3em;
+  position: absolute;
+  content: "";
+  display: inline-block;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: scale(0);
+  z-index: -1;
+}
+
+.restart-btn:before {
+  top: -20%;
+  left: 40%;
+}
+
+.restart-btn:after {
+  bottom: -20%;
+  right: 40%;
+}
+
+.restart-btn:hover:before,
+.restart-btn:hover:after {
+  transform: none;
+  background-color: #88c1b2;
+}
+.restart-btn:hover {
+  background-color: #88c1b2;
+}
+/* 
+@media (min-width: 667px) {
+  .answer-summary {
+    height: 9.375rem;
+    width: 9.375rem;
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 1025px) {
+  .answer-summary {
+    height: 9.375rem;
+    width: 9.375rem;
+    font-size: 1em;
+  }
+} */
