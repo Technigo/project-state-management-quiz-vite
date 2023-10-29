@@ -11,11 +11,13 @@ export const QuizSummary = () => {
   return (
     <div>
       <h2 className="quiz-header">Quiz Summary</h2>
-  
+
       {gameResult === "win" ? (
-        <h3 className="result">🌟 Victory! Quiz mastery unlocked! 🔓</h3>
+        <h3 className="result">🌟 Victory! Quiz mastery achieved! 👑</h3>
       ) : (
-        <h3 className="result">😉 So close! The crown's just a quiz away. 👑</h3>
+        <h3 className="result">
+          😉 So close! The crown is just a quiz away. 👑
+        </h3>
       )}
 
       {/* Display user answers and correct answers for each question */}
