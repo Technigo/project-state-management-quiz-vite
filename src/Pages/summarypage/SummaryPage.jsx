@@ -1,6 +1,6 @@
 import { QuizSummary } from "../../components/quizsummary/QuizSummary";
 
-export const Summary = () => {
+export const SummaryPage = () => {
   return (
     <>
       <QuizSummary />
