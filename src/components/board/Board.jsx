@@ -92,7 +92,6 @@ export const Board = () => {
       winningDia1 ||
       winningDia2
     ) {
-      setGameResult(1);
       setGameResult("win");
       navigate("/summary");
     } else if (
@@ -105,7 +104,6 @@ export const Board = () => {
       losingDia1 &&
       losingDia2
     ) {
-      setGameResult(-1);
       setGameResult("lose");
       navigate("/summary");
     }

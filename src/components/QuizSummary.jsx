@@ -11,9 +11,7 @@ export const QuizSummary = () => {
   return (
     <div>
       <h2 className="quiz-header">Quiz Summary</h2>
-      {/* <p>Total Questions: {questions.length}</p>
-      <p>Correct Answers: {correctAnswers}</p>*/}
-
+  
       {gameResult === "win" ? (
         <h2>Congrats, you won!</h2>
       ) : (
@@ -35,7 +33,6 @@ export const QuizSummary = () => {
                 Correct Answer:{" "}
                 {answer.question.options[answer.question.correctAnswerIndex]}
               </p>
-              {/* <p>{answer.isCorrect ? "Correct" : "Incorrect"}</p> */}
             </li>
           );
         })}
