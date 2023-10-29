@@ -1,8 +1,8 @@
 import { Route } from "react-router-dom";
-import { Summary } from "../pages/SummaryPage";
-import { HomePage } from "../pages/HomePage";
+import { Summary } from "../pages/summarypage/SummaryPage";
+import { HomePage } from "../pages/homepage/HomePage";
 import { PageNotFound } from "../pages/pagenotfound/PageNotFound";
-import { QuestionPage } from "../pages/QuestionPage";
+import { QuestionPage } from "../pages/questionpage/QuestionPage";
 
 export const routing = (
   <>

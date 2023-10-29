@@ -1,4 +1,4 @@
-import { Questions } from "../components/questions/Questions";
+import { Questions } from "../../components/questions/Questions";
 import { useParams } from "react-router-dom";
 
 export const QuestionPage = () => {
