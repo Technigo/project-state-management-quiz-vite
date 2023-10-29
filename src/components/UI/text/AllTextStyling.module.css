@@ -1,0 +1,14 @@
+ /* .header {
+   color: #fafafa;
+    font-size: 30px;
+    font-family: 'Harry Potter', sans-serif;
+    letter-spacing: 0.1em;
+}*/
+
+ .regularText {
+   color: #fafafa;
+   font-size: 18px;
+   font-family: 'SPQR', sans-serif;
+   letter-spacing: 0.1em;
+   line-height: 1.5;
+ }

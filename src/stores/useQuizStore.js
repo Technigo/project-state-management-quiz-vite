@@ -1,28 +1,16 @@
 import { create } from "zustand";
-
-const questions = [
-  {
-    id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
-    correctAnswerIndex: 0,
-  },
-  {
-    id: 2,
-    questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
-    correctAnswerIndex: 2,
-  },
-];
+import { questions } from "../data.js";
 
 const useQuizStore = create((set) => ({
   questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
+  startQuiz: false,
+  finishQuiz: false,
 
   submitAnswer: (questionId, answerIndex) => {
+    //console.log("Submitting answer:", questionId, answerIndex);
     const question = questions.find((q) => q.id === questionId);
 
     if (!question) {
@@ -54,6 +42,7 @@ const useQuizStore = create((set) => ({
   goToNextQuestion: () => {
     set((state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
+        console.log("Quiz should be over now");
         return { quizOver: true };
       } else {
         return { currentQuestionIndex: state.currentQuestionIndex + 1 };
@@ -66,8 +55,19 @@ const useQuizStore = create((set) => ({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
+      startQuiz: false,
     });
   },
+
+  // when this startQuiz is true, the quiz page will be opened
+  // This needs to be imported and called in WelcomePage.
+  start: () => {
+    set({
+      startQuiz: true,
+    });
+  },
+
+  // For the summary page, we can use quizOver. When it is true, we can show the summary page.
 }));
 
 export default useQuizStore;
