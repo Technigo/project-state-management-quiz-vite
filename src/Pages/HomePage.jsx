@@ -1,7 +1,7 @@
 import { Board } from "../components/board/Board";
 import "./Home.css";
 
-const Home = () => {
+export const HomePage = () => {
   return (
     <>
       <h1 className="home-title">Welcome to our quiz game!</h1>
@@ -9,5 +9,3 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;
