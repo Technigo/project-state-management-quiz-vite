@@ -6,26 +6,29 @@ export const Footer = () => {
     <footer>
       <ul>
         <li>
-          <a href="https://github.com/JuliaHolm">
-            <AiFillGithub className="github-icon" />
+          <a href="https://github.com/JuliaHolm" target="_blank">
+            <AiFillGithub className="github-icon" alt="GitHub Icon for Julia" />
             Julia
           </a>
         </li>
         <li>
-          <a href="https://github.com/LauraLyckholm">
-            <AiFillGithub className="github-icon" />
+          <a href="https://github.com/LauraLyckholm" target="_blank">
+            <AiFillGithub className="github-icon" alt="GitHub Icon for Laura" />
             Laura
           </a>
         </li>
         <li>
-          <a href="https://github.com/smExlex">
-            <AiFillGithub className="github-icon" />
+          <a href="https://github.com/smExlex" target="_blank">
+            <AiFillGithub
+              className="github-icon"
+              alt="GitHub Icon for Susanne"
+            />
             Susanne
           </a>
         </li>
         <li>
-          <a href="https://github.com/AnnaRobertsson">
-            <AiFillGithub className="github-icon" />
+          <a href="https://github.com/AnnaRobertsson" target="_blank">
+            <AiFillGithub className="github-icon" alt="GitHub Icon for Anna" />
             Anna
           </a>
         </li>
