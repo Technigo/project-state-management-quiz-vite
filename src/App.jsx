@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes } from "react-router-dom";
 import { routes } from "./routes/routes";
+import { Footer } from "./components/Footer/Footer";
 
 export const App = () => {
   return (
@@ -9,6 +10,9 @@ export const App = () => {
       <main className="main-wrapper">
         <Routes>{routes}</Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 };
+
+
