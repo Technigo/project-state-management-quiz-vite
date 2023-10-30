@@ -1,0 +1,143 @@
+.option-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.option {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+.option-button {
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 15px;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  outline: 0;
+  padding: 1em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.option-button:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 15px;
+  padding: 10px 20px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s;
+  width: 92%;
+}
+
+.option-button:hover {
+  box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
+    rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+.result-text h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+
+.correct {
+  background-color: #4caf50;
+  border: 0;
+  border-radius: 15px;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  outline: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.incorrect {
+  background-color: #ff1010;
+  border: 0;
+  border-radius: 15px;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  outline: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 392px) {
+
+  .option-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0px;
+  }
+
+  .option {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .option-button {
+    font-size: 12px;
+    flex-basis: 48%;
+  }
+}
+
+/* Tablet small */
+@media (min-width: 393px) and (max-width: 744px) {
+
+  .option-button {
+    font-size: 12px;
+  }
+}
+
+
+/* Tablet */
+@media (min-width: 745px) and (max-width: 1024px) {
+
+  .option-button {
+    font-size: 18px;
+  }
+}

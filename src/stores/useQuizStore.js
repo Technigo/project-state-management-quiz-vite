@@ -1,29 +1,77 @@
 import { create } from "zustand";
+import image1 from "../assets/image1.jpg";
+import image2 from "../assets/image2.jpg";
+import image3 from "../assets/image3.jpg";
+import image4 from "../assets/image4.jpg";
+import image5 from "../assets/image5.jpg";
 
 const questions = [
   {
     id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
+    questionText: "What lake is this?",
+    options: ["Lake Louise", "Lake Como", "Lake Titicaca", "Lake Superior"],
     correctAnswerIndex: 0,
+    imagesrc: image1,
   },
   {
     id: 2,
     questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
+      "The Mariana Trench, the deepest part of the world's oceans, is located in which ocean?",
+    options: [
+      "Atlantic ocean",
+      "Pacific ocean",
+      "Southern ocean",
+      "Indian Ocean",
+    ],
+    correctAnswerIndex: 1,
+    imagesrc: image2,
+  },
+  {
+    id: 3,
+    questionText: "What percentage of Earth's surface is covered by oceans?",
+    options: [
+      "~50%",
+      "~61%",
+      "~71%",
+      "~85%",
+    ],
     correctAnswerIndex: 2,
+    imagesrc: image3,
+  },
+  {
+    id: 4,
+    questionText: "What type of shark is pictured above?",
+    options: ["Angel shark", "Tiger shark", "Whale shark", "Nurse shark"],
+    correctAnswerIndex: 3,
+    imagesrc: image4,
+  },
+  {
+    id: 5,
+    questionText: "Who is the actor who plays Aquaman?",
+    options: ["Liam Hemsworth", "Jason Segel", "Chris Evans", "Jason Momoa"],
+    correctAnswerIndex: 3,
+    imagesrc: image5,
   },
 ];
+
+const resultTextArray = ["You absolutely got this!", "Oops, not this time!"];
 
 const useQuizStore = create((set) => ({
   questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
+  userAnswer: null,
+  resultTextArray,
+  resultText: "",
+
+  // setUserAnswer: (answer) => {
+  //   set({ userAnswer: answer });
+  // },
 
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
+    set({ userAnswer: answerIndex });
 
     if (!question) {
       throw new Error(
@@ -38,16 +86,7 @@ const useQuizStore = create((set) => ({
     }
 
     set((state) => ({
-      answers: [
-        ...state.answers,
-        {
-          questionId,
-          answerIndex,
-          question,
-          answer: question.options[answerIndex],
-          isCorrect: question.correctAnswerIndex === answerIndex,
-        },
-      ],
+      answers: [...state.answers, question.options[answerIndex]],
     }));
   },
 
@@ -56,7 +95,11 @@ const useQuizStore = create((set) => ({
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         return { quizOver: true };
       } else {
-        return { currentQuestionIndex: state.currentQuestionIndex + 1 };
+        return {
+          currentQuestionIndex: state.currentQuestionIndex + 1,
+          userAnswer: null,
+          resultText: "",
+        };
       }
     });
   },
@@ -66,6 +109,8 @@ const useQuizStore = create((set) => ({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
+      userAnswer: null,
+      resultText: "",
     });
   },
 }));

@@ -13,17 +13,257 @@ code {
     monospace;
 }
 
-/* Components Structure */
-.managed-component {
-  outline: 1px solid red;
-  padding: 2em;
-  margin-bottom: 1em;
-  font-size: 1em;
+html,
+body {
+  margin: 0 auto;
+  padding: 0 auto;
 }
+
+img {
+  width: 700px;
+  padding: 20px;
+}
+
+/* Components Structure */
+
+.start {
+  width: 1000px;
+  display: grid;
+  place-items: center;
+  padding: 100px 0px 100px 200px;
+}
+
+.start button {
+  font-family: "Poppins", sans-serif;
+  background-color: #d7f2fb;
+  color: #0b24f5;
+  border: 1px dotted #0b24f5;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 26px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.start button:hover {
+  background-color: #0b24f5;
+  color: white;
+}
+
+.startImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.startImg img {
+  width: 300px;
+}
+
+.managed-component {
+  width: 1000px;
+  display: grid;
+  place-items: center;
+  padding: 50px 0px 100px 200px;
+}
+
 .managed-component h2 {
   text-align: center;
   font-size: 1.5em;
 }
+
 .managed-component h1 {
-  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.progress-bar-fill {
+  background-color: #4caf50;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.progress-bar-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 392px) {
+
+  html,
+  body {
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+
+  img {
+    width: 60%;
+    padding: 10px;
+  }
+
+  .start {
+    width: 100%;
+    padding: 5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .managed-component {
+    width: 80%;
+    padding: 0px;
+  }
+
+  .managed-component h1 {
+    width: 50%;
+    font-size: 20px;
+  }
+
+  .progress-bar {
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+  }
+
+  .start button {
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  .startImg img {
+    width: 100px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Tablet small */
+@media (min-width: 393px) and (max-width: 744px) {
+
+  html,
+  body {
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+
+  img {
+    width: 60%;
+    padding: 10px;
+  }
+
+  .start {
+    width: 100%;
+    padding: 5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .managed-component {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .managed-component h1 {
+    width: 50%;
+  }
+
+  .progress-bar {
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+  }
+
+  .start button {
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  .startImg img {
+    width: 100px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Tablet */
+@media (min-width: 745px) and (max-width: 1024px) {
+
+  html,
+  body {
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+
+  img {
+    width: 80%;
+    padding: 10px;
+  }
+
+  .start {
+    width: 100%;
+    padding: 5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .managed-component {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .managed-component h1 {
+    width: 50%;
+  }
+
+  .progress-bar {
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+  }
+
+  .start button {
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  .startImg img {
+    width: 200px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
