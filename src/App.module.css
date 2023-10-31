@@ -1,5 +1,5 @@
 body {
-    background-image: url('./assets/background.jpg');
+    background-image: url('../public/assets/background.jpg');
     background-size: cover;
     font-family: 'Inika';
 }
