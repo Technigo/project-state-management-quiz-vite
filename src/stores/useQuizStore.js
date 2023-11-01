@@ -1,66 +1,64 @@
 import { create } from "zustand";
 
-const questions = [
-  {
-    id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
-    correctAnswerIndex: 0,
-  },
-  {
-    id: 2,
-    questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
-    correctAnswerIndex: 2,
-  },
-];
+//// This is the main state store for the quiz. It contains the variable "questions", an array empty for the answers, a default index of 0 for the "currentQuestionIndex" and a default state of false for the variable "quizOver"
 
 const useQuizStore = create((set) => ({
-  questions,
-  answers: [],
   currentQuestionIndex: 0,
+  answers: [],
   quizOver: false,
+  selectedAnswers: [], // Store user-selected answers
+  questions: [
+    {
+      id: 1,
+      questionText:
+        "Uluru, The Great Barrier Reef, and Mount Kosciuszko, are found in which country?",
+      options: ["Estonia", "Finland", "Indonesia", "Australia"],
+      correctAnswerIndex: 3, //correct answer for Q1 is Australia
+    },
+    {
+      id: 2,
+      questionText:
+        "Which country is known for its love of technology and once declared internet access a basic human right, ensuring that even a squirrel in the forest can livestream its hoarding activities?",
+      options: ["Estonia", "Finland", "Indonesia", "Australia"],
+      correctAnswerIndex: 0, //correct answer for Q2 is Estonia
+    },
+    {
+      id: 3,
+      questionText: "Nasi Goreng is a popular dish is which country?",
+      options: ["Estonia", "Finland", "Indonesia", "Australia"],
+      correctAnswerIndex: 2, //correct answer for Q3 is Indonesia
+    },
+    {
+      id: 4,
+      questionText: "Which country has the highest consumption of coffee per capita in the world?",
+      options: ["Estonia", "Finland", "Indonesia", "Australia"],
+      correctAnswerIndex: 1, //correct answer for Q4 is Finland
+    },
+    {
+      id: 5,
+      questionText: "Komodo Dragons can only be found in which country?",
+      options: ["Estonia", "Finland", "Indonesia", "Australia"],
+      correctAnswerIndex: 2, //correct answer for Q5 is Indonesia
+    },
+  ],
 
-  submitAnswer: (questionId, answerIndex) => {
-    const question = questions.find((q) => q.id === questionId);
-
-    if (!question) {
-      throw new Error(
-        "Could not find question! Check to make sure you are passing the question id correctly."
-      );
-    }
-
-    if (question.options[answerIndex] === undefined) {
-      throw new Error(
-        `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
-      );
-    }
-
+  // This function takes a question id and an answer index, validates them, and then updates the answers array with the user's answer.
+  submitAnswer: (answer) =>
     set((state) => ({
-      answers: [
-        ...state.answers,
-        {
-          questionId,
-          answerIndex,
-          question,
-          answer: question.options[answerIndex],
-          isCorrect: question.correctAnswerIndex === answerIndex,
-        },
-      ],
-    }));
-  },
+      answers: [...state.answers, answer],
+      
+    })),
 
-  goToNextQuestion: () => {
+  goToNextQuestion: () =>
     set((state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         return { quizOver: true };
       } else {
         return { currentQuestionIndex: state.currentQuestionIndex + 1 };
       }
-    });
-  },
+    }),
 
+  //restart quiz - r-eadded from starter code by Beckie for the restart quiz button
   restart: () => {
     set({
       answers: [],
@@ -68,6 +66,13 @@ const useQuizStore = create((set) => ({
       quizOver: false,
     });
   },
+
+  getCorrectedAnswer: (answer) =>
+    set((state) => {
+      const updatedSelectedAnswers = [...state.selectedAnswers, answer];
+      return { selectedAnswers: updatedSelectedAnswers };
+    }),
 }));
 
+// The useQuizStore is exported for use in other parts of the application.
 export default useQuizStore;

@@ -1,0 +1,7 @@
+/* CSS for the header component, put styling here */
+
+.header {
+  color: white;
+  -webkit-text-stroke: 2px #8199A4;
+  font-size: 25px;
+}
