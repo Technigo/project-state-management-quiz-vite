@@ -1,0 +1,29 @@
+footer {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+}
+
+footer ul {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: ease 0.3s;
+}
+
+.github-icon {
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 0.3rem;
+  transition: ease 0.3s;
+}
+
+footer a:hover,
+a:hover .github-icon {
+  color: #ec661e;
+}

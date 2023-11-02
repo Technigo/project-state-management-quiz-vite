@@ -1,0 +1,9 @@
+.error-page-wrapper {
+  max-width: 20rem;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

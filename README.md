@@ -6,32 +6,17 @@
 
 # State Management Quiz
 
-Replace this readme with your own information about your project.
+The project for this week involves creating a dynamic quiz game utilizing Zustand for state management in a React application. This interactive game offers users a series of multiple-choice questions, where they can select their answers. React Router Dom has also been utilized for moving the user between different pages, like the startpage, errorpage, questionpage and summarypage. Accessibility has been in the back of our minds during the entire project. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A group project by Laura Lyckholm, Anna Robertsson, Julia Holm and Susanne Ekenheim.
 
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The project was done in a group of four people. We mainly worked using mob- and pair programming, using Live Share. We found this to be the best approach to allow for a deeper understanding of the codebase in the whole group. Communication was key. During programming sessions we always notified the others of what we where doing, so that everyone felt involved. If something went wrong, we where all hands on deck trying to figure out the issue by discussing possible problems and outcomes, and by searching the web for solutions. Understanding Zustand was our greatest hurdle, but by discussing with each other, asking help from other teammates and by writing clear comments, we could start to understand the concept better. 
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://the-halloween-quiz.netlify.app/
 
-## Instructions
 
-<a href="instructions.md">
-   See instructions of this project
-  </a>
