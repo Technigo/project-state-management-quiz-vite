@@ -3,8 +3,9 @@ import { create } from "zustand";
 const questions = [
   {
     id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
+    questionText:
+      "What character is so strong they have been known to pull people's arms out of their sockets?",
+    options: ["Chewbacca", "Bib Fortuna", "", "Asafa Powell"],
     correctAnswerIndex: 0,
   },
   {
@@ -66,8 +67,18 @@ const useQuizStore = create((set) => ({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
+      // startQuiz: false, lägg ev till senare här
     });
   },
+
+  // Se över detta senare:
+  // when this startQuiz is true, the quiz page will be opened
+  // This needs to be imported and called in WelcomePage.
+  // start: () => {
+  //   set({
+  //     startQuiz: true,
+  //   });
+  // },
 }));
 
 export default useQuizStore;

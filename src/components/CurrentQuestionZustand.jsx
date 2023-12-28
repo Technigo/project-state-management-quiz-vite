@@ -1,20 +1,15 @@
-import useQuizStore from "../stores/useQuizStore"; // Adjust the path accordingly
+import useQuizStore from "../stores/useQuizStore";
 
-export const CurrentQuestionZustand = () => {
-  const questions = useQuizStore((state) => state.questions);
-  const currentQuestionIndex = useQuizStore(
-    (state) => state.currentQuestionIndex
-  );
-  const question = questions[currentQuestionIndex];
+import style from "./Bits and Bobs/ButtonRestart.css";
 
-  if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>;
-  }
+export const RestartButton = () => {
+  const restart = useQuizStore((state) => state.restart);
 
   return (
-    <div className="managed-component">
-      <h2>Using Zustand</h2>
-      <h1>Question: {question.questionText}</h1>
+    <div className={style.restartButtonContainer}>
+      <button className={style.restartButton} type="button" onClick={restart}>
+        New Duel?
+      </button>
     </div>
   );
 };
