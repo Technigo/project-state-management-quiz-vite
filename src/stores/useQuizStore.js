@@ -1,21 +1,5 @@
 import { create } from "zustand";
-
-const questions = [
-  {
-    id: 1,
-    questionText:
-      "What character is so strong they have been known to pull people's arms out of their sockets?",
-    options: ["Chewbacca", "Bib Fortuna", "", "Asafa Powell"],
-    correctAnswerIndex: 0,
-  },
-  {
-    id: 2,
-    questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
-    correctAnswerIndex: 2,
-  },
-];
+import { questions } from "../components/QuestionsArray";
 
 const useQuizStore = create((set) => ({
   questions,
@@ -26,17 +10,17 @@ const useQuizStore = create((set) => ({
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
 
-    if (!question) {
-      throw new Error(
-        "Could not find question! Check to make sure you are passing the question id correctly."
-      );
-    }
+    // if (!question) {
+    //   throw new Error(
+    //     "This question could not be found unfortunately"
+    //   );
+    // }
 
-    if (question.options[answerIndex] === undefined) {
-      throw new Error(
-        `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
-      );
-    }
+    // if (question.options[answerIndex] === undefined) {
+    //   throw new Error(
+    //     `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+    //   );
+    // }
 
     set((state) => ({
       answers: [
@@ -67,18 +51,14 @@ const useQuizStore = create((set) => ({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
-      // startQuiz: false, lägg ev till senare här
     });
   },
 
-  // Se över detta senare:
-  // when this startQuiz is true, the quiz page will be opened
-  // This needs to be imported and called in WelcomePage.
-  // start: () => {
-  //   set({
-  //     startQuiz: true,
-  //   });
-  // },
+  start: () => {
+    set({
+      startQuiz: true,
+    });
+  },
 }));
 
 export default useQuizStore;

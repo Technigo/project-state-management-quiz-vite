@@ -7,7 +7,6 @@ export const NextButton = () => {
   );
   const goToNextQuestion = useQuizStore((state) => state.goToNextQuestion);
 
-  /* Add different text on last Question/task */
   const currentQuestionIndex = useQuizStore(
     (state) => state.currentQuestionIndex
   );
