@@ -1,6 +1,6 @@
 import useQuizStore from "../../stores/useQuizStore";
 import { SWText } from "../../components/BitsAndBobs/SWText";
-import style from "./Summary.css";
+import style from "./Summary.module.css";
 
 export const SummaryPage = () => {
   const { totalQuestions, totalCorrect } = useQuizStore((state) => ({

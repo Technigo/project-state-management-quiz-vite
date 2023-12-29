@@ -1,6 +1,6 @@
 // import { useShallow } from "zustand/shallow";
 import useQuizStore from "../../stores/useQuizStore";
-import styles from "./Steps.css";
+import styles from "./Steps.module.css";
 
 export const Steps = () => {
   const { questions, currentQuestionIndex } = useQuizStore();
@@ -9,16 +9,16 @@ export const Steps = () => {
   //   currentQuestionIndex: state.currentQuestionIndex,
   // }))
 
-  const currentPosition = ((currentQuestionIndex + 1) / questions.length) * 100;
+  // const currentPosition = ((currentQuestionIndex + 1) / questions.length) * 100;
 
   return (
     <>
-      <div className={styles.bar}>
+      {/* <div className={styles.bar}>
         <div
           className={styles.progressBar}
           style={{ width: currentPosition + "%" }}
         ></div>
-      </div>
+      </div> */}
       <div className={styles.num}>
         <p>
           {currentQuestionIndex + 1} / {questions.length}

@@ -1,5 +1,5 @@
 import useQuizStore from "../../stores/useQuizStore";
-import style from "./AnswersandQuestionsStyle.css";
+import style from "./AnswersandQuestionsStyle.module.css";
 import { SWText } from "../../components/BitsAndBobs/SWText";
 
 export const Question = () => {
@@ -12,14 +12,6 @@ export const Question = () => {
 
   return (
     <div>
-      <div className={style.levelContainer}>
-        <SWText regularText="Level:" />
-        <img
-          className={style.levelWand}
-          src={currentQuestion.questionLevel}
-          alt="Question Level"
-        />
-      </div>
       <div className={style.quizQuestion}>
         <SWText
           regularText={`${question.questionText}`}

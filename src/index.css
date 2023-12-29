@@ -25,7 +25,6 @@ body {
   position: relative;
   min-height: 100vh;
   margin: 0;
-  /* cursor: ; */
 }
 
 body::before {
@@ -47,10 +46,9 @@ body::before {
 /* Full page styling */
 
 .layout_wrapper {
-  display: grid;
+  display: flex;
   justify-content: center;
   padding: 10px;
-  background-color: ;
 }
 
 /* Style questions  */
@@ -90,8 +88,8 @@ body::before {
 h1 {
   font-size: 45px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #fafafa;
-  margin: 52px 46px 15px 46px;
+  display: flex;
+  justify-content: center;
 }
 
 .quizMultichoiseItem {
@@ -115,7 +113,7 @@ h1 {
 
 @supports (-webkit-background-clip: text) or (background-clip: text) {
   h1 {
-    background-image: linear-gradient(to bottom, #ffcc66, #000);
+    background-image: linear-gradient(to bottom, #7dff66, #f22626);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;

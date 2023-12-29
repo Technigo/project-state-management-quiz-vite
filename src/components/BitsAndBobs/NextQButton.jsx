@@ -1,5 +1,5 @@
 import useQuizStore from "../../stores/useQuizStore";
-import style from "./NextQButton.css";
+import style from "./NextQButton.module.css";
 
 export const NextButton = () => {
   const selectedAnswerIndex = useQuizStore(
@@ -21,11 +21,7 @@ export const NextButton = () => {
         disabled={selectedAnswerIndex === undefined}
         className={style.nextButton}
       >
-        {isLastQuestion && isAnswerSelected
-          ? "To Results"
-          : isLastQuestion
-          ? "Last Task"
-          : "Next Task"}
+        {isLastQuestion && isAnswerSelected ? "Results, to!" : "Next Question"}
       </button>
     </div>
   );

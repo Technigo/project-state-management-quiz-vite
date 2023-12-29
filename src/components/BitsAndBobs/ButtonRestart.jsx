@@ -1,5 +1,5 @@
 import useQuizStore from "../../stores/useQuizStore";
-import style from "./ButtonRestart.css";
+import style from "./ButtonRestart.module.css";
 
 export const RestartButton = () => {
   const restart = useQuizStore((state) => state.restart);

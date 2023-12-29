@@ -1,6 +1,6 @@
 import useQuizStore from "../../stores/useQuizStore";
 import { SWText } from "../../components/BitsAndBobs/SWText";
-import style from "../Quiz/AnswersandQuestionsStyle.css";
+import style from "../Quiz/AnswersandQuestionsStyle.module.css";
 
 export const Answers = () => {
   const questions = useQuizStore((state) => state.questions);
@@ -10,7 +10,6 @@ export const Answers = () => {
 
   const currentQuestion = questions[currentQuestionIndex];
   const correctAnswerIndex = currentQuestion.correctAnswerIndex;
-  //console.log("correct:", correctAnswerIndex);
   const selectedAnswerIndex = useQuizStore(
     (state) => state.answers[currentQuestionIndex]?.answerIndex
   );
@@ -19,7 +18,6 @@ export const Answers = () => {
   );
 
   const handleOptionClick = (index) => {
-    //console.log("Option clicked:", index);
     if (selectedAnswerIndex !== undefined) return;
     useQuizStore.getState().submitAnswer(currentQuestion.id, index);
   };
@@ -31,7 +29,6 @@ export const Answers = () => {
   return (
     <>
       <div className={style.Answers}>
-        {/* Display every answer option for the current question. */}
         {currentQuestion.options.map((option, index) => (
           <button
             key={index}
