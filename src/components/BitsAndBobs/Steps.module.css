@@ -1,0 +1,13 @@
+.num {
+  color: #060505a2;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 35px;
+}
+
+@media (max-width: 600px) {
+  .num p {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,122 @@
+.summaryContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "h1 h1"
+    "h2 h2"
+    "textSummary textSummary";
+  max-width: 800px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.h1 {
+  font-size: 48px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: transparent;
+  margin-top: 0px;
+  margin-bottom: 7px;
+  grid-area: h1;
+}
+
+.h2 {
+  font-size: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  grid-area: h2;
+}
+
+.textSummary {
+  border: 2px solid #;
+  background-color: #0b0a15b3;
+  padding: 35px;
+  line-height: 1.5;
+  grid-area: textSummary;
+}
+
+.topOfHeader {
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.resultsSubHeader {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 0.1em;
+}
+
+.textSummary {
+  border: 2px solid #820808;
+  background-color: #0b0a15b3;
+  padding: 25px;
+  line-height: 1.5;
+  grid-area: textSummary;
+}
+
+.lastSummary {
+  font-size: 15px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .resultsSubHeader {
+    color: #ffffff;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  .h1,
+  .h2 {
+    color: #820808;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+
+@media (max-width: 900px) {
+  .h2 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .h1 {
+    font-size: 38px;
+  }
+
+  .h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .topOfHeader {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .resultsSubHeader {
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+  }
+
+  .lastSummary {
+    font-size: 15px;
+  }
+}
