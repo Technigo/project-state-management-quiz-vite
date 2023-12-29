@@ -10,18 +10,6 @@ const useQuizStore = create((set) => ({
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
 
-    // if (!question) {
-    //   throw new Error(
-    //     "This question could not be found unfortunately"
-    //   );
-    // }
-
-    // if (question.options[answerIndex] === undefined) {
-    //   throw new Error(
-    //     `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
-    //   );
-    // }
-
     set((state) => ({
       answers: [
         ...state.answers,

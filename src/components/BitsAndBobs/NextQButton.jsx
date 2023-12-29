@@ -21,7 +21,9 @@ export const NextButton = () => {
         disabled={selectedAnswerIndex === undefined}
         className={style.nextButton}
       >
-        {isLastQuestion && isAnswerSelected ? "Results, to!" : "Next Question"}
+        {isLastQuestion && isAnswerSelected
+          ? "Results, to!"
+          : "Stay on target!"}
       </button>
     </div>
   );

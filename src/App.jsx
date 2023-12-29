@@ -22,20 +22,21 @@ export const App = () => {
         <>
           <div className="questionsFullPage">
             <div className="tasks">
-              <h1>Question you answer here</h1>
+              <h1>Reply to question, given here!</h1>
             </div>
+
             <section className="questionBox">
               <div className="quizQuestion">
                 <Question />
               </div>
-              <div className="quizMultichoiseItem">
+              <div className="quizMultichoiceItem">
                 <Answers />
               </div>
             </section>
             <div className="nextButtonItem">
               <NextButton />
             </div>
-            <div className="progress-Bar">
+            <div className="num">
               <Steps />
             </div>
           </div>

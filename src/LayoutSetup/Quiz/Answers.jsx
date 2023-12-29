@@ -38,7 +38,7 @@ export const Answers = () => {
               selectedAnswerIndex === index
                 ? isAnswerCorrect
                   ? style.correct
-                  : `${style.incorrect} ${style.shake}`
+                  : `${style.incorrect}`
                 : index === correctAnswerIndex &&
                   selectedAnswerIndex !== undefined
                 ? style.correct

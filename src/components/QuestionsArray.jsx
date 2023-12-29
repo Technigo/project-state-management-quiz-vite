@@ -21,12 +21,13 @@ export const questions = [
   },
   {
     id: 4,
-    questionText: "How cute is Baby Yoda a.k.a Grogu?",
+    questionText:
+      "Dressed as what are Skywalker and Solo trying to free Princess Leia from the Death Star?",
     options: [
-      "He's not that cute",
-      "About as cute as an ewok",
-      "Cuter than a nublin!",
-      "I guess he's ok",
+      "Imperial Guards",
+      "Banthas",
+      "Stormtroopers",
+      "Tie Fighter-pilots",
     ],
     correctAnswerIndex: 2,
   },

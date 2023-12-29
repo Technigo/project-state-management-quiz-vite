@@ -1,21 +1,13 @@
 .quizQuestion {
   padding: 50px;
-  padding-top: 0px;
-}
-
-.quizMultichoise {
-  padding: 30px;
+  padding-top: 50px;
 }
 
 .levelContainer {
   display: flex;
   align-items: center;
-  padding: 50px;
+  padding: 10px;
 }
-
-/* .levelWand {
-  width: 80px;
-} */
 
 .levelText {
   color: white;
@@ -27,12 +19,12 @@
 
 .optionButton {
   color: #fafafa;
+  font-size: 28px;
   font-family: Helvetica, sans-serif;
   letter-spacing: 0.1em;
   padding: 15px;
   font-weight: bold;
   background-color: black;
-  /* background-image: linear-gradient(to bottom, #d9ff66, #000); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,46 +32,20 @@
   min-height: 70px;
   border-radius: 15px;
   margin-bottom: 15px;
+  margin-top: 20px;
   align-items: center;
   justify-content: center;
 }
 
 .correct {
-  background-color: #5fff6d;
+  background-color: #42fb52;
 }
 
 .incorrect {
   background-color: red;
 }
 
-.shake {
-  animation: shake 0.5s ease forwards;
-}
-
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-
-  25% {
-    transform: translateX(-10px);
-  }
-
-  75% {
-    transform: translateX(10px);
-  }
-}
-
-@supports (-webkit-background-clip: text) or (background-clip: text) {
-  .correct {
-    background-image: linear-gradient(to bottom, #08400d, #000);
-  }
-
-  .incorrect {
-    background-image: linear-gradient(to bottom, #800000, #000);
-  }
-}
+/* Pad and simular */
 
 @media (max-width: 900px) {
   .quizQuestion {
@@ -87,32 +53,27 @@
     padding-bottom: 20px;
   }
 
-  .quizMultichoise {
-    padding: 24px 14px;
+  .quizMultichoice {
+    padding: 24px;
   }
 
   .levelContainer {
     padding: 14px;
+    padding-top: 35px;
   }
 }
+
+/* Mobile */
 
 @media (max-width: 600px) {
   .quizQuestion {
     max-width: 400px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
   }
 
   .optionButton {
     min-width: 100%;
     min-height: 50px;
-  }
-
-  .questionText {
-    font-size: 18px;
-  }
-
-  .quizMultichoise {
-    padding: 13px 14px;
   }
 
   .questions {

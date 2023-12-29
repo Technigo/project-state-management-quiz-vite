@@ -8,7 +8,7 @@ export const Question = () => {
     (state) => state.currentQuestionIndex
   );
   const question = questions[currentQuestionIndex];
-  const currentQuestion = questions[currentQuestionIndex];
+  // const currentQuestion = questions[currentQuestionIndex];
 
   return (
     <div>

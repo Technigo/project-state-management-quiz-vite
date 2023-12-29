@@ -6,9 +6,7 @@
 
 # State Management Quiz
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Create a quiz using Zustand to handle state, plus some css (mine was very basic)
 
 ## Getting Started with the Project
 
@@ -24,7 +22,7 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This is not my strongest work but I worked hard regardless. I missed having a team as there were so many parts, but once I started breaking it down into smaller "team-pieces" it was easier. I had no inspiratoin for the css as I wanted to keep it simple, the background pic is the best thing of the whole page!
 
 ### View it live
 

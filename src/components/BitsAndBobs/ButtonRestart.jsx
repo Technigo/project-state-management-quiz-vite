@@ -7,7 +7,7 @@ export const RestartButton = () => {
   return (
     <div className={style.restartButtonContainer}>
       <button className={style.restartButton} type="button" onClick={restart}>
-        Do or do not.
+        Re-Do or do not. There is no try.
       </button>
     </div>
   );

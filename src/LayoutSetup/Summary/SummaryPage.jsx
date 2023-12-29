@@ -12,9 +12,9 @@ export const SummaryPage = () => {
   if (totalCorrect === 6) {
     message = "A Jedi Master, truly you are!";
   } else if (totalCorrect >= 3) {
-    message = "A strong Padawan - but you are not a Jedi yet";
+    message = "The Force is with you - but you are not a Jedi yet";
   } else {
-    message = "Maybe look into bounty hunting instead oft his?";
+    message = "Maybe look into bounty hunting instead of knowledge, ey kid?";
   }
 
   return (
