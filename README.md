@@ -26,7 +26,7 @@ This is not my strongest work but I worked hard regardless. I missed having a te
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://admirable-bavarois-ae6bfe.netlify.app
 
 ## Instructions
 
