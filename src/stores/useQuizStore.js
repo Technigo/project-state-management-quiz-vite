@@ -3,16 +3,27 @@ import { create } from "zustand";
 const questions = [
   {
     id: 1,
+    questionText: "What is my name?",
+    options: ["Sara", "Sivan", "Sally", "Greven"],
+    correctAnswerIndex: 0,
+  },
+  {
+    id: 2,
     questionText: "Who set the Olympic record for the 100m dash in 2012?",
     options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
     correctAnswerIndex: 0,
   },
   {
-    id: 2,
-    questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
+    id: 3,
+    questionText: "When was Michael Phelps last named male World Swimmer of the Year?",
     options: ["2012", "2014", "2016", "2018"],
     correctAnswerIndex: 2,
+  },
+  {
+    id: 4,
+    questionText: "Where is my dog?",
+    options: ["Here", "There", "Nowhere", "Everywhere"],
+    correctAnswerIndex: 0,
   },
 ];
 
@@ -21,22 +32,10 @@ const useQuizStore = create((set) => ({
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
+  selectedAnswerIndex: -1,
 
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
-
-    if (!question) {
-      throw new Error(
-        "Could not find question! Check to make sure you are passing the question id correctly."
-      );
-    }
-
-    if (question.options[answerIndex] === undefined) {
-      throw new Error(
-        `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
-      );
-    }
-
     set((state) => ({
       answers: [
         ...state.answers,
@@ -48,17 +47,18 @@ const useQuizStore = create((set) => ({
           isCorrect: question.correctAnswerIndex === answerIndex,
         },
       ],
+      selectedAnswerIndex: answerIndex,
     }));
-  },
-
-  goToNextQuestion: () => {
-    set((state) => {
-      if (state.currentQuestionIndex + 1 === state.questions.length) {
-        return { quizOver: true };
-      } else {
-        return { currentQuestionIndex: state.currentQuestionIndex + 1 };
-      }
-    });
+    
+    setTimeout(() => {
+      set((state) => {
+        if (state.currentQuestionIndex + 1 < state.questions.length) {
+          return { ...state, currentQuestionIndex: state.currentQuestionIndex + 1, selectedAnswerIndex: -1 };
+        } else {
+          return { ...state, quizOver: true };
+        }
+      });
+    }, 1000); // Move to the next question after 1 second
   },
 
   restart: () => {
@@ -66,6 +66,7 @@ const useQuizStore = create((set) => ({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
+      selectedAnswerIndex: -1,
     });
   },
 }));

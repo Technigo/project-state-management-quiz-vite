@@ -1,14 +1,15 @@
-import { CurrentQuestionUseContext } from "./components/CurrentQuestionUseContext";
-import { CurrentQuestionZustand } from "./components/CurrentQuestionZustand";
-import { QuizProvider } from "./context/QuizContext";
+import CurrentQuestionZustand from "./components/CurrentQuestionZustand";
+import QuizSummary from "./components/QuizSummary";
+import useQuizStore from "./stores/useQuizStore";
 
-export const App = () => {
+const App = () => {
+  const quizOver = useQuizStore((state) => state.quizOver);
+
   return (
-    <QuizProvider>
-      <div>
-        <CurrentQuestionUseContext />
-        <CurrentQuestionZustand />
-      </div>
-    </QuizProvider>
+    <div>
+      {quizOver ? <QuizSummary /> : <CurrentQuestionZustand />}
+    </div>
   );
 };
+
+export default App;
