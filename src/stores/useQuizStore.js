@@ -67,7 +67,40 @@ const questions = [
     "To stage changes for commit"
   ],
   correctAnswerIndex: 2,
-},
+  },
+  {
+  id: 8,
+  questionText: "Which of the following is NOT a popular frontend language?",
+  options: [
+    "React",
+    "Vue",
+    "Panda",
+    "Angular"
+  ],
+  correctAnswerIndex: 2,
+  },
+  {
+  id: 9,
+  questionText: "How do you create a hyperlink in HTML?",
+  options: [
+    "<a href='http://www.example.com'>Example</a>",
+    "<link src='http://www.example.com'>Example</link>",
+    "<href='http://www.example.com'>Example</href>",
+    "<a link='http://www.example.com'>Example</a>"
+  ],
+  correctAnswerIndex: 0,
+  },
+  {
+  id: 10,
+  questionText: "When would you use Tailwind CSS?",
+  options: [
+    "When you need a highly customized, unique design without writing a lot of CSS",
+    "Only for prototyping or small projects due to its limited capabilities",
+    "When you prefer inline styling directly within your HTML or JSX",
+    "For backend development to enhance server-side rendering"
+  ],
+  correctAnswerIndex: 0,
+}
 ];
 
 const useQuizStore = create((set) => ({

@@ -1,4 +1,4 @@
-import useQuizStore from "../stores/useQuizStore"; // Adjust the path accordingly
+import useQuizStore from "../stores/useQuizStore"; 
 
 const CurrentQuestionZustand = () => {
   const { questions, currentQuestionIndex, submitAnswer, selectedAnswerIndex } = useQuizStore();

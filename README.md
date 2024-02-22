@@ -5,30 +5,16 @@
 </h1>
 
 # State Management Quiz
+The task of the project was to create a quiz using zustand for state management.
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
 
 ### The Problem
+It took a while before I got a good grip of Zustand and the purpose of using it, but when it clicked it felt quite natural and easy to use. There were quite a lot guidance from Chat GPT to get going, and a lot experimenting with Tailwind to get a "retro, computer-ish feeling" that I think matches the theme.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-state-management-quiz-vite.vercel.app/
 
 ## Instructions
 
