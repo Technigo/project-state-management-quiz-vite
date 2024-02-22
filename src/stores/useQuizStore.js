@@ -3,17 +3,104 @@ import { create } from "zustand";
 const questions = [
   {
     id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
+    questionText: "What greeting phrase will a beginner in coding most probably use when creating their first website?",
+    options: ["Hello world", "Bienvenue!", "Tja", "Good evening world wide web"],
     correctAnswerIndex: 0,
   },
   {
     id: 2,
-    questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
-    correctAnswerIndex: 2,
+    questionText: "What does HTML stand for?",
+    options: ["Hypotext Markup Language", "Hypertext Markup Language", "Hot Tomatoes Mild Lettuce", "Hypertext Madeup Language"],
+    correctAnswerIndex: 1,
   },
+  {
+  id: 3,
+  questionText: "What is the purpose of a responsive website?",
+  options: [
+    "To ensure the website looks the same on all devices",
+    "To increase website loading speed on mobile devices",
+    "To make a website look good on all devices and screen sizes",
+    "To enhance the security of websites on mobile devices"
+  ],
+  correctAnswerIndex: 2,
+  },
+  {
+  id: 4,
+  questionText: "What is a bug?",
+  options: [
+    "A feature in a program that works as intended",
+    "An error in a program that causes it to produce unexpected results",
+    "A type of insect that lives in the code",
+    "A small creature that lives in the computer"
+    ],
+    correctAnswerIndex: 1,
+  },
+  {
+  id: 5,
+  questionText: "What is NOT considered Clean Code?",
+  options: [
+    "Code that is well-commented and easy to understand",
+    "Functions that perform a single task",
+    "Code with complex and nested conditional logic",
+    "Variables with meaningful names"
+  ],
+  correctAnswerIndex: 2,
+  },
+  {
+  id: 6,
+  questionText: "What is the output of the following code: <h1>5 + 5<h1>?",
+  options: [
+    "55",
+    "10",
+    "5,5",
+    "Nothing since the ending tag is incorrect."
+  ],
+  correctAnswerIndex: 2,
+  },
+  {
+  id: 7,
+  questionText: "What is the purpose of the `git clone` command?",
+  options: [
+    "To merge changes from one branch to another",
+    "To create a new branch",
+    "To copy a remote repository to your local machine",
+    "To stage changes for commit"
+  ],
+  correctAnswerIndex: 2,
+  },
+  {
+  id: 8,
+  questionText: "Which of the following is NOT a popular frontend language?",
+  options: [
+    "React",
+    "Vue",
+    "Panda",
+    "Angular"
+  ],
+  correctAnswerIndex: 2,
+  },
+  {
+  id: 9,
+  questionText: "How do you create a hyperlink in HTML?",
+  options: [
+    "<a href='http://www.example.com'>Example</a>",
+    "<link src='http://www.example.com'>Example</link>",
+    "<href='http://www.example.com'>Example</href>",
+    "<a link='http://www.example.com'>Example</a>"
+  ],
+  correctAnswerIndex: 0,
+  },
+  {
+  id: 10,
+  questionText: "When would you use Tailwind CSS?",
+  options: [
+    "When you need a highly customized, unique design without writing a lot of CSS",
+    "Only for prototyping or small projects due to its limited capabilities",
+    "When you prefer inline styling directly within your HTML or JSX",
+    "For backend development to enhance server-side rendering"
+  ],
+  correctAnswerIndex: 0,
+}
 ];
 
 const useQuizStore = create((set) => ({
@@ -21,22 +108,10 @@ const useQuizStore = create((set) => ({
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
+  selectedAnswerIndex: -1,
 
   submitAnswer: (questionId, answerIndex) => {
     const question = questions.find((q) => q.id === questionId);
-
-    if (!question) {
-      throw new Error(
-        "Could not find question! Check to make sure you are passing the question id correctly."
-      );
-    }
-
-    if (question.options[answerIndex] === undefined) {
-      throw new Error(
-        `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
-      );
-    }
-
     set((state) => ({
       answers: [
         ...state.answers,
@@ -48,17 +123,18 @@ const useQuizStore = create((set) => ({
           isCorrect: question.correctAnswerIndex === answerIndex,
         },
       ],
+      selectedAnswerIndex: answerIndex,
     }));
-  },
-
-  goToNextQuestion: () => {
-    set((state) => {
-      if (state.currentQuestionIndex + 1 === state.questions.length) {
-        return { quizOver: true };
-      } else {
-        return { currentQuestionIndex: state.currentQuestionIndex + 1 };
-      }
-    });
+    
+    setTimeout(() => {
+      set((state) => {
+        if (state.currentQuestionIndex + 1 < state.questions.length) {
+          return { ...state, currentQuestionIndex: state.currentQuestionIndex + 1, selectedAnswerIndex: -1 };
+        } else {
+          return { ...state, quizOver: true };
+        }
+      });
+    }, 1000);
   },
 
   restart: () => {
@@ -66,6 +142,7 @@ const useQuizStore = create((set) => ({
       answers: [],
       currentQuestionIndex: 0,
       quizOver: false,
+      selectedAnswerIndex: -1,
     });
   },
 }));
